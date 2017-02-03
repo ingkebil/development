@@ -16,5 +16,9 @@ gitbook help
 gitbook serve
 ```
 
+You can read more in the official [GitBook Toolchain documentation][gb-toolchain].
+
 [gb-cli-repo]: https://github.com/GitbookIO/gitbook-cli
+[gb-toolchain]: https://toolchain.gitbook.com/setup.html
 [conda]: https://conda.io/docs/
+
