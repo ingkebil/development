@@ -1,6 +1,10 @@
 # Python
 
-[Testing](testing.md)
+Python is a popular and easy-to-learn interpreted programming language. To get a feel for the language, take a look at this [comprahensive reference][python-ref]. With the surge in adoption of the most recent version of Python we are incouraging all new code to support [Python 3][python3] _first and foremost_.
+
+## Separate topics
+
+- [Testing](testing.md)
 
 ## Packaging
 
@@ -50,3 +54,5 @@ def cli(log_level):
 [pipfile]: https://github.com/pypa/pipfile
 [logging]: http://mussol.org/2016/12/15/understanding-logging-in-python/
 [coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
+[python-ref]: https://github.com/justmarkham/python-reference/blob/master/reference.py
+[python3]: https://docs.python.org/3/
