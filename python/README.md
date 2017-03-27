@@ -1,6 +1,6 @@
 # Python
 
-Python is a popular and easy-to-learn interpreted programming language. To get a feel for the language, take a look at this [comprahensive reference][python-ref]. With the surge in adoption of the most recent version of Python we are incouraging all new code to support [Python 3][python3] _first and foremost_.
+Python is a popular and easy-to-learn interpreted programming language. To get a feel for the language, take a look at this [comprehensive reference][python-ref]. With the surge in adoption of the most recent version of Python we are encouraging all new code to support [Python 3][python3] _first and foremost_.
 
 ## Separate topics
 
@@ -32,7 +32,7 @@ def foo(bar):
     return bar + 1
 ```
 
-The not-so-intuative part is that you need to configure the logging module to see any output from these calls. Luckily we can reduce the setup to a simple function call most of the time using the [coloredlogs][coloredlogs] package. During e.g. your CLI initialization include:
+The not-so-intuitive part is that you need to configure the logging module to see any output from these calls. Luckily we can reduce the setup to a simple function call most of the time using the [coloredlogs][coloredlogs] package. During e.g. your CLI initialization include:
 
 ```python
 import click
