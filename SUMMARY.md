@@ -10,3 +10,4 @@
         * [Identifiers](perl/best_practises/Identifiers.md)
 * [Editors](editors/README.md)
 * [Assignments](assignments/README.md)
+* [Workflows](workflows/README.md)

@@ -23,6 +23,8 @@ Packaging Python code is a known pain point that many developers struggle with. 
 
 For detailed information or if you need to look up specific options there a very [detailed resource](https://packaging.python.org/) available as well.
 
+We should be using Pipfile, pipenv.
+
 ## Conda setup
 
 See [conda](conda.md).
