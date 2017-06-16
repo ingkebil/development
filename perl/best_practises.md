@@ -17,7 +17,7 @@ Damian Conway's book Perl Best Practices is a very good reference.
 
 Perl critic allows different degrees of severity. Severity values are integers ranging from 1 (least severe) to 5 (most severe) when analyzing your code. You can also use the severity names if you think it hard to remember the meaning of the integers (1 = brutal and 5 = gentle). The level is controlled with the '--severity' flag. There is also a verbose flag, to print more information about the identified deviations from the perl critic best practises. There are 11 levels of verbosity.
 
-####Examples
+#### Examples
 
 ```
 perlcritic --severity 4 --verbose 11 my_perl_script.pl
@@ -30,7 +30,7 @@ Perl critic also has [web interface] to instantly analyze your code.
 
 [Perltidy] is a Perl script which indents and reformats Perl scripts to make them easier to read. If you write Perl scripts, or spend much time reading them, you will probably find it useful. Perltidy is an excellent way to automate the code standardisation with minimum of effort.  
 
-####Examples
+#### Examples
 
 ```
 perltidy somefile.pl
