@@ -1,9 +1,11 @@
 # Summary
 
 * [Introduction](README.md)
+* [Documentation](documentation/README.md)
 * [Git](git/README.md)
 * [Python](python/README.md)
     * [Testing](python/testing.md)
+    * [Conventions](python/conventions.md)
     * [Logging](python/logging.md)
 * [Perl](perl/README.md)
     * [Best Practices](perl/best_practises/best_practises.md)
