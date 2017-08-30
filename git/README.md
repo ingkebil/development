@@ -16,7 +16,7 @@
   * [9. Pushing changes to your remote repository.](#9-pushing-changes-to-your-remote-repository)
   * [10. Create a pull request to the parent repository.](#10-create-a-pull-request-to-the-parent-repository)
   * [11. References](#11-references)
-
+  * [12. GitHub](#12-GitHub)
 
 
 ## 1. Purpose
@@ -223,10 +223,7 @@ Github book:        (https://git-scm.com/book/en/v2)
 
 
 
----
-
-
-## GitHub
+## 12. GitHub
 
 **Markdown** is the documentation format of choice for code on GitHub. If you want to live-preview files in the format they will show up before pushing you can use the handy [Grip][grip] tool. It super easy to use! All you need to do is:
 
