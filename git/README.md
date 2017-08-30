@@ -20,7 +20,7 @@
 
 
 ## 1. Purpose
-This document offers an overview of themost important commands of Github and it is intended to be a quick start guide to work with Github repositories.
+This document offers an overview of the most important commands of Github and it is intended to be a quick start guide to work with Github repositories.
 
 
 ## 2. Download and setup
