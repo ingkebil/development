@@ -196,7 +196,7 @@ The process of adding a file to the index is also called staging. Be sure to add
 Before merging the changes you can preview them with the command:
 
 <pre>
-<b>git diff source_branch target_branch<b>
+<b>git diff source_branch target_branch</b>
 </pre>
 
 Calling the "diff" command without arguments will list all the differences between the index and your workspace, i.e. all the files that you could add to the index.
