@@ -210,10 +210,10 @@ To commit changes from the index to the local repository (HEAD), type:
 Alternatively you can add and commit the files to the local repository in only one command:
 
 <pre>
-<b>git commit -a</b>*
+<b>git commit -a</b>
 </pre>
 
-\* Be very careful with the above command, since it gives you less control over the single steps of the workflow and the files you really want to commit.
+NOTE: Be very careful with the above command, since it gives you less control over the single steps of the workflow and the files you really want to commit.
 Before using it, make sure everything is under control by using the "git status" and "git diff" commands.
 
 
@@ -221,10 +221,10 @@ Before using it, make sure everything is under control by using the "git status"
 After "git add" and "git commit", or "commit -a", your changes are in the HEAD of your local repository. To send them to the remote repository use the command "push":
 
 <pre>
-<b>git push origin (or branch_you_want_to_push_to)</b>**
+<b>git push origin (or branch_you_want_to_push_to)</b>
 </pre>
 
-\** If your remote, called origin, is configured and you're committing to master, you can omit the word "origin" and just type "git push".
+NOTE: If your remote, called origin, is configured and you're committing to master, you can omit the word "origin" and just type "git push".
 
 
 ## 10. Create a pull request to the parent repository.
