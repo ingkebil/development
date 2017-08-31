@@ -15,8 +15,8 @@
   * [8. Make changes and commit them to your local repository.](#8-make-changes-and-commit-them-to-your-local-repository)
   * [9. Pushing changes to your remote repository.](#9-pushing-changes-to-your-remote-repository)
   * [10. Create a pull request to the parent repository.](#10-create-a-pull-request-to-the-parent-repository)
-  * [11. References](#11-references)
-  * [12. GitHub documentation](#12-github-documentation)
+  * [11. Github usage references](#11-github-usage-references)
+  * [12. How to write Github documentation](#12-how-to-write-github-documentation)
 
 
 ## 1. Purpose
@@ -29,9 +29,9 @@ This document offers an overview of the most important commands of Github and it
 
 If you are working on a Debian-based version of Linux you can install the basic Git tools via APT:
 
-```bash
-$ sudo apt-get install git-all
-```
+<pre>
+<b>$ sudo apt-get install git-all</b>
+</pre>
 
 Here are instructions on how to [install Git under other Linux distributions.](https://git-scm.com/download/linux)
 
@@ -41,10 +41,10 @@ The latest version of Git for Mac can be downloaded [here](https://git-scm.com/d
 
 If you are installing on a Mac with OS X 10.9 you can install Git from command line with Homebrew (get Homebrew [here](https://brew.sh/)) by typing:
 
-```bash
-brew install git
-brew install git-flow
-```
+<pre>
+<b>brew install git
+brew install git-flow</b>
+</pre>
 
 ### 2.3 Download and install Git under Windows.
 
@@ -56,10 +56,10 @@ You can download an installer of Git for Windows from [here](https://git-scm.com
 
 The first time you are using git from command line you should set up a username and a password. Type in the following commands:
 
-```bash
-git config --global user.email "you@example.com"
-git config --global user.name "YourUsername"
-```
+<pre>
+<b>git config --global user.email "you@example.com"
+git config --global user.name "YourUsername"</b>
+</pre>
 
 ## 4. Create a new repository.
 
@@ -76,7 +76,8 @@ Create a directory with the name of the new repository and enter it from command
 This command will create a .git subfolder containing all the necessary files for your project.
 
 ### 4.2 Clone a repository from an existing project.
-After forking a repository from the internet (how to fork a repository) you can create a local copy of it from command line, by moving in the parent folder of your new repository, then typing:
+When you are contributing to an existing repository, the first thing you should do is forking this repository to your space. A fork is basically a copy of the original project, on which you can experiment as much as you want without changing the original project.
+After forking a repository from the internet ([how to fork a repository](https://guides.github.com/activities/forking/)) you can create a local copy of it from command line, by moving in the parent folder of your new repository, then typing:
 
 <pre>
 <b>git clone username@host:/path/to/repository</b>
@@ -84,6 +85,11 @@ After forking a repository from the internet (how to fork a repository) you can 
 
 Where username@host:/path/to/repository is the url which can be obtained from the web page of your local fork, by clicking on the "clone or download" green button.
 The git clone command then creates a folder with the project and pulls the latest data from your fork in it.
+
+<pre>
+  For instance, to clone this repository from your fork:
+  git clone https://github.com/YourUsername/development.git
+</pre>
 
 
 ## 5. Git data transport structure and commands.
@@ -94,19 +100,20 @@ The following image shows the structure of the git commands and spaces:
 </p>
 Your workspace is the folder that holds the actual working files while the "index" is the space is a staging area where you add your changes before committing them to the local repository or "head". To send the changes to your remote repository you use the "push" command.
 
-## 6. Keep your fork up to date.
-Before committing and pushing changes to your remote repository you should chack that you are working on an updated version of the repository. To update your fork follow these instructions:
+Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary/](https://help.github.com/articles/github-glossary/)
 
-From command line CD to the main folder containing your project and type:
+## 6. Keep your fork up to date.
+Before committing and pushing changes to your remote repository you should check that you are working on an updated version of it. To update your fork follow these instructions:
+
+First you need to get the latest version of the original project you forked from.
+To do so, from command line move to the main folder containing your project and type:
 
 <pre>
 <b>git remote add upstream path/to/repo/you/forked/from
 git fetch upstream
 git pull upstream master
-git pull upstream develop (develop it's the version you start from for your work!)
-</b>
+git pull upstream develop (develop it's the version you start from for your work!)</b>
 </pre>
-
 
 You don't have to call the remote "upstream" but you can chose any name for it. To visualize all remotes you are working with and their respective shortnames use the command:
 
@@ -117,12 +124,25 @@ You don't have to call the remote "upstream" but you can chose any name for it. 
 
 To remove remotes instead, use the command "git remove rm":
 
-```bash
-git remote rm name_of_remote
-```
+<pre>
+<b>git remote rm name_of_remote</b>
+</pre>
+
+After pulling data from the remote your local copy of the repo should be up-to-date with the upstream. Now you need to update your fork (the copy existing online, in GitHub) accordingly.
+
+If you wish to update you master branch on your fork, sor instance, you'd type these commands:
+
+<pre>
+<b>git checkout master</b>		#be sure to place yourself in your master branch
+<b>git rebase upstream/master
+git push</b>
+</pre>
+
+You use the same commands to update any other branch of your forked repository.
+
 
 ## 7. Create a new branch/feature for your work.
-To create a new branch, from command line CD to the main folder containing your project and type:
+To create a new branch, from command line move to the main folder containing your project and type:
 
 <pre>
 <b>git branch -b name_of_the_new_branch</b>
@@ -132,8 +152,7 @@ To create a new feature instead, type:
 
 <pre>
 <b>git flow init
-git flow feature start name_of_your_feature
-</b>
+git flow feature start name_of_your_feature</b>
 </pre>
 
 If everything went fine than you'll get the following message: "Switched to a new branch Feature/NameOfYourFeature". This means you are already inside the new feature. To make sure that you are in the right branch type:
@@ -142,11 +161,11 @@ If everything went fine than you'll get the following message: "Switched to a ne
 <b>git branch</b>
 </pre>
 
-Whenever you want to move to another branch/Feature the command is:
+Whenever you want to move to another branch/feature the command is:
 
 
 <pre>
-<b>git checkout branch_to_use_for_your_work</b>
+<b>git checkout -b [my-topic]</b>
 </pre>
 
 ## 8. Make changes and commit them to your local repository.
@@ -173,14 +192,16 @@ The you can start adding your changes to the index with the command:
 <b>git add fileName_to_send_to_index</b>
 </pre>
 
+The process of adding a file to the index is also called staging. Be sure to add all the files you want to include to the index. 
+Before merging the changes you can preview them with the command:
 
-Add all the files you want to include to the index. Before merging the changes you can preview them with the command:
+<pre>
+<b>git diff source_branch target_branch<b>
+</pre>
 
-```bash
-git diff source_branch target_branch
-```
+Calling the "diff" command without arguments will list all the differences between the index and your workspace, i.e. all the files that you could add to the index.
 
-To commit these files to the local repository type:
+To commit changes from the index to the local repository (HEAD), type:
 
 <pre>
 <b>git commit</b>
@@ -189,15 +210,21 @@ To commit these files to the local repository type:
 Alternatively you can add and commit the files to the local repository in only one command:
 
 <pre>
-<b>git commit -a</b>
+<b>git commit -a</b>*
 </pre>
+
+\* Be very careful with the above command, since it gives you less control over the single steps of the workflow and the files you really want to commit.
+Before using it, make sure everything is under control by using the "git status" and "git diff" commands.
+
 
 ## 9. Pushing changes to your remote repository.
 After "git add" and "git commit", or "commit -a", your changes are in the HEAD of your local repository. To send them to the remote repository use the command "push":
 
 <pre>
-<b>git push origin (or branch_you_want_to_push_to)</b>
+<b>git push origin (or branch_you_want_to_push_to)</b>**
 </pre>
+
+\** If your remote, called origin, is configured and you're committing to master, you can omit the word "origin" and just type "git push".
 
 
 ## 10. Create a pull request to the parent repository.
@@ -206,32 +233,35 @@ You create a "pull request" when you want to propose the introduction of your ch
 Once the pull request is merged and closed you can safely remove the branch you've been working on.
 If you have been implementing a feature use this syntax:
 
-```bash
-git flow feature finish name_of_your_feature
-```
+<pre>
+<b>git flow feature finish name_of_your_feature</b>
+</pre>
+
 Otherwise to remove a generic branch both remotely and locally type:
 
-```bash
-git branch -d name_of_your_branch                #removes it locally
-git push origin --delete name_of_your_branch     #removes it remotely
- ```
+<pre>
+<b>git branch -d name_of_your_branch                #removes it locally
+git push origin --delete name_of_your_branch     #removes it remotely</b>
+</pre>
 
 
-## 11. References
+## 11. Github usage references
 Github short guide: (https://guides.github.com/activities/hello-world/)<br>
-Github book:        (https://git-scm.com/book/en/v2)
+Github book:        (https://git-scm.com/book/en/v2)<br>
+GitHub help page:   (https://help.github.com/)<br>
+Glossary:           (https://help.github.com/articles/github-glossary/)
 
 
 
-## 12. GitHub documentation
+## 12. How to write Github documentation
 
 **Markdown** is the documentation format of choice for code on GitHub. If you want to live-preview files in the format they will show up before pushing you can use the handy [Grip][grip] tool. It super easy to use! All you need to do is:
 
-```bash
-pip install grip
+<pre>
+<b>pip install grip
 # cd to your project directory
 grip
-# open your web-browser at http://localhost:6419
-```
+# open your web-browser at http://localhost:6419</b>
+</pre>
 
 [grip]: https://github.com/joeyespo/grip
