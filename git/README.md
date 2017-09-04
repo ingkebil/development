@@ -42,7 +42,7 @@ The latest version of Git for Mac can be downloaded [here](https://git-scm.com/d
 If you are installing on a Mac with OS X 10.9 you can install Git from command line with Homebrew (get Homebrew [here](https://brew.sh/)) by typing:
 
 <pre>
-<b>brew install git
+<b>brew install git</b>
 </pre>
 
 ### 2.3 Download and install Git under Windows.
