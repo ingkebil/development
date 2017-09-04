@@ -43,12 +43,11 @@ If you are installing on a Mac with OS X 10.9 you can install Git from command l
 
 <pre>
 <b>brew install git
-brew install git-flow</b>
 </pre>
 
 ### 2.3 Download and install Git under Windows.
 
-You can download an installer of Git for Windows from [here](https://git-scm.com/download/win) or one of the dedicated projects like this or [this](https://desktop.github.com/). 
+You can download an installer of Git for Windows from [here](https://git-scm.com/download/win) or one of the dedicated projects like this or [this](https://desktop.github.com/).
 
 
 
@@ -120,7 +119,7 @@ You don't have to call the remote "upstream" but you can chose any name for it. 
 <pre>
 <b>git remote -v</b>
 </pre>
-   
+
 
 To remove remotes instead, use the command "git remove rm":
 
@@ -148,14 +147,13 @@ To create a new branch, from command line move to the main folder containing you
 <b>git branch -b name_of_the_new_branch</b>
 </pre>
 
-To create a new feature instead, type:
+To create a new feature from the develop branch, instead, type:
 
 <pre>
-<b>git flow init
-git flow feature start name_of_your_feature</b>
+<b>git checkout -b name_of_your_feature develop</b>
 </pre>
 
-If everything went fine than you'll get the following message: "Switched to a new branch Feature/NameOfYourFeature". This means you are already inside the new feature. To make sure that you are in the right branch type:
+If everything went fine than you'll get the following message: "Switched to a new branch name_of_your_feature". This means you are already inside the new feature. To make sure that you are in the right branch type:
 
 <pre>
 <b>git branch</b>
@@ -173,11 +171,11 @@ Before committing any changes to your local repository, and finally to the remot
 After you are satisfied with your code you can start to commit to the remote repository.
 
 To check that there are actually changes to add and commit, type:
- 
+
 <pre>
 <b>git status</b>
 </pre>
- 
+
 This command will give you info on the status of your working directory comparing it with the local and remote repositories.
 
 To update the local repository to the latest status, by fetchin and merging remote changes, type:
@@ -192,7 +190,7 @@ The you can start adding your changes to the index with the command:
 <b>git add fileName_to_send_to_index</b>
 </pre>
 
-The process of adding a file to the index is also called staging. Be sure to add all the files you want to include to the index. 
+The process of adding a file to the index is also called staging. Be sure to add all the files you want to include to the index.
 Before merging the changes you can preview them with the command:
 
 <pre>
@@ -231,17 +229,12 @@ NOTE: If your remote, called origin, is configured and you're committing to mast
 You create a "pull request" when you want to propose the introduction of your changes to the repository where your project was forked from. Pull requests are created from the webpage of your remote repository. By default pull requests are directed to the default branch of the parent repository, so make sure to use properly the drop-down menu on the webpage to pull changes to the develop branch and not the master branch of the parent repository. For a more detailed explanation of pull requests visit the Github help page.
 
 Once the pull request is merged and closed you can safely remove the branch you've been working on.
-If you have been implementing a feature use this syntax:
+to remove a generic branch both remotely and locally type:
+
 
 <pre>
-<b>git flow feature finish name_of_your_feature</b>
-</pre>
-
-Otherwise to remove a generic branch both remotely and locally type:
-
-<pre>
-<b>git branch -d name_of_your_branch                #removes it locally
-git push origin --delete name_of_your_branch     #removes it remotely</b>
+<b>git branch -d name_of_your_branch                #removes it locally</b>
+<b>git push origin --delete name_of_your_branch     #removes it remotely</b>
 </pre>
 
 
