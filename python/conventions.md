@@ -1,17 +1,59 @@
 # Conventions
 
-First some general stuff. We use Python 3.6+. We encourage the use of type annotations even if it doesn't cover 100% of your functions. We encourage using the new format strings:
+> Code is read much more often than it is written. - A Wise Pythonista
+
+[PEP8][pep8] and 💎 [PEP20][pep20] (``import this``) should be considered as the starting points. Unless specified otherwise, we follow the guidelines laid out there. For a brief overview, read the [Python Guide][python-guide#style]'s entry on the subject.
+
+> The official guide has some very nice tips on [code layout][code-layout]. This can be a nice reference when you are unsure about how to e.g. style your hanging indents.
+
+Futhermore, we use Python 3.6+. We encourage the use of type annotations (even if it doesn't cover 100% of your functions) and the new format strings:
 
 ```python
 name = 'Paul Anderson'
 string = f"Hello {name}!"
 ```
 
+## Indentation
+
+Use 4 *spaces* to indent code. Never use hard tabs. Spaces are preferred over tabs for the following reason: spaces are spaces on every editor on every operating system. Tabs can be configured to act as 2, 4, 8 "spaces" and this can make code unreadable when being shared.
+
+## Maximum line length: 100 chars
+
+Limit all lines to a maximum of 100 characters. Break down the line if it exceeds the maximum length. For example:
+
+```python
+# Python automatically concatenates consecutive strings
+a_long_string = ("I am a very long string that can be split across"
+                 "multiple lines by automatic string concatenation.")
+
+# multi conditional if-statements can be split into multiple statements
+# notice how the code reads a lot like regular English!
+first_condition = 'genius' in 'Paul Thomas Anderson'
+second_condition = 'genius' in 'Daniel Day-Lewis'
+
+if first_condition and second_condition:
+    print('And the Oscar goes to... There Will Be Blood!')
+```
+
+### Imports
+
+I like to split up imports into three separate groups: 1. standard library imports, 2. third party imports, 3. intra-package imports.
+
+```python
+import os
+import re
+
+import numpy as np
+from path import path
+
+from .utils import read_config
+```
+
 ## Folders/packages
 
 A common folder structure for a Python projects looks like:
 
-```
+```bash
 myPackage
 ├── __init__.py
 ├── exc.py                   <-- custom exceptions
@@ -104,10 +146,22 @@ class MissingFileError(TrailblazerError):
     pass
 ```
 
+## Helpful tools
 
+We encourage using a *linter* to continuously check the syntax of your code. The Python community maintains a number of linters such as pep8, and [PyFlakes][pyflakes].
+
+Another resource that can greatly ease collaboration is [EditorConfig][editor-config]. It's an effort to provide a cross editor configuration format and in placed in your project and committed to source control. You also need to install a plugin for your favorite editor, e.g. [Sublime][sublime-config].
+
+[pep8]: http://legacy.python.org/dev/peps/pep-0008/
+[pep20]: http://legacy.python.org/dev/peps/pep-0020/
+[python-guide#style]: http://docs.python-guide.org/en/latest/writing/style/
+[code-layout]: http://legacy.python.org/dev/peps/pep-0008/#code-lay-out
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [click]: http://click.pocoo.org/
 [coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
 [flask]: http://flask.pocoo.org/
 [alchy]: http://alchy.readthedocs.io/en/latest/
 [flask-alchy]: https://github.com/dgilland/flask-alchy
+[pyflakes]: https://pypi.python.org/pypi/pyflakes
+[editor-config]: http://editorconfig.org/
+[sublime-config]: https://github.com/sindresorhus/editorconfig-sublime
