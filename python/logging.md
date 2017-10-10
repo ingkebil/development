@@ -5,12 +5,12 @@ Logging is the logical next step when you realize the limitations of printing. P
 ```python
 import logging
 
-log = logging.getLogger(__name__)
+LOG = logging.getLogger(__name__)
 
 
 def foo(bar):
     """My fancy function."""
-    log.info("incrementing the input: %s", bar)
+    LOG.info("incrementing the input: %s", bar)
     return bar + 1
 ```
 
@@ -19,13 +19,16 @@ The not-so-intuitive part is that you need to configure the logging module to se
 ```python
 import click
 import coloredlogs
+import logging
 
+LOG = logging.getLogger(__name__)
 
 @click.command()
 @click.option('-l', '--log-level', default='INFO', help='Log message level to display')
 def cli(log_level):
     """Base command line entry point."""
     coloredlogs.install(level=log_level)
+	LOG.info("Running cli")
     # ... more code here
 ```
 
