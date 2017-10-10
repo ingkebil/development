@@ -13,7 +13,6 @@
     * [setup.py](python/count_variants/setup_py.md)
     * [First module](python/count_variants/count_module.md)
     * [Installing](python/count_variants/installing.md)
-  	
 * [Perl](perl/README.md)
   * [Best Practices](perl/best_practises/best_practises.md)
     * [Identifiers](perl/best_practises/Identifiers.md)
