@@ -4,7 +4,7 @@ Every python package contains a special file called `setup.py ` in the root dire
 There is a excellent guide for how to setup a package and create the setup.py [here][setup_guide].
 Lets continue with our example following @kennethreitz guide, please read the guide first.
 
-Copy `setup.py` from the guide and open it, if you done it right it should look like
+Copy `setup.py` from the guide and open it, if you do it right it should look like:
 
 ```python
 #!/usr/bin/env python
@@ -269,13 +269,14 @@ From the [documentation][init_doc]
 > The __init__.py files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as string, from unintentionally hiding valid modules that occur later (deeper) on the module search path. In the simplest case, __init__.py can just be an empty file, but it can also execute initialization code for the package or set the __all__ variable, described later.
 
 ```bash
-$ mkdir count_variants
-$ touch count_variants/__init__.py
-$ touch count_variants/__version__.py
+mkdir count_variants
+touch count_variants/__init__.py
+touch count_variants/__version__.py
 ```
+
 open `count_variants/__version__.py` and write:
 
-```
+```python
 __version__ = '0.1.0'
 ```
 
@@ -293,8 +294,7 @@ count_variants/
     ├── __version__.py
 ```
 
-Add all the new files to a new git commit.(Tips: use `git status` to see if all files are committed.) 
-
+Add all the new files to a new git commit. (Tip: use `git status` to see if all files are committed.)
 
 [setup_guide]: https://github.com/kennethreitz/setup.py
 [init_doc]: https://docs.python.org/3/tutorial/modules.html#packages
