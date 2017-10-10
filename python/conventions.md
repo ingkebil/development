@@ -92,6 +92,8 @@ import coloredlogs
 coloredlogs.install(level=log_level)
 ```
 
+Read more in the [logging section](./logging.md)
+
 ## Server
 
 If it makes sense, a general app exposes a JSON API over HTTP(S). This API can then be consumed by a client side web app. Sometimes it makes sense to provide a the web interface as part of the Python package and other times it will be consumed by the central web portal interface.
