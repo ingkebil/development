@@ -6,6 +6,7 @@ Python is a popular and easy-to-learn interpreted programming language. To get a
 
 - [Testing](testing.md)
 - [Logging](logging.md)
+- [Packaging](count_variants/overview.md)
 
 ## Style guide
 
@@ -20,6 +21,8 @@ A linter is a great way to ensure you are writing code of good quality; followin
 ## Packaging
 
 Packaging Python code is a known pain point that many developers struggle with. There are some [moves][pipenv] to [standardize][pipfile] the experience but for now a great place to start would be to follow [this guide][mini-guide]. It will give you an idea of the minimal structure you need and beyond.
+
+We also have our own guide to packaging [here](count_variants/overview.md)
 
 For detailed information or if you need to look up specific options there a very [detailed resource](https://packaging.python.org/) available as well.
 

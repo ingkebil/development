@@ -35,4 +35,4 @@ Error: Missing argument "vcf".
 Great job!!!
 If you have a vcf file lying around you could try and feed that to the program and see if it works.
 
-In the following section we will add some complexity, write tests and push the code to github so others can see it.
+In the following sections we will add some complexity, write tests and push the code to github so others can see it.
