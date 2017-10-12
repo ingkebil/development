@@ -1,8 +1,8 @@
 # Creating a Python package
 
-To be able to reuse code it is important to package the things we are doing in a way that makes them easy to install and operate.
-There are of course a number of ways to handle this situation and we will describe our prefered way to do it here.
-I will use an example as we go along, we are going to create a package called `count_variants` that is used to count variants with different selection criterias in a [VCF][vcf] file.
+To be able to reuse code it is important to package things we are doing in a way that makes them easy to install and operate.
+There are of course a number of ways to handle this and we will describe our prefered way to do it here.
+I will use an example as we go along; we are going to create a package called `count_variants` that is used to count variants with different selection criteria in a [VCF][vcf] file.
 
 In this example we will tie together many of the topics described in this guide, like [testing](../testing.md), [conventions](../conventions.md), [git](../../git/README.md), [logging](../logging.md) and perhaps some more.
 
