@@ -19,3 +19,4 @@
 * [Editors](editors/README.md)
 * [Assignments](assignments/README.md)
 * [Workflows](workflows/README.md)
+* [Security](security/README.md)
