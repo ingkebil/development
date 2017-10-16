@@ -237,6 +237,15 @@ to remove a generic branch both remotely and locally type:
 <b>git push origin --delete name_of_your_branch     #removes it remotely</b>
 </pre>
 
+Sometimes you might need to do some cleaning, and need to remove local branches which have been tracking remote branches that are now deleted. To remove these outdated branches you can use the following command:
+<pre>
+<b>git remote prune origin</b>
+</pre>
+Instead of running the above command on a regular basis you could instead configure git to do it by default:
+<pre>
+<b>git config remote.origin.prune true</b>
+</pre>
+
 
 ## 11. Github usage references
 Github short guide: (https://guides.github.com/activities/hello-world/)<br>
