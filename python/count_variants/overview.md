@@ -19,6 +19,7 @@ In this example we will tie together many of the topics described in this guide,
 	* [3.2 cli](./count_module.md#cli)
 	* [3.3 missing modules](./count_module.md#33-Missing-modules)
 * [4. Installing](./installing.md)
+* [5. Testing](./testing.md)
 
 [next](./structure.md)
 
