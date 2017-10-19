@@ -1,11 +1,11 @@
 # 3. First module {#first_module}
 
 Ok so finally we can start to write some actual python code! In this section we will learn about file structure, imports and a little bit about command line interfaces.
-When we finnish this section we should have a small program that counts the number of variants in a vcf.
+When we finish this section we should have a small program that counts the number of variants in a vcf.
 We will try to keep the code separated inside our projekt as described [here](../conventions.md), we store the counting code in a submodule called utils and the cli code in a module called cli. So run:
 
 ```bash
-mkdir count_variants/cli count_variants/cli
+mkdir count_variants/cli count_variants/utils
 touch count_variants/cli/__init__.py
 touch count_variants/utils/__init__.py
 touch count_variants/cli/root.py
@@ -69,7 +69,7 @@ def cli(vcf):
     click.echo("Nr variants in vcf: %s" % nr_variants)
 ```
 
-It is a good convention to import standard library modules first, then third party modules and finally local imports.
+It is a good convention to import modules from standard library first, then third party modules and finally local imports.
 
 In this case we will go through the code line by line.
 
@@ -86,7 +86,7 @@ Then comes the function definition, the docstring and some code that should be r
 
 ## 3.3 Missing modules
 
-The modules in standard library follows with the python distribution so there is no need to install those. As you may have noticed there are some modules used here that are missing in our `requirements.txt` file. It can be a bit hard to know what third party modules that will be used when starting a project. So lets add `coloredlogs` and `cyvcf2` to `requirements.txt`, when you are done it should look like:
+The modules in standard library follow with the python distribution so there is no need to install those. As you may have noticed there are some modules used here that are missing in our `requirements.txt` file. It can be a bit hard to know what third party modules that will be used when starting a project. So lets add `coloredlogs` and `cyvcf2` to `requirements.txt`, when you are done it should look like:
 
 ```bash
 $ cat requirements.txt

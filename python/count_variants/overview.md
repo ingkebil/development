@@ -18,7 +18,7 @@ In this example we will tie together many of the topics described in this guide,
 	* [3.1 first function](./count_module.md#first_function)
 	* [3.2 cli](./count_module.md#cli)
 	* [3.3 missing modules](./count_module.md#33-Missing-modules)
-* [3. Installing](./installing.md)
+* [4. Installing](./installing.md)
 
 [next](./structure.md)
 
