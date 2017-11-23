@@ -111,7 +111,8 @@ To do so, from command line move to the main folder containing your project and 
 <b>git remote add upstream path/to/repo/you/forked/from
 git fetch upstream
 git pull upstream master
-git pull upstream develop (develop it's the version you start from for your work!)</b>
+git checkout -b develop
+git pull upstream develop (develop is the version you start from for your work!)</b>
 </pre>
 
 You don't have to call the remote "upstream" but you can chose any name for it. To visualize all remotes you are working with and their respective shortnames use the command:
