@@ -32,7 +32,31 @@ We should be using Pipfile, pipenv.
 
 See [conda](conda.md).
 
+## Awesome Python
 
+A curated list of _awesome_ Python tools and libraries!
+
+- Command line interface
+
+  - [Click][click]: composable and Flask-like CLI framework
+  - [Halo][halo]: beautiful terminal spinners
+
+- Testing
+
+  - [Py.test][pytest]
+
+    - [Py.test Coverage][pytest-cov]: easily integrate test coverage with Py.test
+    - [Py.test Flask][pytest-flask]: easily integrate Py.test and Flask
+    - [All plugin-ins][pytest-plugins]: list of all Py.test plugins!
+    - Suggested command:
+
+      ```bash
+      py.test --cov-report html --cov "$(basename "$PWD")" --verbose --color=yes tests/
+      ```
+
+- Logging
+
+  - [Coloredlogs][coloredlogs]: super simple setup for colorized logging
 
 [mini-guide]: https://python-packaging.readthedocs.io/en/latest/minimal.html
 [pipenv]: https://github.com/kennethreitz/pipenv
@@ -40,3 +64,10 @@ See [conda](conda.md).
 [python-ref]: https://github.com/justmarkham/python-reference/blob/master/reference.py
 [python3]: https://docs.python.org/3/
 [pylint]: https://www.pylint.org/
+[click]: http://click.pocoo.org/
+[halo]: https://github.com/ManrajGrover/halo
+[pytest]: https://docs.pytest.org/en/latest/
+[pytest-cov]: http://pytest-cov.readthedocs.io/en/latest/readme.html
+[pytest-flask]: https://pypi.python.org/pypi/pytest-flask
+[pytest-plugins]: https://pytest.readthedocs.io/en/2.7.3/plugins_index/index.html
+[coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
