@@ -233,6 +233,7 @@ to remove a generic branch both remotely and locally type:
 <b>git push origin --delete name_of_your_branch     #removes it remotely</b>
 </pre>
 
+
 ## 11. Github usage references
 
 Github short guide: (https://guides.github.com/activities/hello-world/)<br>
