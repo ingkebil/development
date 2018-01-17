@@ -4,7 +4,7 @@ One of the most important and often overlooked topic.
 
 ## Passwords
 
-Passwords are everywhere. It's still the preffered way to authenticate across a broad set of areas from databases, online sites, servers, tools etc. What makes a strong password is usually correlated with how difficult it is for a human to remember and deal with. This is why we have...
+Passwords are everywhere. It's still the prefered way to authenticate across a broad set of areas from databases, online sites, servers, tools etc. What makes a strong password is usually correlated with how difficult it is for a human to remember and deal with. This is why we have...
 
 ### Password managers
 
@@ -22,7 +22,7 @@ It also goes almost without saying that you need a separate user with ONLY acces
 
 ## Two-factor authentication
 
-If your password is compromised you are usually screwed unless you manage to detect the leak and issue a password-reset on your account. A smart way of adding a second layer of protection is to use a secondary authentication method. A common pattern is to dispatch temporary codes which can only be accessed on _your_ cell-phone. By using this authentication method and a password you have _two factors of authentication_. Either one can be compromised while keeping your account safe.
+If your password is compromised you are usually in trouble unless you manage to detect the leak and issue a password-reset on your account. A smart way of adding a second layer of protection is to use a secondary authentication method. A common pattern is to dispatch temporary codes which can only be accessed on _your_ cell-phone. By using this authentication method and a password you have _two factors of authentication_. Either one can be compromised while keeping your account safe.
 
 It's highly recommended to enable 2-factor authentication on (mission critial) accounts.
 
