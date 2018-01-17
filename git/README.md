@@ -2,22 +2,22 @@
 
   1. [Purpose](#1-purpose)
   1. [Download and setup](#2-download-and-setup)
-      1. [Git for Linux.](#21-download-and-install-git-for-linux)
-      1. [Git for OSX.](#22-download-and-install-git-for-osx)
-      1. [Git under Windows.](#23-download-and-install-git-under-windows)
-  1. [Configure username and email.](#3-configure-username-and-email)
-  1. [Create a new repository.](#4-create-a-new-repository)
-      1. [4.1 Create a new repository from scratch.](#41-create-a-new-repository-from-scratch)
-      1. [4.2 Clone a repository from an existing project.](#42-clone-a-repository-from-an-existing-project)
-  1. [Git data transport structure and commands.](#5-git-data-transport-structure-and-commands)
-  1. [Keep your fork up to date.](#6-keep-your-fork-up-to-date)
-  1. [Create a new branch/feature for your work.](#7-create-a-new-branch-feature-for-your-work)
-  1. [Make changes and commit them to your local repository.](#8-make-changes-and-commit-them-to-your-local-repository)
-  1. [Pushing changes to your remote repository.](#9-pushing-changes-to-your-remote-repository)
-  1. [Create a pull request to the parent repository.](#10-create-a-pull-request-to-the-parent-repository)
+      1. [Git for Linux](#21-download-and-install-git-for-linux)
+      1. [Git for OSX](#22-download-and-install-git-for-osx)
+      1. [Git under Windows](#23-download-and-install-git-under-windows)
+  1. [Configure username and email](#3-configure-username-and-email)
+  1. [Create a new repository](#4-create-a-new-repository)
+      1. [4.1 Create a new repository from scratch](#41-create-a-new-repository-from-scratch)
+      1. [4.2 Clone a repository from an existing project](#42-clone-a-repository-from-an-existing-project)
+  1. [Git data transport structure and commands](#5-git-data-transport-structure-and-commands)
+  1. [Keep your fork up to date](#6-keep-your-fork-up-to-date)
+  1. [Create a new branch or feature for your work](#7-create-a-new-branch-or-feature-for-your-work)
+  1. [Make changes and commit them to your local repository](#8-make-changes-and-commit-them-to-your-local-repository)
+  1. [Pushing changes to your remote repository](#9-pushing-changes-to-your-remote-repository)
+  1. [Create a pull request to the parent repository](#10-create-a-pull-request-to-the-parent-repository)
   1. [Github usage references](#11-github-usage-references)
   1. [How to write Github documentation](#12-how-to-write-github-documentation)
-  1. `.gitignore`
+  1. [gitignore](#13-gitignore)
 
 ## 1. Purpose
 
@@ -137,7 +137,7 @@ git push
 
 You use the same commands to update any other branch of your forked repository.
 
-## 7. Create a new branch/feature for your work
+## 7. Create a new branch or feature for your work
 To create a new branch, from command line move to the main folder containing your project and type:
 
 <pre>
@@ -252,7 +252,7 @@ grip
 # open your web-browser at http://localhost:6419</b>
 </pre>
 
-## `.gitignore`
+## 13. gitignore
 
 This is a special file that's usually part of every repo. Here you can tell git which files it should exclude from version control. Examples include private files with sensitive data, temporary log files, and large files used for testing.
 
