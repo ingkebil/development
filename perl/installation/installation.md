@@ -20,7 +20,8 @@ $ perlbrew switch perl-5.26.0
 ```
 
 ### Cpanm
-Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across all your perl installations.
+Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. You can even have multiple CPANM libraries for each perl version.
+Installing CPANM with perlbrew is done by this command:
 ```Bash
 $ perlbrew install-cpanm
 ```
