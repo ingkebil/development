@@ -1,0 +1,777 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>setup.py · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="count_module.html" />
+    
+    
+    <link rel="prev" href="structure.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../documentation/">
+            
+                <a href="../../documentation/">
+            
+                    
+                    Documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../git/">
+            
+                <a href="../../git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../git/code-review.html">
+            
+                <a href="../../git/code-review.html">
+            
+                    
+                    Code Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../testing.html">
+            
+                <a href="../testing.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../conventions.html">
+            
+                <a href="../conventions.html">
+            
+                    
+                    Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../logging.html">
+            
+                <a href="../logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Creating a Python projekt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    Start with a structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4.2" data-path="setup_py.html">
+            
+                <a href="setup_py.html">
+            
+                    
+                    setup.py
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="count_module.html">
+            
+                <a href="count_module.html">
+            
+                    
+                    First module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="installing.html">
+            
+                <a href="installing.html">
+            
+                    
+                    Installing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../perl/">
+            
+                <a href="../../perl/">
+            
+                    
+                    Perl
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../perl/best_practises/best_practises.html">
+            
+                <a href="../../perl/best_practises/best_practises.html">
+            
+                    
+                    Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../perl/best_practises/Identifiers.html">
+            
+                <a href="../../perl/best_practises/Identifiers.html">
+            
+                    
+                    Identifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../editors/">
+            
+                <a href="../../editors/">
+            
+                    
+                    Editors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../assignments/">
+            
+                <a href="../../assignments/">
+            
+                    
+                    Assignments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../workflows/">
+            
+                <a href="../../workflows/">
+            
+                    
+                    Workflows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >setup.py</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="2-setuppy">2. setup.py</h1>
+<p>Every python package contains a special file called <code>setup.py</code> in the root directory. This file describes some meta information about the package and how to create a distribution.
+There is a excellent guide for how to setup a package and create the setup.py <a href="https://github.com/kennethreitz/setup.py" target="_blank">here</a>.
+Lets continue with our example following @kennethreitz guide, please read the guide first.</p>
+<p>Copy <code>setup.py</code> from the guide and open it, if you done it right it should look like</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+
+<span class="hljs-comment"># Note: To use the &apos;upload&apos; functionality of this file, you must:</span>
+<span class="hljs-comment">#   $ pip install twine</span>
+
+<span class="hljs-keyword">import</span> io
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> shutil <span class="hljs-keyword">import</span> rmtree
+
+<span class="hljs-keyword">from</span> setuptools <span class="hljs-keyword">import</span> find_packages, setup, Command
+
+<span class="hljs-comment"># Package meta-data.</span>
+NAME = <span class="hljs-string">&apos;mypackage&apos;</span>
+DESCRIPTION = <span class="hljs-string">&apos;My short description for my project. &apos;</span>
+URL = <span class="hljs-string">&apos;https://github.com/me/myproject&apos;</span>
+EMAIL = <span class="hljs-string">&apos;me@example.com&apos;</span>
+AUTHOR = <span class="hljs-string">&apos;Awesome Soul&apos;</span>
+
+<span class="hljs-comment"># What packages are required for this module to be executed?</span>
+REQUIRED = [
+    <span class="hljs-comment"># &apos;requests&apos;, &apos;maya&apos;, &apos;records&apos;,</span>
+]
+
+<span class="hljs-comment"># The rest you shouldn&apos;t have to touch too much :)</span>
+<span class="hljs-comment"># ------------------------------------------------</span>
+<span class="hljs-comment"># Except, perhaps the License and Trove Classifiers!</span>
+<span class="hljs-comment"># If you do change the License, remember to change the Trove Classifier for that!</span>
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+<span class="hljs-comment"># Import the README and use it as the long-description.</span>
+<span class="hljs-comment"># Note: this will only work if &apos;README.rst&apos; is present in your MANIFEST.in file!</span>
+<span class="hljs-keyword">with</span> io.open(os.path.join(here, <span class="hljs-string">&apos;README.rst&apos;</span>), encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f:
+    long_description = <span class="hljs-string">&apos;\n&apos;</span> + f.read()
+
+<span class="hljs-comment"># Load the package&apos;s __version__.py module as a dictionary.</span>
+about = {}
+<span class="hljs-keyword">with</span> open(os.path.join(here, NAME, <span class="hljs-string">&apos;__version__.py&apos;</span>)) <span class="hljs-keyword">as</span> f:
+    exec(f.read(), about)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UploadCommand</span><span class="hljs-params">(Command)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Support setup.py upload.&quot;&quot;&quot;</span>
+
+    description = <span class="hljs-string">&apos;Build and publish the package.&apos;</span>
+    user_options = []
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">status</span><span class="hljs-params">(s)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Prints things in bold.&quot;&quot;&quot;</span>
+        print(<span class="hljs-string">&apos;\033[1m{0}\033[0m&apos;</span>.format(s))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize_options</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">finalize_options</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">try</span>:
+            self.status(<span class="hljs-string">&apos;Removing previous builds&#x2026;&apos;</span>)
+            rmtree(os.path.join(here, <span class="hljs-string">&apos;dist&apos;</span>))
+        <span class="hljs-keyword">except</span> OSError:
+            <span class="hljs-keyword">pass</span>
+
+        self.status(<span class="hljs-string">&apos;Building Source and Wheel (universal) distribution&#x2026;&apos;</span>)
+        os.system(<span class="hljs-string">&apos;{0} setup.py sdist bdist_wheel --universal&apos;</span>.format(sys.executable))
+
+        self.status(<span class="hljs-string">&apos;Uploading the package to PyPi via Twine&#x2026;&apos;</span>)
+        os.system(<span class="hljs-string">&apos;twine upload dist/*&apos;</span>)
+
+        sys.exit()
+
+
+<span class="hljs-comment"># Where the magic happens:</span>
+setup(
+    name=NAME,
+    version=about[<span class="hljs-string">&apos;__version__&apos;</span>],
+    description=DESCRIPTION,
+    long_description=long_description,
+    author=AUTHOR,
+    author_email=EMAIL,
+    url=URL,
+    packages=find_packages(exclude=(<span class="hljs-string">&apos;tests&apos;</span>,)),
+    <span class="hljs-comment"># If your package is a single module, use this instead of &apos;packages&apos;:</span>
+    <span class="hljs-comment"># py_modules=[&apos;mypackage&apos;],</span>
+
+    <span class="hljs-comment"># entry_points={</span>
+    <span class="hljs-comment">#     &apos;console_scripts&apos;: [&apos;mycli=mymodule:cli&apos;],</span>
+    <span class="hljs-comment"># },</span>
+    install_requires=REQUIRED,
+    include_package_data=<span class="hljs-keyword">True</span>,
+    license=<span class="hljs-string">&apos;MIT&apos;</span>,
+    classifiers=[
+        <span class="hljs-comment"># Trove classifiers</span>
+        <span class="hljs-comment"># Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+        <span class="hljs-string">&apos;License :: OSI Approved :: MIT License&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 2.6&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 2.7&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.3&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.4&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.5&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.6&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: Implementation :: CPython&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: Implementation :: PyPy&apos;</span>
+    ],
+    <span class="hljs-comment"># $ setup.py publish support.</span>
+    cmdclass={
+        <span class="hljs-string">&apos;upload&apos;</span>: UploadCommand,
+    },
+)
+</code></pre>
+<p>We will now edit the file so to follow our package. We are going to change the <em>name</em> of our package, the <em>author name</em> and <em>description</em>. Since we keep our requirements in a special file we are going to edit how to tell <code>setup.py</code> about those. We will also change <code>README.rst</code> to <code>README.md</code>. When you are done the file should look like:</p>
+<pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/env python</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+
+<span class="hljs-comment"># Note: To use the &apos;upload&apos; functionality of this file, you must:</span>
+<span class="hljs-comment">#   $ pip install twine</span>
+
+<span class="hljs-keyword">import</span> io
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> shutil <span class="hljs-keyword">import</span> rmtree
+
+<span class="hljs-keyword">from</span> setuptools <span class="hljs-keyword">import</span> find_packages, setup, Command
+
+<span class="hljs-comment"># Package meta-data.</span>
+NAME = <span class="hljs-string">&apos;count_variants&apos;</span>
+DESCRIPTION = <span class="hljs-string">&apos;Count variants in VCF files based on different criterias&apos;</span>
+URL = <span class="hljs-string">&apos;https://github.com/moonso/count_variants&apos;</span>
+EMAIL = <span class="hljs-string">&apos;mans.magnusson@scilifelab.se&apos;</span>
+AUTHOR = <span class="hljs-string">&apos;M&#xE5;ns Magnusson&apos;</span>
+
+here = os.path.abspath(os.path.dirname(__file__))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parse_reqs</span><span class="hljs-params">(req_path=<span class="hljs-string">&apos;./requirements.txt&apos;</span>)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Recursively parse requirements from nested pip files.&quot;&quot;&quot;</span>
+    install_requires = []
+    <span class="hljs-keyword">with</span> io.open(os.path.join(here, <span class="hljs-string">&apos;requirements.txt&apos;</span>), encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> handle:
+        <span class="hljs-comment"># remove comments and empty lines</span>
+        lines = (line.strip() <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> handle
+                 <span class="hljs-keyword">if</span> line.strip() <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> line.startswith(<span class="hljs-string">&apos;#&apos;</span>))
+
+        <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> lines:
+            <span class="hljs-comment"># check for nested requirements files</span>
+            <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;-r&apos;</span>):
+                <span class="hljs-comment"># recursively call this function</span>
+                install_requires += parse_reqs(req_path=line[<span class="hljs-number">3</span>:])
+
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-comment"># add the line as a new requirement</span>
+                install_requires.append(line)
+
+    <span class="hljs-keyword">return</span> install_requires
+
+<span class="hljs-comment"># What packages are required for this module to be executed?</span>
+REQUIRED = parse_reqs()
+
+<span class="hljs-comment"># The rest you shouldn&apos;t have to touch too much :)</span>
+<span class="hljs-comment"># ------------------------------------------------</span>
+<span class="hljs-comment"># Except, perhaps the License and Trove Classifiers!</span>
+<span class="hljs-comment"># If you do change the License, remember to change the Trove Classifier for that!</span>
+
+<span class="hljs-comment"># Import the README and use it as the long-description.</span>
+<span class="hljs-comment"># Note: this will only work if &apos;README.rst&apos; is present in your MANIFEST.in file!</span>
+<span class="hljs-keyword">with</span> io.open(os.path.join(here, <span class="hljs-string">&apos;README.md&apos;</span>), encoding=<span class="hljs-string">&apos;utf-8&apos;</span>) <span class="hljs-keyword">as</span> f:
+    long_description = <span class="hljs-string">&apos;\n&apos;</span> + f.read()
+
+<span class="hljs-comment"># Load the package&apos;s __version__.py module as a dictionary.</span>
+about = {}
+<span class="hljs-keyword">with</span> open(os.path.join(here, NAME, <span class="hljs-string">&apos;__version__.py&apos;</span>)) <span class="hljs-keyword">as</span> f:
+    exec(f.read(), about)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UploadCommand</span><span class="hljs-params">(Command)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Support setup.py upload.&quot;&quot;&quot;</span>
+
+    description = <span class="hljs-string">&apos;Build and publish the package.&apos;</span>
+    user_options = []
+
+<span class="hljs-meta">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">status</span><span class="hljs-params">(s)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;Prints things in bold.&quot;&quot;&quot;</span>
+        print(<span class="hljs-string">&apos;\033[1m{0}\033[0m&apos;</span>.format(s))
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize_options</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">finalize_options</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">run</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">try</span>:
+            self.status(<span class="hljs-string">&apos;Removing previous builds&#x2026;&apos;</span>)
+            rmtree(os.path.join(here, <span class="hljs-string">&apos;dist&apos;</span>))
+        <span class="hljs-keyword">except</span> OSError:
+            <span class="hljs-keyword">pass</span>
+
+        self.status(<span class="hljs-string">&apos;Building Source and Wheel (universal) distribution&#x2026;&apos;</span>)
+        os.system(<span class="hljs-string">&apos;{0} setup.py sdist bdist_wheel --universal&apos;</span>.format(sys.executable))
+
+        self.status(<span class="hljs-string">&apos;Uploading the package to PyPi via Twine&#x2026;&apos;</span>)
+        os.system(<span class="hljs-string">&apos;twine upload dist/*&apos;</span>)
+
+        sys.exit()
+
+
+<span class="hljs-comment"># Where the magic happens:</span>
+setup(
+    name=NAME,
+    version=about[<span class="hljs-string">&apos;__version__&apos;</span>],
+    description=DESCRIPTION,
+    long_description=long_description,
+    author=AUTHOR,
+    author_email=EMAIL,
+    url=URL,
+    packages=find_packages(exclude=(<span class="hljs-string">&apos;tests&apos;</span>,)),
+    <span class="hljs-comment"># If your package is a single module, use this instead of &apos;packages&apos;:</span>
+    <span class="hljs-comment"># py_modules=[&apos;mypackage&apos;],</span>
+
+    <span class="hljs-comment"># entry_points={</span>
+    <span class="hljs-comment">#     &apos;console_scripts&apos;: [&apos;mycli=mymodule:cli&apos;],</span>
+    <span class="hljs-comment"># },</span>
+    install_requires=REQUIRED,
+    include_package_data=<span class="hljs-keyword">True</span>,
+    license=<span class="hljs-string">&apos;MIT&apos;</span>,
+    classifiers=[
+        <span class="hljs-comment"># Trove classifiers</span>
+        <span class="hljs-comment"># Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers</span>
+        <span class="hljs-string">&apos;License :: OSI Approved :: MIT License&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 2.6&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 2.7&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.3&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.4&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.5&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: 3.6&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: Implementation :: CPython&apos;</span>,
+        <span class="hljs-string">&apos;Programming Language :: Python :: Implementation :: PyPy&apos;</span>
+    ],
+    <span class="hljs-comment"># $ setup.py publish support.</span>
+    cmdclass={
+        <span class="hljs-string">&apos;upload&apos;</span>: UploadCommand,
+    },
+)
+</code></pre>
+<p>Now we are about to add the directory where we will write the actual python code.
+Each module in the package must have a file called <code>__init__.py</code> to tell python that this is a module.
+From the <a href="https://docs.python.org/3/tutorial/modules.html#packages" target="_blank">documentation</a></p>
+<blockquote>
+<p>The <strong>init</strong>.py files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as string, from unintentionally hiding valid modules that occur later (deeper) on the module search path. In the simplest case, <strong>init</strong>.py can just be an empty file, but it can also execute initialization code for the package or set the <strong>all</strong> variable, described later.</p>
+</blockquote>
+<pre><code class="lang-bash">$ mkdir count_variants
+$ touch count_variants/__init__.py
+$ touch count_variants/__version__.py
+</code></pre>
+<p>open <code>count_variants/__version__.py</code> and write:</p>
+<pre><code>__version__ = &apos;0.1.0&apos;
+</code></pre><p>The folder structure should now look like:</p>
+<pre><code class="lang-bash">count_variants/
+&#x251C;&#x2500;&#x2500; LICENSE
+&#x251C;&#x2500;&#x2500; README.md
+&#x251C;&#x2500;&#x2500; MANIFEST.in
+&#x251C;&#x2500;&#x2500; .gitignore
+&#x251C;&#x2500;&#x2500; setup.py
+&#x251C;&#x2500;&#x2500; count_variants/
+    &#x251C;&#x2500;&#x2500; __init__.py
+    &#x251C;&#x2500;&#x2500; __version__.py
+</code></pre>
+<p>Add all the new files to a new git commit.(Tips: use <code>git status</code> to see if all files are committed.) </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="structure.html" class="navigation navigation-prev " aria-label="Previous page: Start with a structure">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="count_module.html" class="navigation navigation-next " aria-label="Next page: First module">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"setup.py","level":"1.4.4.2","depth":3,"next":{"title":"First module","level":"1.4.4.3","depth":3,"path":"python/count_variants/count_module.md","ref":"python/count_variants/count_module.md","articles":[]},"previous":{"title":"Start with a structure","level":"1.4.4.1","depth":3,"path":"python/count_variants/structure.md","ref":"python/count_variants/structure.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/count_variants/setup_py.md","mtime":"2017-10-10T07:44:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T09:25:28.425Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
