@@ -18,6 +18,7 @@ The reviewer should focus on things in this order:
 1. Design (how)
 1. Implementation
 1. Grammar
+1. Linking to the github issue [linking]
 
 Collect the suggested changes in TODO lists, questions for the code author, and suggested follow-ups for later patches.
 
@@ -34,3 +35,4 @@ The person reviewing the code signs off on the pull request with a "👍" or sim
 Aim to discover mistakes as early as possible. This includes running lints, checking for conformance to style guide, etc. Encourage team members to run these tools locally as well as considering them as part of your continuous integration flow. It can also be worth mentioning that it's often easier to take criticism from computers rather than your peers.
 
 [thoughtbot]: https://github.com/thoughtbot/guides/tree/master/code-review
+[linking]: https://help.github.com/articles/closing-issues-using-keywords/
