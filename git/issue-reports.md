@@ -1,6 +1,6 @@
-# Trouble reports
+# Issue reports
 
-The aim of the trouble report is to describe a trouble as concisely and clearly as possible.
+The aim of the issue report is to describe an issue as concisely and clearly as possible.
 A suggested minimum description:
 
 Title:
@@ -11,25 +11,24 @@ Title:
 
 ## Title
 
-Describe the trouble in a sentence that summarises the trouble
+Describe the issue in a sentence that summarises the issue
 - Example: Clinical-Genomics - Missing feedback on failed login 
 
 ## Steps to reproduce
 
-Describe the steps that are needed to provoke the encountered trouble so that a anyone can reproduce the trouble 
-oneself. 
+Describe the steps that are needed to provoke the encountered issue so that anyone can reproduce the issue. 
 Any special circumstances that you think is affecting the outcome should be described (e.g. environment/browser etc.) 
 Example: 
 1. Go to Clinical-Genomics in production environment (https://clinical.scilifelab.se) with a web browser
 1. Press "Sign in with Google"
 1. Select any of your accounts that don't have access to the system
 
-The aim is to guide the reader towards the problem without having to spending any time on figuring out how or 
-having to communicate with anyone on what to do to provoke the system in order to reproduce the trouble. 
+The aim is to guide the reader towards the problem without having to spend any time on figuring out how or 
+having to communicate with the issue reporter on what to do to provoke the system in order to reproduce the issue. 
 
 ## Expected outcome
 
-Describe the expected output so that is clear what the goal state is. The aim is to know when trouble is gone.
+Describe the expected output so that is clear what the goal state is. The aim is to know when issue is resolved.
 
 - Example: A red toast message saying: This account is not whitelisted
 
