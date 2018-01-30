@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [Git](git/README.md)
+* [Conda](conda/README.md)
+    * [Conventions](conda/conda_conventions.md)
 * [Python](python/README.md)
     * [Testing](python/testing.md)
 * [Perl](perl/README.md)
