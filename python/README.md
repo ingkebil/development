@@ -5,54 +5,69 @@ Python is a popular and easy-to-learn interpreted programming language. To get a
 ## Separate topics
 
 - [Testing](testing.md)
+- [Logging](logging.md)
+- [Packaging](count_variants/overview.md)
+
+## Style guide
+
+We generally follow PEP8. Written code should pass linting using [PyLint][pylint]. Ignored rules include:
+
+- E501: "wrap lines at 80 characters" => we use a **100 character** limit
+
+### Linting code
+
+A linter is a great way to ensure you are writing code of good quality; following best practices and without avoidable errors relating to missing imports and misspelled variable names. We recommend [PyLint][pylint] for working with Python code. You can set it up to run in the background when you edit code.
 
 ## Packaging
 
 Packaging Python code is a known pain point that many developers struggle with. There are some [moves][pipenv] to [standardize][pipfile] the experience but for now a great place to start would be to follow [this guide][mini-guide]. It will give you an idea of the minimal structure you need and beyond.
 
+We also have our own guide to packaging [here](count_variants/overview.md)
+
 For detailed information or if you need to look up specific options there a very [detailed resource](https://packaging.python.org/) available as well.
+
+We should be using Pipfile, pipenv.
 
 ## Conda setup
 
 See [conda](conda.md).
 
-## Logging
+## Awesome Python
 
-Logging is the logical next step when you realize the limitations of printing. Python includes a very useful logging module in the standard library so it's rather easy to get started. First make sure you know [the basics][logging]. Now when you want to log some progress or program state in a module:
+A curated list of _awesome_ Python tools and libraries!
 
-```python
-import logging
+- Command line interface
 
-log = logging.getLogger(__name__)
+  - [Click][click]: composable and Flask-like CLI framework
+  - [Halo][halo]: beautiful terminal spinners
 
+- Testing
 
-def foo(bar):
-    """My fancy function."""
-    log.info("incrementing the input: %s", bar)
-    return bar + 1
-```
+  - [Py.test][pytest]
 
-The not-so-intuitive part is that you need to configure the logging module to see any output from these calls. Luckily we can reduce the setup to a simple function call most of the time using the [coloredlogs][coloredlogs] package. During e.g. your CLI initialization include:
+    - [Py.test Coverage][pytest-cov]: easily integrate test coverage with Py.test
+    - [Py.test Flask][pytest-flask]: easily integrate Py.test and Flask
+    - [All plugin-ins][pytest-plugins]: list of all Py.test plugins!
+    - Suggested command:
 
-```python
-import click
-import coloredlogs
+      ```bash
+      py.test --cov-report html --cov "$(basename "$PWD")" --verbose --color=yes tests/
+      ```
 
+- Logging
 
-@click.command()
-@click.option('-l', '--log-level', default='INFO', help='Log message level to display')
-def cli(log_level):
-    """Base command line entry point."""
-    coloredlogs.install(level=log_level)
-    # ... more code here
-```
-
-
+  - [Coloredlogs][coloredlogs]: super simple setup for colorized logging
 
 [mini-guide]: https://python-packaging.readthedocs.io/en/latest/minimal.html
 [pipenv]: https://github.com/kennethreitz/pipenv
 [pipfile]: https://github.com/pypa/pipfile
-[logging]: http://mussol.org/2016/12/15/understanding-logging-in-python/
-[coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
 [python-ref]: https://github.com/justmarkham/python-reference/blob/master/reference.py
 [python3]: https://docs.python.org/3/
+[pylint]: https://www.pylint.org/
+[click]: http://click.pocoo.org/
+[halo]: https://github.com/ManrajGrover/halo
+[pytest]: https://docs.pytest.org/en/latest/
+[pytest-cov]: http://pytest-cov.readthedocs.io/en/latest/readme.html
+[pytest-flask]: https://pypi.python.org/pypi/pytest-flask
+[pytest-plugins]: https://pytest.readthedocs.io/en/2.7.3/plugins_index/index.html
+[coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
