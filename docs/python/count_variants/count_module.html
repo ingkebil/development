@@ -1,0 +1,594 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>First module · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="installing.html" />
+    
+    
+    <link rel="prev" href="setup_py.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../documentation/">
+            
+                <a href="../../documentation/">
+            
+                    
+                    Documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../git/">
+            
+                <a href="../../git/">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../git/code-review.html">
+            
+                <a href="../../git/code-review.html">
+            
+                    
+                    Code Review
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../testing.html">
+            
+                <a href="../testing.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../conventions.html">
+            
+                <a href="../conventions.html">
+            
+                    
+                    Conventions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../logging.html">
+            
+                <a href="../logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="overview.html">
+            
+                <a href="overview.html">
+            
+                    
+                    Creating a Python projekt
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="structure.html">
+            
+                <a href="structure.html">
+            
+                    
+                    Start with a structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="setup_py.html">
+            
+                <a href="setup_py.html">
+            
+                    
+                    setup.py
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4.3" data-path="count_module.html">
+            
+                <a href="count_module.html">
+            
+                    
+                    First module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="installing.html">
+            
+                <a href="installing.html">
+            
+                    
+                    Installing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../perl/">
+            
+                <a href="../../perl/">
+            
+                    
+                    Perl
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../perl/best_practises/best_practises.html">
+            
+                <a href="../../perl/best_practises/best_practises.html">
+            
+                    
+                    Best Practices
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../perl/best_practises/Identifiers.html">
+            
+                <a href="../../perl/best_practises/Identifiers.html">
+            
+                    
+                    Identifiers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../editors/">
+            
+                <a href="../../editors/">
+            
+                    
+                    Editors
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../assignments/">
+            
+                <a href="../../assignments/">
+            
+                    
+                    Assignments
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../workflows/">
+            
+                <a href="../../workflows/">
+            
+                    
+                    Workflows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >First module</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="first_module">3. First module </h1>
+<p>Ok so finally we can start to write some actual python code! In this section we will learn about file structure, imports and a little bit about command line interfaces.
+When we finnish this section we should have a small program that counts the number of variants in a vcf.
+We will try to keep the code separated inside our projekt as described <a href="../conventions.html">here</a>, we store the counting code in a submodule called utils and the cli code in a module called cli. So run:</p>
+<pre><code class="lang-bash">$ mkdir count_variants/cli count_variants/cli
+$ touch count_variants/cli/__init__.py
+$ touch count_variants/utils/__init__.py
+$ touch count_variants/cli/root.py
+$ touch count_variants/utils/count.py
+</code></pre>
+<p>Ok a lot of files created here, the <code>__init__.py</code> files we know from before, they are there to tell that this is a module.
+<code>count_variants/cli/root.py</code> will include the command line interface to our program and <code>count_variants/utils/count.py</code> will include the code that counts vcf variants.</p>
+<h2 id="first_function">3.1 Writing the first function </h2>
+<p>Open <code>count_variants/utils/count.py</code> and write the following</p>
+<pre><code class="lang-python">
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">count_variants</span><span class="hljs-params">(vcf)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Count the number of variants in a vcf file
+
+    Args:
+        vcf(iterable): An iterable with variants
+
+    Returns:
+        nr_variants(int): Number of variants in file
+    &quot;&quot;&quot;</span>
+    nr_variants = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> variant <span class="hljs-keyword">in</span> vcf:
+        nr_variants += <span class="hljs-number">1</span>
+
+    <span class="hljs-keyword">return</span> nr_variants
+</code></pre>
+<p>The text within quotation marks is a docstring, <strong>EVERY</strong> function you write should have a docstring that at least explains what the intention of the function is and input and output.</p>
+<h2 id="cli">3.2 Writing the CLI </h2>
+<p>Now open <code>count_variants/cli/root.py</code> and write:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> logging
+
+<span class="hljs-keyword">import</span> click
+<span class="hljs-keyword">import</span> coloredlogs
+
+<span class="hljs-keyword">from</span> cyvcf2 <span class="hljs-keyword">import</span> VCF
+
+<span class="hljs-keyword">from</span> count_variants.utils.count <span class="hljs-keyword">import</span> count_variants
+
+LOG = logging.getLogger(__name__)
+
+<span class="hljs-meta">@click.command()</span>
+<span class="hljs-meta">@click.argument(&apos;vcf&apos;, type=click.Path(exists=True))</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cli</span><span class="hljs-params">(vcf)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Count the variants in a vcf&quot;&quot;&quot;</span>
+    coloredlogs.install(level=<span class="hljs-string">&apos;INFO&apos;</span>)
+    LOG.info(<span class="hljs-string">&quot;Reading vcf file: %s&quot;</span>, vcf)
+
+    vcf_obj = VCF(vcf)
+
+    nr_variants = count_variants(vcf_obj)
+
+    click.echo(<span class="hljs-string">&quot;Nr variants in vcf: %s&quot;</span> % nr_variants)
+</code></pre>
+<p>It is a good convention to import standard library modules first, then third party modules and finally local imports.</p>
+<p>In this case we will go through the code line by line.</p>
+<ul>
+<li><code>logging</code> is the standard library solution for logging in python.</li>
+<li><code>click</code> is our prefered package to buiild command line interfaces.</li>
+<li><code>coloredlogs</code> is a wrapper for <code>logging</code> that makes logging look good and super easy.</li>
+<li><code>cyvcf2</code> is a reliable and fast parser for VCF files</li>
+<li><code>count_variants.utils.count</code> on this line we import the function that we root in the previous section</li>
+<li><code>LOG = logging.getLogger(__name__)</code> here we create a logging object and name it <code>LOG</code></li>
+<li><code>@click.command()</code> is a <a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators" target="_blank">decorator</a>, you do not need to understand the concept right now. It basically give the following function some properties</li>
+<li><code>@click.argument()</code> this is how a argument is defined in click</li>
+</ul>
+<p>Then comes the function definition, the docstring and some code that should be rather straight forward.</p>
+<h2 id="33-missing-modules">3.3 Missing modules</h2>
+<p>The modules in standard library follows with the python distribution so there is no need to install those. As you may have noticed there are some modules used here that are missing in our <code>requirements.txt</code> file. It can be a bit hard to know what third party modules that will be used when starting a project. So lets add <code>coloredlogs</code> and <code>cyvcf2</code> to <code>requirements.txt</code>, when you are done it should look like:</p>
+<pre><code class="lang-bash">$ cat requirements.txt
+click
+coloredlogs
+cyvcf2
+</code></pre>
+<hr>
+<p>If everything is done correct the folder structure should look like this now:</p>
+<pre><code class="lang-bash">count_variants/
+&#x251C;&#x2500;&#x2500; LICENSE
+&#x251C;&#x2500;&#x2500; README.md
+&#x251C;&#x2500;&#x2500; MANIFEST.in
+&#x251C;&#x2500;&#x2500; .gitignore
+&#x251C;&#x2500;&#x2500; setup.py
+&#x251C;&#x2500;&#x2500; count_variants/
+    &#x251C;&#x2500;&#x2500; __init__.py
+    &#x251C;&#x2500;&#x2500; __version__.py
+    &#x251C;&#x2500;&#x2500; cli/
+        &#x251C;&#x2500;&#x2500; __init__.py
+        &#x251C;&#x2500;&#x2500; root.py
+    &#x251C;&#x2500;&#x2500; utils/
+        &#x251C;&#x2500;&#x2500; __init__.py
+        &#x251C;&#x2500;&#x2500; count.py
+</code></pre>
+<p>If you haven&apos;t done so already, stage all the files and commit them!</p>
+<p><a href="setup_py.html">previous(setup.py)</a>-<a href="installing.html">next(installing package)</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="setup_py.html" class="navigation navigation-prev " aria-label="Previous page: setup.py">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="installing.html" class="navigation navigation-next " aria-label="Next page: Installing">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"First module","level":"1.4.4.3","depth":3,"next":{"title":"Installing","level":"1.4.4.4","depth":3,"path":"python/count_variants/installing.md","ref":"python/count_variants/installing.md","articles":[]},"previous":{"title":"setup.py","level":"1.4.4.2","depth":3,"path":"python/count_variants/setup_py.md","ref":"python/count_variants/setup_py.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/count_variants/count_module.md","mtime":"2017-10-10T08:07:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-10-09T09:25:28.425Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

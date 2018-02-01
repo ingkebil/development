@@ -20,10 +20,30 @@ $ perlbrew switch perl-5.26.0
 ```
 
 ### Cpanm
-Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. You can even have multiple CPANM libraries for each perl version.
+Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. 
 Installing CPANM with perlbrew is done by this command:
 ```Bash
 $ perlbrew install-cpanm
+``` 
+Perlbrew makes it easy to create and switch between multiple libraries of CPAN modules. You can even have several libraries for the same distribution of perl.
+Here are some examples:
+``` Bash
+## To create a library named Basil to perl version 5.26.0 
+$ perlbrew lib create perl-5.26.0@Basil
+
+## To switch library for that perl distribution permanently
+$ perlbrew switch perl-5.26.0@Basil
+
+## If you have another library that you want to use for your current session 
+$ perlbrew use perl-5.26.0@Manuel
+
+## To delete your Manuel library 
+$ perlbrew lib delete perl-5.26.0@Manuel
+
+## You can view your perl distributions and libraries by running:  
+$ perlbrew list  
 ```
+More information on perlbrew is available here:  
+https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew
 
 [Perlbrew]: https://perlbrew.pl
