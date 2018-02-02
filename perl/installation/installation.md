@@ -19,6 +19,11 @@ $ perlbrew install perl-5.26.0
 $ perlbrew switch perl-5.26.0
 ```
 
+Use a specific perl version in your current shell, run:
+```Bash
+$ perlbrew use perl-5.26.1
+``` 
+
 ### Cpanm
 Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. 
 Installing CPANM with perlbrew is done by this command:
