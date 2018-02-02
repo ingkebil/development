@@ -15,7 +15,7 @@
 
 When it is time to move your development environment to production - make a copy of it and rename it following the above conventions e.g.:
 ```Bash
-$ conda create --name D_mip-6.0.0_180101_hs --clone P_mip-6.0.0_180129
+$ conda create --name P_mip-6.0_180129 --clone D_mip-6.0_180101_hs
 ```
 
 ## Production conda environments
