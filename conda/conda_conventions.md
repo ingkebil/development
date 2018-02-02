@@ -4,10 +4,10 @@
 - Naming conventions for conda environments: 
    - Production: `[env_type=P]_[logical_name]_[creation_date]`
    - Development: `[env_type=D]_[logical_name]_[creation_date]_[signature]`
-      - [env_type]: Allowed environment types are **D** (develop) or **P** (production)
-      - [creation_date]: YYMMDD
-      - [logical_name]: Whatever makes sense
-      - [signature]: Something to show who created the environment. Use the two- or three letter name akronyms assigned to you.
+      - env_type: Allowed environment types are **D** (develop) or **P** (production).
+      - creation_date: YYMMDD.
+      - logical_name: Whatever makes sense.
+      - signature: Something to show who created the environment. Use the two- or three letter name akronyms assigned to you.
 - List your production environment and dependent processes at the bottom of this page.
 - It is considered unpolite to change or delete someone elses environment without involving the person which created the environment.
 
