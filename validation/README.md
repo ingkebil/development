@@ -42,7 +42,7 @@ Unit tests are setup for each package/tool separately. They tend to use the py.t
 It’s important that the environment used to run the integration tests behave as close to the production environment as possible. We achieve this by running the development code on the same hardware alongside the production code, but in isolated test environments.
 
 ### 3.2 Installation
-All production code is installed in a conda environments following this naming [convention](http://localhost:4000/conda/conda_conventions.html):
+All production code is installed in a conda environments following this naming [convention](https://github.com/Clinical-Genomics/development/blob/master/conda/conda_conventions.md):
 
 `[P]_[main-process]_[creation-date(YYMMDD)]`
 
@@ -72,7 +72,7 @@ Test data should exist to start the integration tests from some key entry points
    * Data analysis from linked FASTQ-files
 
 ### 3.5 Tests
-This dependent on how each tool or method is set-up. There should be adequate tests, data, environements to cover major, minor and patch updates. In the end, it should report if everything proceeded according to expectations or not. All tests need to pass so a simple check; “yes” or “no” will suffice. 
+This is dependent on how each tool or method is set-up. There should be adequate tests, data, environements to cover major, minor and patch updates. In the end, it should report if everything proceeded according to expectations or not. All tests need to pass so a simple check; “yes” or “no” will suffice. 
 
 ## 4 Validation
 
