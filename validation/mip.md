@@ -88,7 +88,7 @@ Add these lines to your mip config file:
 
 ### 3.2 Python 3 tools
 ```Bash
-$ perl mip_install.pl -env mip_pyv3.6 --python_version 3.6 --select_program genmod --select_program chanjo --select_program variant_integrity
+$ perl mip_install.pl -env P_mip-pyv3.6_180203 --python_version 3.6 --select_program genmod --select_program chanjo --select_program variant_integrity
 $ bash mip.sh
 ```
 Add these lines to your mip config file:
@@ -140,7 +140,7 @@ source_main_environment_commands:
 ### 3.6 Test MIP
 Now that all prerequisites have been installed, run:
 ```Bash
-$ cd t; prove run_tests.t
+$ cd t; prove -r
 $ cd -
 ```
 to test the MIP installation.
