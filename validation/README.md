@@ -37,7 +37,7 @@ There’s multiple levels of testing software. You need small, quick, and direct
 Then there’s a layer on top of the small tests that combine multiple tools and tests e.g. the entire workflow on a high level (integration tests). These tests don’t concern themselves so much with edge cases and are perhaps run in a production-like environment only once before new code is deployed to the system.
 
 ### 3.1 Setup
-Unit tests are setup for each package/tool separately. They tend to use the py.test test-runner or a test anything protocol (TAP) and are automated using TravisCI. This makes it possible to track each result in the GitHub interface.
+Unit tests are setup for each package/tool separately. They tend to use the py.test test-runner for python code or a test anything protocol (TAP) and are automated using TravisCI. This makes it possible to track each result in the GitHub interface.
 
 It’s important that the environment used to run the integration tests behave as close to the production environment as possible. We achieve this by running the development code on the same hardware alongside the production code, but in isolated test environments.
 
