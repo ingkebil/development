@@ -88,7 +88,7 @@ Add these lines to your mip config file:
 
 ### 3.2 Python 3 tools
 ```Bash
-$ perl mip_install.pl -env P_mip-pyv3.6_180203 --python_version 3.6 --select_program genmod --select_program chanjo --select_program variant_integrity
+$ perl mip_install.pl -env P_mip-pyv3.6_180203 --python_version 3.6 --select_program genmod --select_program chanjo --select_program variant_integrity --select_program multiqc
 $ bash mip.sh
 ```
 Add these lines to your mip config file:
@@ -98,6 +98,7 @@ Add these lines to your mip config file:
  - module_source_environment_command:
      pfrequency_filter: "source activate P_mip-pyv3.6_180203"
      pchanjo_sexcheck: "source activate P_mip-pyv3.6_180203"
+     pmultiqc: "source activate P_mip-pyv3.6_180203"
      prankvariant: "source activate P_mip-pyv3.6_180203"
      psv_rankvariant: "source activate P_mip-pyv3.6_180203"
 ```
