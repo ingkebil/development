@@ -19,6 +19,8 @@
   * [Installation](perl/installation/installation.md)
   * [Best Practises](perl/best_practises/best_practises.md)
     * [Identifiers](perl/best_practises/identifiers.md)
+* [Validation](validation/README.md)
+  * [MIP](validation/mip.md)
 * [Editors](editors/README.md)
 * [Assignments](assignments/README.md)
 * [Workflows](workflows/README.md)
