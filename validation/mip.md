@@ -36,7 +36,7 @@ $ cd MIP
 $ git checkout master
 ```
 
-### 2.1 Cpnam 
+### 2.1 Cpanm 
 MIP uses several perl modules outside of the perl core distribution. These needs to be installed preferentially to a separate cpanm library tied to your perl version. To install a new cpanm library to a specific perl version, run:
 ```Bash
 $ perlbrew lib create perl-5.26.0@MIP
