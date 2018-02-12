@@ -30,7 +30,7 @@ We should be using Pipfile, pipenv.
 
 ## Uploading a package to Pypi
 
-In order to be able to install a Python package directly from the pip command, or from the requirements file of another software package, it is necessary to upload the package into PyPI. A basic tutorial on how to so that is available [here](uploading_to_pypi.md).
+In order to be able to install a Python package directly from the pip command, or from the requirements file of another software package, it is necessary to upload the package to [PyPI][PyPI]. A basic tutorial on how to do that is available [here](uploading_to_pypi.md).
 
 
 ## Conda setup
@@ -71,6 +71,7 @@ A curated list of _awesome_ Python tools and libraries!
 [pylint]: https://www.pylint.org/
 [click]: http://click.pocoo.org/
 [halo]: https://github.com/ManrajGrover/halo
+[PyPI]: https://pypi.python.org/pypi
 [pytest]: https://docs.pytest.org/en/latest/
 [pytest-cov]: http://pytest-cov.readthedocs.io/en/latest/readme.html
 [pytest-flask]: https://pypi.python.org/pypi/pytest-flask
