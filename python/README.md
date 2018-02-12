@@ -28,6 +28,11 @@ For detailed information or if you need to look up specific options there a very
 
 We should be using Pipfile, pipenv.
 
+## Uploading a package to Pypi
+
+In order to be able to install a Python package directly from the pip command, or from the requirements file of another software package, it is necessary to upload the package into PyPI. A basic tutorial on how to so that is available [here](uploading_to_pypi.md).
+
+
 ## Conda setup
 
 See [conda](conda.md).
