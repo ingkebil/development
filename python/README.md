@@ -35,7 +35,7 @@ In order to be able to install a Python package directly from the pip command, o
 
 ## Conda setup
 
-See [conda](conda.md).
+See [conda](../conda/README.md).
 
 ## Awesome Python
 

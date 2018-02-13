@@ -77,7 +77,7 @@ The "--extra-index-url https://pypi.org/simple" option would instruct pip to ret
 If your package can be found on the test repository and everything is as you expect, it is safe to upload it on the PyPI repository:
 
 <pre>
-twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 </pre>
 
 Your package should be now available for installation over internet by using the command "pip install your_package".
