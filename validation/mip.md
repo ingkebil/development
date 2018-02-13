@@ -77,13 +77,13 @@ Some tools have conflicting dependencies. Therefore, it is required to place the
 
 ### 3.1 Svdb 
 ```Bash
-$ perl mip_install.pl -env P_mip-svdb_180203_hs -sp svdb -sp vcfanno -sp vt -sp bcftools -sp htslib -sp picard
+$ perl mip_install.pl -env P_mip-svdb_180203 -sp svdb -sp vcfanno -sp vt -sp bcftools -sp htslib -sp picard
 $ bash mip.sh
 ```
 Add these lines to your mip config file:
 ```YAML
  - module_source_environment_command:
-     psv_combinevariantcallsets: "source activate P_mip-svdb_180203_hs"
+     psv_combinevariantcallsets: "source activate P_mip-svdb_180203"
 ```
 
 ### 3.2 Python 3 tools
