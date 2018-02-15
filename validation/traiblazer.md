@@ -11,7 +11,7 @@ Trailblazer requires python 3.6 or above. Use conda to handle different versions
 ## 2. Validation environment
 Follow the conda conventions in the [conda guide](https://github.com/Clinical-Genomics/development/tree/master/conda).
 ```bash
-$ conda create --name d_tb_180214_hs python=3.6 pip
+$ conda create --name D_180214_hs python=3.6 pip
 ```
 
 ## 3. Trailblazer
@@ -66,7 +66,7 @@ An existing config to use for development can be copied for development use from
 It is convient to add an alias to your .bashrc. **NOTE**: Currently this is required for testing as the production setting with the use of the word trailblazer is aliased.
 Add this to your .bashrc:
 ```
-alias dtb="/mnt/hds/proj/bioinfo/SERVER/miniconda/envs/d_tb_180214_hs/bin/trailblazer -c /mnt/hds/proj/bioinfo/develop/config/trailblazer.yaml"
+alias dtb="/mnt/hds/proj/bioinfo/SERVER/miniconda/envs/D_tb_180214_hs/bin/trailblazer -c /mnt/hds/proj/bioinfo/develop/config/trailblazer.yaml"
 ```
 
 ```
