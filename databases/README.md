@@ -1,3 +1,3 @@
 # Databases
-This is a quide on using databases at Clinical Genomics.
+This is a guide on using databases at Clinical Genomics.
 
