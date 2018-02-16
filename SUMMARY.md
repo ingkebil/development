@@ -21,6 +21,8 @@
     * [Identifiers](perl/best_practises/identifiers.md)
 * [Validation](validation/README.md)
   * [MIP](validation/mip.md)
+  * [Trailblazer](validation/traiblazer.md)
+  * [Cg](validation/cg.md)
 * [Editors](editors/README.md)
 * [Assignments](assignments/README.md)
 * [Workflows](workflows/README.md)
