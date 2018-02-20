@@ -48,6 +48,11 @@ $ perlbrew lib delete perl-5.26.0@Manuel
 ## You can view your perl distributions and libraries by running:  
 $ perlbrew list  
 ```
+If you need to reinstall a specific version of a cpanm library, run:
+```Bash
+$ cpanm --reinstall [your_cpanm_lib]@[version]
+```
+
 More information on perlbrew is available here:  
 https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew
 
