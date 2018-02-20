@@ -2,6 +2,8 @@
 
 * [Introduction](README.md)
 * [Documentation](documentation/README.md)
+* [Databases](databases/README.md)
+  * [Mysql](databases/mysql.md)
 * [Git](git/README.md)
   * [Code Review](git/code-review.md)
 * [Conda](conda/README.md)
