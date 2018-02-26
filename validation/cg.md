@@ -27,7 +27,7 @@ which holds both alias for production under the `## Production` header and testi
 alias beta-cg="${CONDA_BIN}/cg --config ${HOME}/servers/config/beta/cg.yaml"
 ```
 
-As you can see, this actually points to the production binary for cg, but has a seperate configuration file for other tool binaries and databases. This is due to the fact we want to mimick the actual production setting as much as possible. Therefore, we need to use the production code of cg already installed. The config file `${HOME}/servers/config/beta/cg.yaml` list all other tools and databases needed to initiate different processes required by cg commands. These should point to test and not production databases. Update a copy of this config file for your particurlar test if you need to modify this.
+As you can see, this actually points to the production binary for cg, but has a seperate configuration file for other tool binaries and databases. This is due to the fact we want to mimick the actual production setting as much as possible. Therefore, we need to use the production code of cg already installed. The config file `${HOME}/servers/config/beta/cg.yaml` list all other tools and databases needed to initiate different processes required by cg commands. These should point to test or the production databases depending on your needs. Update a copy of this config file for your particurlar test if you need to modify this to other requirements.
 
 ## 2. MIP
 This is a step-wise instruction on how to set-up and validate starting a MIP run.
@@ -65,10 +65,20 @@ $ cg get sample [sample_id]
 $ cg get sample -f [sample_id]
 ```
 
+#### Sample origin
+If the sample does not belong to cust000, import it to the cg database using cg add:
+```Bash
+# This creates a new family petname id and associated the family to cust000 and sets a default panel
+$ cg add family cust000 [original_family_id]-validation -p OMIM-AUTO
+
+# This set the sample phenotype and associates the sample with the family
+$ cg add relationship [petname_family_id] [sample_id] -s affected
+```
+
 ### 2.3 Stage-cg
 Make sure that the flowcell in stage-cg has the status: "ondisk". If the flowcell actually is on disk, run:
 ```bash
-$ beta-cg set flowcell -s ondisk
+$ cg set flowcell -s ondisk
 ```
 to set the status of the flowcell to ondisk.
 
@@ -93,7 +103,10 @@ $ housekeeper include [sample_id]
 ## 3 Start analyses
 This will create all prerequisites for starting a MIP analysis and then launch the actual analysis.
 ```Bash
+## Hapmap
 $ beta-cg analysis -f vitalmouse
+
+## Customer validation (snv/indel)
 
 $ beta-cg analysis -f cuddlyoryx
 
@@ -102,6 +115,19 @@ $ beta-cg analysis -f firstfawn
 $ beta-cg analysis -f topsrhino
 
 $ beta-cg analysis -f usablemarten
+
+## Customer validation (Uniparental disomy, UPD)
+
+$ beta-cg analysis -f easybeetle
+
+## Customer validation (sv)
+
+$ beta-cg analysis -f epicasp
+
+$ beta-cg analysis -f rightmacaw
+
+$ beta-cg analysis -f hotskink
+
 ```
 
 ### 3.1 Start analysis using separate commands
