@@ -126,7 +126,7 @@ git remote rm name_of_remote
 
 After pulling data from the remote your local copy of the repo should be up-to-date with the upstream. Now you need to update your fork (the copy existing online, in GitHub) accordingly.
 
-If you wish to update you master branch on your fork, sor instance, you'd type these commands:
+If you wish to update you master branch on your fork, for instance, you'd type these commands:
 
 ```bash
 # be sure to place yourself in your master branch
