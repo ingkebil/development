@@ -8,6 +8,7 @@
   * [Code Review](git/code-review.md)
 * [Conda](conda/README.md)
   * [Conventions](conda/conda_conventions.md)
+  * [Confinement](conda/confinement.md)
 * [Python](python/README.md)
   * [Testing](python/testing.md)
   * [Conventions](python/conventions.md)
