@@ -4,7 +4,7 @@ It is possible to truely compartimentalize your conda env with the inclusion of 
 
 ## Use case: aliases
 
-So, you want to only have your aliases available in your conda env only?
+So, you want to have your aliases available in your conda env only?
 
 Solution? create a pre-activate script and post-deactivate script!
 
