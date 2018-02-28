@@ -18,6 +18,18 @@ We generally follow PEP8. Written code should pass linting using [PyLint][pylint
 
 A linter is a great way to ensure you are writing code of good quality; following best practices and without avoidable errors relating to missing imports and misspelled variable names. We recommend [PyLint][pylint] for working with Python code. You can set it up to run in the background when you edit code.
 
+### Documenting code
+
+We try to make comments and document what we do as much as possible, rather more than less.
+At least make proper docstrings that explains the logic. The reasoning should be that if I read the docstring I should not have to look at the code.
+Try to document the following:
+
+- Module documentation: At the top of the file document in broad sentences
+- Docstring: What is the purpose of class/function. Input/Output
+- Inline comments: Why this if? Why this variable etc..
+
+We try to follow [googles docstring convention][docstrings]
+
 ## Packaging
 
 Packaging Python code is a known pain point that many developers struggle with. There are some [moves][pipenv] to [standardize][pipfile] the experience but for now a great place to start would be to follow [this guide][mini-guide]. It will give you an idea of the minimal structure you need and beyond.
@@ -77,3 +89,4 @@ A curated list of _awesome_ Python tools and libraries!
 [pytest-flask]: https://pypi.python.org/pypi/pytest-flask
 [pytest-plugins]: https://pytest.readthedocs.io/en/2.7.3/plugins_index/index.html
 [coloredlogs]: https://coloredlogs.readthedocs.io/en/latest/
+[docstrings]: http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
