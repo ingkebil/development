@@ -157,3 +157,11 @@ You can delete an analysis by:
 ```Bash
 $ trailblazer delete [ANALYSIS_ID]
 ```
+
+To follow the progress of your analysis you will also have to run:
+
+```Bash
+$ trailblazer scan
+```
+
+since you are most probably processing the sample in a different trailblazer root directory than production. Hence, the automated trailblazer scan in production will not include your analyses. 
