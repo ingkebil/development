@@ -10,24 +10,29 @@ This is a step-wise instruction on how to set-up cg for starting validation runs
        1. [Start analysis using separate commands](#31-start-analysis-using-separate-commands)
 
 ## 1. Conda environment
-In the `.bashrc` file there is an alias for the BETA binaries.
-```
+This validation environment use the conda beta environment. When you `source activate beta`, a pre-activate script will source aliases before sourcing your environment, see [conda confinement](https://github.com/Clinical-Genomics/development/blob/master/conda/confinement.md). The pre-actviate script set-up cg and trailblazer aliases specific to your environment and points to config files:
+
+```Bash
 BETA_CONDA_BIN="/mnt/hds/proj/bioinfo/SERVER/miniconda/envs/beta/bin"
+alias cg="${BETA_CONDA_BIN}/cg --config ${HOME}/servers/config/beta/cg.yaml"
+alias trailblazer="${BETA_CONDA_BIN}/trailblazer --config ${HOME}/servers/config/beta/trailblazer.yaml"
 ```
 
-together with a sourcing of an alias dotfile:
+All config files of cg, trailblazer and MIP should reside in the `${HOME}/servers/config/beta/` directory.
 
-```
-source ~/servers/dotfiles/aliases.sh
-```
+The config file `${HOME}/servers/config/beta/cg.yaml` list all other tools and databases needed to initiate different processes required by cg commands. These should point to test or the production databases depending on your needs. Update a copy of this config file for your particurlar test if you need to modify this to other requirements.
 
-which holds both alias for production under the `## Production` header and testing aliases under the `## Beta` header. Specifically for beta:
-```
-## beta
-alias beta-cg="${CONDA_BIN}/cg --config ${HOME}/servers/config/beta/cg.yaml"
-```
+The trailblazer config uses a different root directory than production to not mix the validation cases with production cases.
 
-As you can see, this actually points to the production binary for cg, but has a seperate configuration file for other tool binaries and databases. This is due to the fact we want to mimick the actual production setting as much as possible. Therefore, we need to use the production code of cg already installed. The config file `${HOME}/servers/config/beta/cg.yaml` list all other tools and databases needed to initiate different processes required by cg commands. These should point to test or the production databases depending on your needs. Update a copy of this config file for your particurlar test if you need to modify this to other requirements.
+In essence, we are allowing testing of new binaries, using production databases and/or development databases, but performing analyses separated from production.
+
+When you are finished with your validation, run:
+
+```Bash
+$ source deactivate
+``` 
+
+To perform the deactivation script which will unalias your conda environment aliases.
 
 ## 2. MIP
 This is a step-wise instruction on how to set-up and validate starting a MIP run.
@@ -104,44 +109,44 @@ $ housekeeper include [sample_id]
 This will create all prerequisites for starting a MIP analysis and then launch the actual analysis.
 ```Bash
 ## Hapmap
-$ beta-cg analysis -f vitalmouse
+$ cg analysis -f vitalmouse
 
 ## Customer validation (snv/indel)
 
-$ beta-cg analysis -f cuddlyoryx
+$ cg analysis -f cuddlyoryx
 
-$ beta-cg analysis -f firstfawn
+$ cg analysis -f firstfawn
 
-$ beta-cg analysis -f topsrhino
+$ cg analysis -f topsrhino
 
-$ beta-cg analysis -f usablemarten
+$ cg analysis -f usablemarten
 
 ## Customer validation (Uniparental disomy, UPD)
 
-$ beta-cg analysis -f easybeetle
+$ cg analysis -f easybeetle
 
 ## Customer validation (sv)
 
-$ beta-cg analysis -f epicasp
+$ cg analysis -f epicasp
 
-$ beta-cg analysis -f rightmacaw
+$ cg analysis -f rightmacaw
 
-$ beta-cg analysis -f hotskink
+$ cg analysis -f hotskink
 
 ```
 
 ### 3.1 Start analysis using separate commands
 ```Bash
 # Link fastqc files
-beta-cg analysis link -f [family_id]
+cg analysis link -f [family_id]
 
 # Create pedigree file
-beta-cg analysis config [family_id]
+cg analysis config [family_id]
 
 # Create gene panel file
-beta-cg analysis panel [family_id]
+cg analysis panel [family_id]
 
 # Start the analysis
-beta-cg analysis start [family_id]
+cg analysis start [family_id]
 ```
 
