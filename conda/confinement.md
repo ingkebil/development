@@ -9,7 +9,7 @@ So, you want to have your aliases available in your conda env only?
 Solution? create a pre-activate script and post-deactivate script!
 
 ```bash
-cd ${CONDA_BIN}
+cd ${your_conda_env} # e.g. cd ./miniconda/envs/production/
 mkdir -p ./etc/conda/activate.d
 mkdir -p ./etc/conda/deactivate.d
 touch ./etc/conda/activate.d/alias.sh
