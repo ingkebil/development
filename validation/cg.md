@@ -33,7 +33,7 @@ When you are finished with your validation, run:
 $ source deactivate
 ``` 
 
-To perform the deactivation script which will unalias your conda environment aliases.
+To perform the deactivation script which will unalias your conda environment aliases: `cg` and `trailblazer`.
 
 ## 2. MIP
 This is a step-wise instruction on how to set-up and validate starting a MIP run.
