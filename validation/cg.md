@@ -8,6 +8,7 @@ This is a step-wise instruction on how to set-up cg for starting validation runs
        1. [Housekeeper](#24-Housekeeper)
    1. [Start analyses](#3-start-analyses)
        1. [Start analysis using separate commands](#31-start-analysis-using-separate-commands)
+   1. [Check analysis progress](#4-check-analysis-progress)
 
 ## 1. Conda environment
 This validation environment use the conda beta environment. When you `source activate beta`, a pre-activate script will source aliases before sourcing your environment, see [conda confinement](https://github.com/Clinical-Genomics/development/blob/master/conda/confinement.md). The pre-actviate script set-up cg and trailblazer aliases specific to your environment and points to config files:
@@ -150,3 +151,22 @@ cg analysis panel [family_id]
 cg analysis start [family_id]
 ```
 
+## 4. Check analysis progress
+Can be done using the trailblazer web page at: https://trailblazer.scilifelab.se. Here you can also find the trailblazer analysis id by clicking on a family and looking at the last part of the in the adress field. This is also availiable on the command line:
+```Bash
+$ trailblazer ls
+```
+where the analysis id is the first column of the output.
+
+You can delete an analysis by:
+```Bash
+$ trailblazer delete [ANALYSIS_ID]
+```
+
+To follow the progress of your analysis you will also have to run:
+
+```Bash
+$ trailblazer scan
+```
+
+since you are most probably processing the sample in a different trailblazer root directory than production. Hence, the automated trailblazer scan in production will not include your analyses. 
