@@ -33,7 +33,9 @@ tag_name = {new_version}
 Version a script
 Then give a script a version number, in two easy steps:
 
-Step 1: Add a version string to setup.py in the set up section:
+Step 1: Add a version string.
+
+For python packages add the string to setup.py in the set up section:
 
 ```
 setup(
@@ -44,9 +46,17 @@ name='cgstats',
 # see http://packaging.python.org/en/latest/tutorial.html#version
 version='1.2.2'
 ```
+For bash scripts, add a `VERSION=` at the top of the script
 
+```
+#!/bin/bash
 
-Register the script name in the .bumpversion.cfg file, e.g. append [bumpversion:file:path/to/script]
+set -eu
+
+VERSION=1.2.2
+```
+
+Step 2: Register the script name in the .bumpversion.cfg file, e.g. append [bumpversion:file:path/to/script]
 
 ```
 [bumpversion]
@@ -67,7 +77,7 @@ To increase the version number according to the semantic versioning rules, issue
 
 ```bumpversion minor```
 
-==Only bump on up to date master!==
+== Only bump on up to date master! ==
 
 With abovementioned configuration, a git tag will be created and you still need to push it to github:
 
