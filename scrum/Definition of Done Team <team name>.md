@@ -1,4 +1,4 @@
-## Definition of done
+## Definition of Done Team \<team name>
 
 ### 1) defect fix/patch
 
