@@ -2,7 +2,7 @@
 
 ### 1) patch/bug fixes
 
-* fixing something that used to work before, but not anymore. Functionality stays the same!
+* Scope: fixing something that used to work before, but not anymore. There are no changes to functionality.
 
 1) pass all unit tests
 2) approved pull request
@@ -10,12 +10,9 @@
 4) merged into production
 5) end users notified
 
-
-
-
 ### 2) minor updates
 
-* adding functionality
+* Scope: adding functionality
 * restructuring
 
 3) demo
