@@ -1,4 +1,4 @@
-## Definition of Done Team \<team name>
+## Definition of Done Team &lt;team name&gt;
 
 ### 1) defect fix/patch
 
