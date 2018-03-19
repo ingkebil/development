@@ -32,7 +32,7 @@ Scope:
 * redefining interfaces
 
 1) see *defect fix/patch* and *minor update*, additionally:  
-2) system or system integration passed  
+2) system or system integration test passed  
 3) an validation/acceptance test specification should be added to AM-systems, for accreditation purposes  
 4) an implementation plan should be added to AM-systems, for accreditation purposes  
 
