@@ -2,7 +2,8 @@
 
 ### 1) defect fix/patch
 
-Scope: * fixing something that used to work before, but not anymore. There are no changes to functionality.
+Scope: 
+* fixing something that used to work before, but not anymore. There are no changes to functionality.
 
 1) unit tests have to be executed and passed
 2) the change needsa to be reviewed and approve through a pull request in Github
@@ -12,8 +13,9 @@ Scope: * fixing something that used to work before, but not anymore. There are n
 
 ### 2) minor update
 
-Scope: * adding functionality
-       * restructuring
+Scope: 
+* adding functionality
+* restructuring
 
 3) demo
 2) documentation in github or AM
@@ -21,6 +23,7 @@ Scope: * adding functionality
 
 ### 3) major update
 
+Scope:
 * adding lots of functionality or breaking old functionality, redefine interface
 
 1) test specification (AM, due to acccreditation)
