@@ -1,6 +1,7 @@
-### Definition of done
+## Definition of done
 
-## 1) bug fixes
+### 1) bug fixes
+
 * fixing something that used to work before, but not anymore. Functionality stays the same!
 
 1) pass all unit tests
@@ -12,7 +13,8 @@
 
 
 
-## 2) minor updates
+### 2) minor updates
+
 * adding functionality
 * restructuring
 
@@ -20,7 +22,7 @@
 2) documentation in github or AM
 1) testing:
 
-## 3) major update
+### 3) major update
 
 * adding lots of functionality or breaking old functionality, redefine interface
 
