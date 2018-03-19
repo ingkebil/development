@@ -1,6 +1,6 @@
 ## Definition of done
 
-### 1) bug fixes
+### 1) patch/bug fixes
 
 * fixing something that used to work before, but not anymore. Functionality stays the same!
 
