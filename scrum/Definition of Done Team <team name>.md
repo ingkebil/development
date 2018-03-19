@@ -18,10 +18,11 @@ Scope:
 * restructuring
 
 1) see *defect fix/patch*, additionally:
-2) automated unit tests for the new functiunality should be in place
-3) integration tests (component or system) should be passed
-4) the change(s) in functionality should be documented in Github or AM
-5) a demo or workshop should be organized to inform all end users of the change(s)
+2) acceptance citeria/requirements should be met
+3) automated unit tests for the new functionality should be in place
+4) integration tests (component or system) should be passed
+5) the change(s) in functionality should be documented in Github or AM
+6) a demo or workshop should be organized to inform all end users of the change(s)
 
 
 ### 3) major update
@@ -31,7 +32,8 @@ Scope:
 * redefining interfaces
 
 1) see *defect fix/patch* and *minor update*, additionally:
-2) system or system integration tests should be passed
-3) an validation/acceptance test specification should be added to AM-systems, for accreditation purposes
-4) an implementation plan should be added to AM-systems, for accreditation purposes
+2) acceptance citeria/requirements should be met
+3) system or system integration tests should be passed
+4) an validation/acceptance test specification should be added to AM-systems, for accreditation purposes
+5) an implementation plan should be added to AM-systems, for accreditation purposes
 
