@@ -6,7 +6,7 @@
 
 Take a snapshot of the current conda env!
 
-```savetheconda prod170926```
+```$ savetheconda prod170926```
 
 This will:
 - create a list of installed conda and pip packages and version control it in the servers repo
@@ -25,9 +25,9 @@ with:
 You can now install/upgrade your package with pip
 
 For package available on PiPY
-```pip install -U --no-deps cg```
+```$ pip install -U --no-deps cg```
 
 For packages only available on github
-```pip install -U --no-deps git+https://github.com/Clinical-Genomics/cg.git```
+```$ pip install -U --no-deps git+https://github.com/Clinical-Genomics/cg.git```
 
 We recommend to install with `--no-deps` as to avoid upgrading dependencies.
