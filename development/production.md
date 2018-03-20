@@ -4,7 +4,7 @@
 
 ## Snapshot!
 
-Take a snapshot of hte current conda env!
+Take a snapshot of the current conda env!
 
 ```savetheconda prod170926```
 
