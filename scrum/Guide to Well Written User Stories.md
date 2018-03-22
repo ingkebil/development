@@ -16,6 +16,6 @@ As a < type of user >, I want < some goal > so that < some reason >.
 
 
 
-[^1`]: test footnote
+[^1]: test footnote
 [[1]](https://www.mountaingoatsoftware.com/agile/user-stories)
 
