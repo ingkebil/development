@@ -36,7 +36,15 @@ vagrant@vagrant:~$ singularity selftest
 
 There are two commands to download pre-built Singularity image: ```pull``` and ```build```. ```Pull``` is basically similar to cloning a repositories. While ```pull``` is *the* go to command to download a prebuilt image, one can also use ```build``` to download image. Other than renaming the container, ```build``` also converts the container to the latest format. Both of them can be used for Docker image retrieval as well.
 
+To download an image with these commands:
 
+```bash
+# Example for URI shub://vsoch/hello-world
+# If a new name is not set for pull, it will use the name from image_URI
+$ singularity pull --name [new_optional_name_for_image] [image_URI]
+# When using build, image name is mandatory
+$ singularity build [image_name_and_path] [image_URI]
+```
 
 - ```pull``` example:
 
