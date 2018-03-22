@@ -18,7 +18,7 @@ As the name suggests, a user story describes how a customer or user employs the 
 
 
 
-<a name="myfootnote1">1</a>: https://www.mountaingoatsoftware.com/agile/user-stories
+<a name="myfootnote1">1</a>: https://www.mountaingoatsoftware.com/agile/user-stories  
 <a name="myfootnote2">2</a>: https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/
 
 
