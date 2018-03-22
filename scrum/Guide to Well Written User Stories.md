@@ -16,6 +16,6 @@ As a < type of user >, I want < some goal > so that < some reason >.<sup>[1](#my
 
 
 
-<a name="myfootnote1">1</a>: (https://www.mountaingoatsoftware.com/agile/user-stories)
+<a name="myfootnote1">1</a>: https://www.mountaingoatsoftware.com/agile/user-stories
 
 
