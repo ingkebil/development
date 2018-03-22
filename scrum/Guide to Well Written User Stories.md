@@ -6,6 +6,8 @@ User stories are short, simple descriptions of a feature told from the perspecti
 
 As a < type of user >, I want < some goal > so that < some reason >.<sup>[1](#myfootnote1)</sup>
 
+As the name suggests, a user story describes how a customer or user employs the product; it is told from the user’s perspective.<sup>[2](#myfootnote2)</sup>
+
 
 
 
@@ -17,5 +19,6 @@ As a < type of user >, I want < some goal > so that < some reason >.<sup>[1](#my
 
 
 <a name="myfootnote1">1</a>: https://www.mountaingoatsoftware.com/agile/user-stories
+<a name="myfootnote2">2</a>: https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/
 
 
