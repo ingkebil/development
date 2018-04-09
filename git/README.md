@@ -210,6 +210,20 @@ Alternatively you can add and commit the files to the local repository in only o
 NOTE: Be very careful with the above command, since it gives you less control over the single steps of the workflow and the files you really want to commit.
 Before using it, make sure everything is under control by using the "git status" and "git diff" commands.
 
+To include a description of the commit use the -m flag
+
+<pre>
+<b>git commit -m "Example of a commit message"</b>
+</pre>
+
+It is possible to close a GitHub issue by referencing it in a commit message or pull request. The issue will be closed when the code is merged to the default branch
+
+<pre>
+<b>git commit -m "Fixes #36"</b>
+</pre>
+
+For more examples on how to close issues using keywords see this [guide][issue-closing].
+
 ## 9. Pushing changes to your remote repository
 
 After "git add" and "git commit", or "commit -a", your changes are in the HEAD of your local repository. To send them to the remote repository use the command "push":
@@ -222,17 +236,20 @@ NOTE: If your remote, called origin, is configured and you're committing to mast
 
 ## 10. Create a pull request to the parent repository
 
-You create a "pull request" when you want to propose the introduction of your changes to the repository where your project was forked from. Pull requests are created from the webpage of your remote repository. By default pull requests are directed to the default branch of the parent repository, so make sure to use properly the drop-down menu on the webpage to pull changes to the develop branch and not the master branch of the parent repository. For a more detailed explanation of pull requests visit the Github help page.
+You create a "pull request" when you want to propose the introduction of your changes to the repository where your 
+project was forked from. Pull requests are created from the webpage of your remote repository. 
+By default pull requests are directed to the default branch of the parent repository, 
+so make sure to use properly the drop-down menu on the webpage to pull changes to the develop branch and not the master branch of the parent repository. For a more detailed explanation of pull requests visit the Github help page.
 
 Once the pull request is merged and closed you can safely remove the branch you've been working on.
 to remove a generic branch both remotely and locally type:
-
 
 <pre>
 <b>git branch -d name_of_your_branch                #removes it locally</b>
 <b>git push origin --delete name_of_your_branch     #removes it remotely</b>
 </pre>
 
+It is possible to close a GitHub issue by referencing it in a pull request title or description, e.g. "Fixes #46". The issue will be closed when the code is merged to the default branch. A more in-depth description can be found in this [guide][issue-closing].
 
 ## 11. Github usage references
 
@@ -261,3 +278,4 @@ GitHub hosts a [brief guide][gitignore] about the format. There's also a great r
 [grip]: https://github.com/joeyespo/grip
 [gitignore]: https://help.github.com/articles/ignoring-files/
 [gitignore-templates]: https://www.gitignore.io/
+[issue-closing]: https://help.github.com/articles/closing-issues-using-keywords/
