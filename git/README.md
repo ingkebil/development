@@ -216,7 +216,7 @@ To include a description of the commit use the -m flag
 <b>git commit -m "Example of a commit message"</b>
 </pre>
 
-It is possible to close a GitHub issue by referencing it in a commit message or Pull Request. The issue will be closed when the code is merged to the default branch
+It is possible to close a GitHub issue by referencing it in a commit message or pull request. The issue will be closed when the code is merged to the default branch
 
 <pre>
 <b>git commit -m "Fixes #36"</b>
@@ -249,7 +249,7 @@ to remove a generic branch both remotely and locally type:
 <b>git push origin --delete name_of_your_branch     #removes it remotely</b>
 </pre>
 
-It is possible to close a GitHub issue by referencing it in a Pull Requests title or description, e.g. "Fixes #46". The issue will be closed when the code is merged to the default branch. A broader description can be found in this [guide][issue-closing].
+It is possible to close a GitHub issue by referencing it in a pull request title or description, e.g. "Fixes #46". The issue will be closed when the code is merged to the default branch. A more in-depth description can be found in this [guide][issue-closing].
 
 ## 11. Github usage references
 
