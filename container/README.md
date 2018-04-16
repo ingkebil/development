@@ -75,7 +75,9 @@ RaawwWWWWWRRRR!!
 
 ### 2.3 Build an image from scratch
 
-TBA
+Building from scratch requires a Singularity recipe file. A recipe file has multiple sections: %help, %setup, %files, %label, etc. A complete explanation for each section can be found at [http://singularity.lbl.gov/docs-recipes](http://singularity.lbl.gov/docs-recipes).
+
+#### Example: A container with multiple Conda environments for alignment and basic QC
 
 ### 2.4 Interact with an image
 
