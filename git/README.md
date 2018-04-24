@@ -7,8 +7,8 @@
       * [Git under Windows](#23-download-and-install-git-under-windows)
   * [Configure username and email](#3-configure-username-and-email)
   * [Create a new repository](#4-create-a-new-repository)
-     * [4.1 Create a new repository from scratch](#41-create-a-new-repository-from-scratch)
-     * [4.2 Clone a repository from an existing project](#42-clone-a-repository-from-an-existing-project)
+     * [Create a new repository from scratch](#41-create-a-new-repository-from-scratch)
+     * [Clone a repository from an existing project](#42-clone-a-repository-from-an-existing-project)
   * [Git data transport structure and commands](#5-git-data-transport-structure-and-commands)
   * [Keep your fork up to date](#6-keep-your-fork-up-to-date)
   * [Create a new branch or feature for your work](#7-create-a-new-branch-or-feature-for-your-work)
@@ -102,7 +102,7 @@ Your workspace is the folder that holds the actual working files while the "inde
 
 Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary/](https://help.github.com/articles/github-glossary/)
 
-## 6. Keep your fork up to date
+## Keep your fork up to date
 
 Before committing and pushing changes to your remote repository you should check that you are working on an updated version of it. To update your fork follow these instructions:
 
