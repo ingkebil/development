@@ -15,6 +15,21 @@ CRONIC=~/server/resources/cronic
 0 0 * * * $CRONIC your_awesome_program >> your_awesome.log 2> >(tee -a your_awesome.log >&2)
 ```
 
+## Crontab format
+
+```
+ ┌───────────── minute (0 - 59)
+ │ ┌───────────── hour (0 - 23)
+ │ │ ┌───────────── day of month (1 - 31)
+ │ │ │ ┌───────────── month (1 - 12)
+ │ │ │ │ ┌───────────── day of week (0 - 6) (Sunday to Saturday;
+ │ │ │ │ │                                       7 is also Sunday on some systems)
+ │ │ │ │ │
+ │ │ │ │ │
+ * * * * *  command to execute
+```
+See [Cron][cron] for more explanation on crontab's format.
+
 ## Errors!
 
 You really want to be notified when your automation goes wrong. This line will add an email address to the crontab:
