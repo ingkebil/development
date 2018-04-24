@@ -20,7 +20,7 @@ Here are instructions on how to [install Git under other Linux distributions.](h
 
 The latest version of Git for Mac can be downloaded [here](https://git-scm.com/download/mac), use this binary installer to get an up-to date version of he software.
 
-If you are installing on a Mac with OS X 10.9 you can install Git from command line with Homebrew (get Homebrew [here](https://brew.sh/)) by typing:
+If you are installing on a Mac with OS X 10.9 you can install Git from command line with Homebrew (get Homebrew [here](https://brew.sh)) by typing:
 
 ```bash
 brew install git
@@ -65,12 +65,12 @@ The git clone command then creates a folder with the project and pulls the lates
 
 When you are contributing to an existing repository, the first thing you should do is forking this repository to your github space. A fork is basically a copy of the original project, on which you can experiment as much as you want without changing the original project.
 
-[how to fork a repository](https://guides.github.com/activities/forking/)).
+[how to fork a repository](https://guides.github.com/activities/forking)
 
 Then clone your fork.
 
 ```
-git clone https://github.com/<your user name>/development.git
+git clone https://github.com/[your user name]/development.git
 ```
 
 ## Git data transport structure and commands
@@ -81,7 +81,7 @@ The following image shows the structure of the git commands and spaces:
 
 Your workspace is the folder that holds the actual working files while the "index" is the space is a staging area where you add your changes before committing them to the local repository or "head". To send the changes to your remote repository you use the "push" command.
 
-Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary/](https://help.github.com/articles/github-glossary/)
+Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary](https://help.github.com/articles/github-glossary)
 
 ## Keep your fork up to date
 
@@ -229,10 +229,10 @@ It is possible to close a GitHub issue by referencing it in a pull request title
 
 ## Github usage references
 
-Github short guide: (https://guides.github.com/activities/hello-world/)<br>
+Github short guide: (https://guides.github.com/activities/hello-world)<br>
 Github book:        (https://git-scm.com/book/en/v2)<br>
-GitHub help page:   (https://help.github.com/)<br>
-Glossary:           (https://help.github.com/articles/github-glossary/)
+GitHub help page:   (https://help.github.com)<br>
+Glossary:           (https://help.github.com/articles/github-glossary)
 
 ## How to write Github documentation
 
@@ -252,6 +252,6 @@ This is a special file that's usually part of every repo. Here you can tell git 
 GitHub hosts a [brief guide][gitignore] about the format. There's also a great resource for finding [templates][gitignore-templates] for every language to use as starting points.
 
 [grip]: https://github.com/joeyespo/grip
-[gitignore]: https://help.github.com/articles/ignoring-files/
-[gitignore-templates]: https://www.gitignore.io/
-[issue-closing]: https://help.github.com/articles/closing-issues-using-keywords/
+[gitignore]: https://help.github.com/articles/ignoring-files
+[gitignore-templates]: https://www.gitignore.io
+[issue-closing]: https://help.github.com/articles/closing-issues-using-keywords
