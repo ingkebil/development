@@ -1,24 +1,5 @@
 # Quick reference guide to Github
 
-  * [Purpose](#1-purpose)
-  * [Download and setup](#2-download-and-setup)
-      * [Git for Linux](#21-download-and-install-git-for-linux)
-      * [Git for OSX](#22-download-and-install-git-for-osx)
-      * [Git under Windows](#23-download-and-install-git-under-windows)
-  * [Configure username and email](#3-configure-username-and-email)
-  * [Create a new repository](#4-create-a-new-repository)
-     * [Create a new repository from scratch](#41-create-a-new-repository-from-scratch)
-     * [Clone a repository from an existing project](#42-clone-a-repository-from-an-existing-project)
-  * [Git data transport structure and commands](#5-git-data-transport-structure-and-commands)
-  * [Keep your fork up to date](#6-keep-your-fork-up-to-date)
-  * [Create a new branch or feature for your work](#7-create-a-new-branch-or-feature-for-your-work)
-  * [Make changes and commit them to your local repository](#8-make-changes-and-commit-them-to-your-local-repository)
-  * [Pushing changes to your remote repository](#9-pushing-changes-to-your-remote-repository)
-  * [Create a pull request to the parent repository](#10-create-a-pull-request-to-the-parent-repository)
-  * [Github usage references](#11-github-usage-references)
-  * [How to write Github documentation](#12-how-to-write-github-documentation)
-  * [gitignore](#13-gitignore)
-
 ## Purpose
 
 This document offers an overview of the most important commands of git and it is intended to be a quick start guide to work with git repositories.
