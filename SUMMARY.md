@@ -24,6 +24,7 @@
     * [Identifiers](perl/best_practises/identifiers.md)
 * [Servers](servers/README.md)
   * [Crontab](servers/crontab.md)
+* [Bumpversion](development/bumpversion.md)
 * [Validation](validation/README.md)
   * [MIP](validation/mip.md)
   * [Trailblazer](validation/traiblazer.md)
