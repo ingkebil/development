@@ -22,6 +22,8 @@
   * [Installation](perl/installation/installation.md)
   * [Best Practises](perl/best_practises/best_practises.md)
     * [Identifiers](perl/best_practises/identifiers.md)
+* [Servers](servers/README.md)
+  * [Crontab](servers/crontab.md)
 * [Bumpversion](development/bumpversion.md)
 * [Validation](validation/README.md)
   * [MIP](validation/mip.md)
