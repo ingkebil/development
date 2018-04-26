@@ -73,17 +73,7 @@ Then clone your fork.
 git clone https://github.com/[your user name]/development.git
 ```
 
-## Git data transport structure and commands
-
-The following image shows the structure of the git commands and spaces:
-
-![Overview](http://images.osteele.com/2008/git-transport.png)
-
-Your workspace is the folder that holds the actual working files while the "index" is the space is a staging area where you add your changes before committing them to the local repository or "head". To send the changes to your remote repository you use the "push" command.
-
-Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary](https://help.github.com/articles/github-glossary)
-
-## Keep your fork up to date
+#### Keep your fork up to date
 
 Before committing and pushing changes to your remote repository you should check that you are working on an updated version of it. To update your fork follow these instructions:
 
@@ -123,6 +113,18 @@ git push
 
 You use the same commands to update any other branch of your forked repository.
 
+
+## Git data transport structure and commands
+
+The following image shows the structure of the git commands and spaces:
+
+![Overview](http://images.osteele.com/2008/git-transport.png)
+
+Your workspace is the folder that holds the actual working files while the "index" is the space is a staging area where you add your changes before committing them to the local repository or "head". To send the changes to your remote repository you use the "push" command.
+
+Here is a link to a page explaining the common Git terminology: [https://help.github.com/articles/github-glossary](https://help.github.com/articles/github-glossary)
+
+
 ## Create a new branch or feature for your work
 To create a new branch, from command line move to the main folder containing your project and type:
 
@@ -130,7 +132,7 @@ To create a new branch, from command line move to the main folder containing you
 <b>git checkout -b name_of_your_feature develop</b>
 </pre>
 
-If everything went fine than you'll get the following message: "Switched to a new branch name_of_your_feature". This means you are already inside the new feature. To make sure that you are in the right branch type:
+If everything went fine then you'll get the following message: "Switched to a new branch name_of_your_feature". This means you are already inside the new feature. To make sure that you are in the right branch type:
 
 <pre>
 <b>git branch</b>
@@ -141,6 +143,7 @@ Whenever you want to move to another branch/feature the command is:
 <pre>
 <b>git checkout [my-topic]</b>
 </pre>
+
 
 ## Make changes and commit them to your local repository
 
