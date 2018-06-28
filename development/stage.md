@@ -130,6 +130,8 @@ All config files point to the stage location of the package, if any, to lims-sta
 
 ## What about databases?
 
+### MySQL
+
 All databases are located on clinical-db. To make sure you have the latest uncorrupted data, you can make a copy of one or all databases like this:
 
 On clinical-db, copying all databases:
@@ -145,6 +147,26 @@ bash dbcopy-prod-to-stage.sh trailblazer
 ```
 
 The credentials to the stage databases have already been set in the stage configs.
+
+### Mongo
+
+All mongodbs are located on clinical-db. To copy both scout and loqusdb, you can issue:
+
+```
+cd ~/servers/resources
+bash dbcopy-mongoprod-to-stage.sh
+```
+
+This will reinstate a backuped version of scout (dated: 2018-05-18) and a fresh copy of loqusdb.
+
+Please be aware that this process takes several days to complete!
+
+The mongo-stage server is not running by default. To start the mongo-stage run:
+
+```
+cd ~/servers/resources
+bash start-mongo-stage.sh &
+```
 
 ## So, what is beta?
 
