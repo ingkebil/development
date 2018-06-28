@@ -3,14 +3,17 @@
 ## What is stage?
 
 The environment in which we test our proposed solution before we push it to production is called stage. It should as closely as possible resemble production in terms of software dependencies, configuration, hardware, and data.
-A staging environment can be destroyed. Meaning one needs to be able to quickly setup stage again.
+
+A staging environment can be destroyed and you cannot trust that the a previously set up stage is still fully reflecting production. Meaning one needs to be able to quickly setup stage again.
 
 No development should happen in stage.
 
 ## Locations
 
-All scripts are found in `${HOME}/servers/resources`
+All scripts are found in `${HOME}/servers/resources` on both rasta and clinical-db.
+
 All staging websites are found on clinical-db in directory `~/STAGE/`.
+
 All staging names, both packages and databases, have been named with -stage appended to the package name, e.g. trailblazer-stage.
 
 ## How to activate stage
@@ -37,7 +40,7 @@ set -e
 # make sure we run as hiseq.clinical
 sh ./assert_user.sh hiseq.clinical
 
-# make sure we run on rasta
+# make sure we run on rasta. Leave this assert out if this script can be run on all servers.
 sh ./assert_host.sh rastapopoulos.scilifelab.se
 
 # One optional argument
@@ -111,9 +114,8 @@ cd -
 
 ### Naming of scripts
 
-The suggestion is to name your script:
+The suggestion is to name your script: `update-$component-stage.sh`
 
-`update-$component-stage.sh`
 with $component the name of your component, be it `trailblazer` for the cli or `trailblazer-ui` for the web.
 
 ## What about config files?
@@ -142,7 +144,7 @@ cd ~/servers/resources
 bash dbcopy-prod-to-stage.sh trailblazer
 ```
 
-The credentials to the stage databases has already been set in the stage configs.
+The credentials to the stage databases have already been set in the stage configs.
 
 ## So, what is beta?
 
