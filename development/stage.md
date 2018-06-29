@@ -10,7 +10,7 @@ No development should happen in stage.
 
 ## Locations
 
-All scripts are found in `${HOME}/servers/resources` on both rasta and clinical-db.
+All scripts are found in `~/servers/resources` on both rasta and clinical-db.
 
 All staging websites are found on clinical-db in directory `~/STAGE/`.
 
@@ -20,6 +20,7 @@ All staging names, both packages and databases, have been named with -stage appe
 
 Rasta and clinical-db
 ```
+cd ~/servers/resources
 . activate-stage.sh
 ```
 
@@ -63,6 +64,12 @@ You run it:
 ```bash
 cd ~/servers/resources
 bash update-trailblazer-stage.sh
+```
+
+Or you update stage to a specific branch:
+```bash
+cd ~/servers/resources
+bash update-trailblazer-stage.sh beta
 ```
 
 ### Web update script
