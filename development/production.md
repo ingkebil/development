@@ -30,3 +30,5 @@ When things go wrong, you can restore a backup by running:
 ```conda env create -n prod170926 -f `~/servers/conda/$(hostname)/A_prod170926_180313082333_kenny.billiau```
 
 Use the `--force` for the creation  of  environment (removing a previously existing environment of the same name).
+
+See [conda create](https://conda.io/docs/commands/env/conda-env-create.html)
