@@ -12,6 +12,7 @@ This will:
 - create a list of installed conda and pip packages and version control it in the servers repo
 - create a cloned conda env of the selected environment
 - create a conda environment file from following template: `A_${CONDA_ENV}_$(date)_${SUDO_USER}`
+- the environment file will save in following location: `~/servers/conda/$(hostname)/`
 
 with:
 
