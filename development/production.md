@@ -2,7 +2,7 @@
 
 ... and rollback if things go haywire!
 
-## Snapshot!
+## Create envrinment file
 
 Take a snapshot of the current conda env! Go to `~/servers/resources`:
 
@@ -15,15 +15,15 @@ This will:
 
 with:
 
-- $(hostname): the name of the server you're running the command on
+- `$(hostname)`: the name of the server you're running the command on
 - A: archived
-- ${CONDA_ENV}: the name of the given conda environment
-- $(date): current datetime
-- ${SUDO_USER}: the name of the user executing the command determined from the bash environment, if possible.
+- `${CONDA_ENV}`: the name of the given conda environment
+- `$(date)`: current datetime
+- `${SUDO_USER}`: the name of the user executing the command determined from the bash environment, if possible.
 
 So executing `bash savetheconda prod170926` will create a conda environment file named `A_prod170926_180824103445_kenny.billiau`.
 
-# How to restore a conda-backup
+## How to restore a conda-backup from an environment file
 
 When things go wrong, you can restore a backup by running:
 
@@ -32,3 +32,9 @@ When things go wrong, you can restore a backup by running:
 Use the `--force` for the creation  of  environment (removing a previously existing environment of the same name).
 
 See [conda create](https://conda.io/docs/commands/env/conda-env-create.html)
+
+## How to push to production?
+
+Don't!
+
+The responsibility lies with the deployment officer.
