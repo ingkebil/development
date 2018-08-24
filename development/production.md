@@ -22,7 +22,7 @@ with:
 - `$(date)`: current datetime
 - `${SUDO_USER}`: the name of the user executing the command determined from the bash environment, if possible.
 
-So executing `bash savetheconda prod170926` will create a conda environment file named `A_prod170926_180824103445_kenny.billiau`.
+So executing `bash savetheconda prod170926` on server `hyppocampus` will create a conda environment file named `~/servers/conda/hyppocampus/A_prod170926_180824103445_kenny.billiau`.
 
 ## How to restore a conda-backup from an environment file
 
