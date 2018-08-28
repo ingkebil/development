@@ -1,13 +1,21 @@
-# Issue reports
+# User stories
 
-The aim of the issue report is to describe an issue as concisely and clearly as possible.
-A suggested minimum description:
+User stories are short, simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system. They typically follow a simple template:
+
+> As a < type of user >, I want < some goal > so that < some reason >.1
+
+As the name suggests, a user story describes how a customer or user employs the product; it is told from the user’s perspective.2
+
+## A suggested minimum description:
 
 Title:
 
+- Problem description
 - Steps to reproduce
-- Expected outcome
-- Actual outcome
+- Expected outcome / suggested solution
+- Questions answered
+- Add label *PBL Teamname*
+- Estimated
 
 ## Title
 
@@ -40,3 +48,7 @@ the problem. (E.g. Is it something that relates to this specific user or somethi
 - Example: There is no message at all about what went wrong when I tried to login
 
 > A screenshot of the outcome can often be of great help for the reader to understand what you see 
+
+
+1: https://www.mountaingoatsoftware.com/agile/user-stories
+2: https://www.romanpichler.com/blog/10-tips-writing-good-user-stories/
