@@ -81,5 +81,5 @@ To increase the version number according to the semantic versioning rules, issue
 
 With abovementioned configuration, a git tag will be created and you still need to push it to github:
 
-git push
+git push;
 git push --tags
