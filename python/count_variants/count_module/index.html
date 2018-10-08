@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>3. First module {#first_module} - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "3. First module {#first_module}";
+    var mkdocs_page_input_path = "python/count_variants/count_module.md";
+    var mkdocs_page_url = "/development/python/count_variants/count_module/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do use conda to contain my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../testing/">How to write unit test?</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>3. First module {#first_module}</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/count_variants/count_module.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="3-first-module-first_module">3. First module {#first_module}</h1>
+<p>Ok so finally we can start to write some actual python code! In this section we will learn about file structure, imports and a little bit about command line interfaces.
+When we finnish this section we should have a small program that counts the number of variants in a vcf.
+We will try to keep the code separated inside our projekt as described <a href="../../conventions/">here</a>, we store the counting code in a submodule called utils and the cli code in a module called cli. So run:</p>
+<pre><code class="bash">mkdir count_variants/cli count_variants/cli
+touch count_variants/cli/__init__.py
+touch count_variants/utils/__init__.py
+touch count_variants/cli/root.py
+touch count_variants/utils/count.py
+</code></pre>
+
+<p>Ok a lot of files created here, the <code>__init__.py</code> files we know from before, they are there to tell that this is a module.
+<code>count_variants/cli/root.py</code> will include the command line interface to our program and <code>count_variants/utils/count.py</code> will include the code that counts vcf variants.</p>
+<h2 id="31-writing-the-first-function-first_function">3.1 Writing the first function {#first_function}</h2>
+<p>Open <code>count_variants/utils/count.py</code> and write the following</p>
+<pre><code class="python">def count_variants(vcf):
+    &quot;&quot;&quot;Count the number of variants in a vcf file
+
+    Args:
+        vcf(iterable): An iterable with variants
+
+    Returns:
+        nr_variants(int): Number of variants in file
+    &quot;&quot;&quot;
+    nr_variants = 0
+    for variant in vcf:
+        nr_variants += 1
+
+    return nr_variants
+
+</code></pre>
+
+<p>The text within quotation marks is a docstring, <strong>EVERY</strong> function you write should have a docstring that at least explains what the intention of the function is and input and output.</p>
+<h2 id="32-writing-the-cli-cli">3.2 Writing the CLI {#cli}</h2>
+<p>Now open <code>count_variants/cli/root.py</code> and write:</p>
+<pre><code class="python">import logging
+
+import click
+import coloredlogs
+
+from cyvcf2 import VCF
+
+from count_variants.utils.count import count_variants
+
+LOG = logging.getLogger(__name__)
+
+@click.command()
+@click.argument('vcf', type=click.Path(exists=True))
+def cli(vcf):
+    &quot;&quot;&quot;Count the variants in a vcf&quot;&quot;&quot;
+    coloredlogs.install(level='INFO')
+    LOG.info(&quot;Reading vcf file: %s&quot;, vcf)
+
+    vcf_obj = VCF(vcf)
+
+    nr_variants = count_variants(vcf_obj)
+
+    click.echo(&quot;Nr variants in vcf: %s&quot; % nr_variants)
+</code></pre>
+
+<p>It is a good convention to import standard library modules first, then third party modules and finally local imports.</p>
+<p>In this case we will go through the code line by line.</p>
+<ul>
+<li><code>logging</code> is the standard library solution for logging in python.</li>
+<li><code>click</code> is our prefered package to build command line interfaces.</li>
+<li><code>coloredlogs</code> is a wrapper for <code>logging</code> that makes logging look good and super easy.</li>
+<li><code>cyvcf2</code> is a reliable and fast parser for VCF files</li>
+<li><code>count_variants.utils.count</code> on this line we import the function that we wrote in the previous section</li>
+<li><code>LOG = logging.getLogger(__name__)</code> here we create a logging object and name it <code>LOG</code></li>
+<li><code>@click.command()</code> is a <a href="https://en.wikipedia.org/wiki/Python_syntax_and_semantics#Decorators">decorator</a>, you do not need to understand the concept right now. It basically give the following function some properties</li>
+<li><code>@click.argument()</code> this is how an argument is defined in click</li>
+</ul>
+<p>Then comes the function definition, the docstring and some code that should be rather straight forward.</p>
+<h2 id="33-missing-modules">3.3 Missing modules</h2>
+<p>The modules in standard library follows with the python distribution so there is no need to install those. As you may have noticed there are some modules used here that are missing in our <code>requirements.txt</code> file. It can be a bit hard to know what third party modules that will be used when starting a project. So lets add <code>coloredlogs</code> and <code>cyvcf2</code> to <code>requirements.txt</code>, when you are done it should look like:</p>
+<pre><code class="bash">$ cat requirements.txt
+click
+coloredlogs
+cyvcf2
+</code></pre>
+
+<hr />
+<p>If everything is done correct the folder structure should look like this now:</p>
+<pre><code class="bash">count_variants/
+├── LICENSE
+├── README.md
+├── MANIFEST.in
+├── .gitignore
+├── setup.py
+├── count_variants/
+    ├── __init__.py
+    ├── __version__.py
+    ├── cli/
+        ├── __init__.py
+        ├── root.py
+    ├── utils/
+        ├── __init__.py
+        ├── count.py
+</code></pre>
+
+<p>If you haven't done so already, stage all the files and commit them!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

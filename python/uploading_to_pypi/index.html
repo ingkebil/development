@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Uploading a Python package to PyPI - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Uploading a Python package to PyPI";
+    var mkdocs_page_input_path = "python/uploading_to_pypi.md";
+    var mkdocs_page_url = "/development/python/uploading_to_pypi/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do use conda to contain my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../testing/">How to write unit test?</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Uploading a Python package to PyPI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/uploading_to_pypi.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="uploading-a-python-package-to-pypi">Uploading a Python package to PyPI</h1>
+<p>First thing to do is registering a user account on both <a href="https://test.pypi.org/">TestPyPI</a> and <a href="https://pypi.org/">PyPI</a>. TestPyPI is a test site where you can verify that the software package is ok before uploading it to the official PyPI repository. To handle these accounts and use the same settings for every submission to PyPI you'll do in the future, you could create a .pypirc file in your home directory. This file should contain the following lines:</p>
+<pre>
+[distutils]
+index-servers =
+  pypi
+  testpypi
+
+[pypi]
+username = your pypi username
+password = your pypi password
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = your testpypi username
+password = your testpypi password
+</pre>
+
+<p>Otherwise you could always specify repository name, user and password every time you upload a package. This latter would be the <strong>safest option</strong> because this way you'd be avoiding storing passwords in plaintext in your home directory.</p>
+<p>After packaging your software as described <a href="https://packaging.python.org/">here</a>, you are ready to upload it to the Python Package Index (PyPI), a repository specific for Python software. Be sure that all files that have to be included in the package along with with the code are listed in the <strong>manifest file</strong> (MANIFEST.in). It is necessary for instance to include files such as requirements.txt and LICENSE.txt.<br>
+Please note that markdown-formatted pages are rendered poorly on the PyPI web pages, so you might want to convert the README.md file to reStructuredText format (.rst). This can be done by using <a href="https://pandoc.org/">Pandoc</a>.</p>
+<p>Next step of preparing your package for PyPI would be fixing the <strong>setup.py</strong> file to include a download_url link to a tarball url. According to the official documentation available on packaging.python.org, packages version should follow the flexible public version scheme specified in <a href="https://www.python.org/dev/peps/pep-0440/">PEP 440</a>. Some examples:</p>
+<pre>
+1.2.0.dev1  # Development release
+1.2.0a1     # Alpha Release
+1.2.0b1     # Beta Release
+1.2.0rc1    # Release Candidate
+1.2.0       # Final Release
+1.2.0.post1 # Post Release
+15.10       # Date based release
+23          # Serial release
+</pre>
+
+<p>is link should be taking into account the version number of the software.</p>
+<p>If for instance the version of your software is 1.3.0, the setup.py file should be modified by adding this line:</p>
+<pre>
+setup(
+...
+download_url = 'https://github.com/Clinical-Genomics/Name_of_your_package/tarball/1.3.0',
+...
+)
+</pre>
+
+<p>Note that this url doesn't exist yet and will be created at a later stage. After committing this change and fixing this version of the repository you should add a git tag to the package. This commands adds basically a version number and release to the project and will be showed under the "releases" page of the git project. The syntax to <strong>add a tag</strong> is the following:</p>
+<pre>
+git tag 1.3.0 -m "Added a 1.3.0 version tag for PyPI"
+git push --tags origin master
+</pre>
+
+<p>Next step consists in creating a distribution release of the package. If your package has different requirements under different platforms (Linux, Mac or Windows) you should create platform wheels to taking care of this issue. Here's a documentation page explaining <a href="https://wheel.readthedocs.io/en/stable/">how to create wheel files</a>. If you don't need to care about wheels instead you can just create a distribution using the setup file:</p>
+<pre>
+python setup.py sdist
+</pre>
+
+<p>After creating a distribution you can test the upload on test.pypi. To do the actual upload you'll need <a href="https://github.com/pypa/twine"><strong>twine</strong></a> (pip install twine if it isn't installed already).</p>
+<p>Upload to test.pypi:</p>
+<pre>
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+</pre>
+
+<p>Check now that your repository is on PyPI test, under "your packages". You could now attempt to install the package from pip. To do that type:</p>
+<pre>
+pip install --index-url https://test.pypi.org/simple --extra-index-url https://pypi.org/simple name_of_package
+</pre>
+
+<p>The "--extra-index-url https://pypi.org/simple" option would instruct pip to retrieve all dependencies for your package from pypi itself.
+If your package can be found on the test repository and everything is as you expect, it is safe to upload it on the PyPI repository:</p>
+<pre>
+twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
+</pre>
+
+<p>Your package should be now available for installation over internet by using the command "pip install your_package".</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Conventions - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Conventions";
+    var mkdocs_page_input_path = "python/conventions.md";
+    var mkdocs_page_url = "/development/python/conventions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do use conda to contain my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../testing/">How to write unit test?</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Conventions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/conventions.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="conventions">Conventions</h1>
+<blockquote>
+<p>Code is read much more often than it is written. - A Wise Pythonista</p>
+</blockquote>
+<p><a href="http://legacy.python.org/dev/peps/pep-0008/">PEP8</a> and 💎 <a href="http://legacy.python.org/dev/peps/pep-0020/">PEP20</a> (<code>import this</code>) should be considered as the starting points. Unless specified otherwise, we follow the guidelines laid out there. For a brief overview, read the <a href="http://docs.python-guide.org/en/latest/writing/style/">Python Guide</a>'s entry on the subject.</p>
+<blockquote>
+<p>The official guide has some very nice tips on <a href="http://legacy.python.org/dev/peps/pep-0008/#code-lay-out">code layout</a>. This can be a nice reference when you are unsure about how to e.g. style your hanging indents.</p>
+</blockquote>
+<p>Futhermore, we use Python 3.6+. We encourage the use of type annotations (even if it doesn't cover 100% of your functions) and the new format strings:</p>
+<pre><code class="python">name = 'Paul Anderson'
+string = f&quot;Hello {name}!&quot;
+</code></pre>
+
+<h2 id="indentation">Indentation</h2>
+<p>Use 4 <em>spaces</em> to indent code. Never use hard tabs. Spaces are preferred over tabs for the following reason: spaces are spaces on every editor on every operating system. Tabs can be configured to act as 2, 4, 8 "spaces" and this can make code unreadable when being shared.</p>
+<h2 id="maximum-line-length-100-chars">Maximum line length: 100 chars</h2>
+<p>Limit all lines to a maximum of 100 characters. Break down the line if it exceeds the maximum length. For example:</p>
+<pre><code class="python"># Python automatically concatenates consecutive strings
+a_long_string = (&quot;I am a very long string that can be split across&quot;
+                 &quot;multiple lines by automatic string concatenation.&quot;)
+
+# multi conditional if-statements can be split into multiple statements
+# notice how the code reads a lot like regular English!
+first_condition = 'genius' in 'Paul Thomas Anderson'
+second_condition = 'genius' in 'Daniel Day-Lewis'
+
+if first_condition and second_condition:
+    print('And the Oscar goes to... There Will Be Blood!')
+</code></pre>
+
+<h3 id="imports">Imports</h3>
+<p>I like to split up imports into three separate groups: 1. standard library imports, 2. third party imports, 3. intra-package imports.</p>
+<pre><code class="python">import os
+import re
+
+import numpy as np
+from path import path
+
+from .utils import read_config
+</code></pre>
+
+<h2 id="folderspackages">Folders/packages</h2>
+<p>A common folder structure for a Python projects looks like:</p>
+<pre><code class="bash">myPackage
+├── __init__.py
+├── exc.py                   &lt;-- custom exceptions
+├── cli/
+│   ├── __init__.py
+│   ├── base.py              &lt;-- read app config, set up logging, import subcommands
+│   └── subcommand.py
+├── server/
+│   ├── templates/
+│   ├── __init__.py
+│   └── app.py
+└── store/
+    ├── __init__.py
+    ├── api.py
+    └── models.py            &lt;-- database models, DB schema definitions
+</code></pre>
+
+<p>The important thing to note is how functionality is split up across the project. It's common that the same or similar functionality is available through many interfaces. For example it might be possible to list all recently added records in a database:</p>
+<ul>
+<li>on the command line printed to the console</li>
+<li>over HTTP through a JSON API</li>
+<li>programmatically through accessing an API class</li>
+</ul>
+<p>The <code>cli</code> package contains all command line related code and nothing more. Logic such as how to handle and report error messages to the user goes here. <strong>Avoid</strong> putting logic in CLI modules that directly handle things like manually filtering database queries. More generally think <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> - avoid doing the same thing manually in both CLI and server code. <strong>Always</strong> go through your Python API to interact with e.g. the database.</p>
+<h2 id="command-line-interface-cli">Command line interface (CLI)</h2>
+<p>We highly recommend implementing the CLI using <a href="http://click.pocoo.org/">Click</a>. It has a very nice Pythonic interface for defining your interface and comes with helpers for reading input, printing colorful output, etc.</p>
+<h2 id="logging">Logging</h2>
+<p>We recommend using <a href="https://coloredlogs.readthedocs.io/en/latest/">Coloredlogs</a> which makes it <em>super easy</em> to enable logging for your package:</p>
+<pre><code class="python">import coloredlogs
+coloredlogs.install(level=log_level)
+</code></pre>
+
+<p>Read more in the <a href="../logging/">logging section</a></p>
+<h2 id="server">Server</h2>
+<p>If it makes sense, a general app exposes a JSON API over HTTP(S). This API can then be consumed by a client side web app. Sometimes it makes sense to provide a the web interface as part of the Python package and other times it will be consumed by the central web portal interface.</p>
+<p>We write our web servers in <a href="http://flask.pocoo.org/">Flask</a> which shares many similarities with <a href="http://click.pocoo.org/">Click</a>. To connect to the store/backend we use <a href="https://github.com/dgilland/flask-alchy">Flask-Alchy</a>.</p>
+<p>We generally configure servers using environment variables which is a flexible and well supported option.</p>
+<h2 id="store">Store</h2>
+<p>We start out with a SQL backend unless our needs require something different. We run all production SQL databases in MySQL. For development and testing it's often nice to work against a SQLite copy. For that reason and to make database interactions more pythonic, we make heavy use of the SQLAlchemy-wrapper, <a href="http://alchy.readthedocs.io/en/latest/">Alchy</a>.</p>
+<blockquote>
+<p>Note that Alchy has been <strong>deprecated</strong> in favor of SQLService, however, we have not been able to successfully set up the latter package with Flask to work with the request context which is why we stay with Alchy for now.</p>
+</blockquote>
+<h3 id="store-api">Store API</h3>
+<p>Alchy shares the database connection with associated model classes. This allows you to perform queries by simply importing them like:</p>
+<pre><code class="python"># ... connect to database
+from trailblazer.store import models
+
+for record in models.Sample.query:
+    print(record)
+</code></pre>
+
+<p>However, this feels a little magic and it's not so clear how the model exactly got access to that database connection. Therefore, we advocate explicitly passing around an API class holding the database connection.</p>
+<pre><code class="python">from . import models
+
+class DatabaseAPI():
+    Sample = models.Sample
+
+    def __init__(self, uri):
+        self.connect(uri)
+
+    def samples(self):
+        return self.Sample.query
+</code></pre>
+
+<h2 id="exceptions">Exceptions</h2>
+<p>We recommend that you base all your custom exceptions on a app-specific exception class. This way, 3-party packages that depend on it easily catch all exceptions from your package if they so choose.</p>
+<pre><code class="python">class TrailblazerError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+class MissingFileError(TrailblazerError):
+    pass
+</code></pre>
+
+<h2 id="helpful-tools">Helpful tools</h2>
+<p>We encourage using a <em>linter</em> to continuously check the syntax of your code. The Python community maintains a number of linters such as pep8, and <a href="https://pypi.python.org/pypi/pyflakes">PyFlakes</a>.</p>
+<p>Another resource that can greatly ease collaboration is <a href="http://editorconfig.org/">EditorConfig</a>. It's an effort to provide a cross editor configuration format and in placed in your project and committed to source control. You also need to install a plugin for your favorite editor, e.g. <a href="https://github.com/sindresorhus/editorconfig-sublime">Sublime</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Conda - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Conda";
+    var mkdocs_page_input_path = "conda/README.md";
+    var mkdocs_page_url = "/development/conda/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do use conda to contain my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="conda_conventions/">How to name your conda env</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../python/logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../python/testing/">How to write unit test?</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Conda</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/conda/README.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="conda">Conda</h1>
+<ol>
+<li><a href="#1-introduction">Introduction</a></li>
+<li><a href="#2-environments">Environments</a></li>
+<li><a href="#3-packages">Packages</a><ol>
+<li><a href="31#-versions">Version</a></li>
+</ol>
+</li>
+</ol>
+<h2 id="1-introduction">1. Introduction</h2>
+<p><a href="https://conda.io/docs/index.html">Conda</a> is a package, dependency and environment manager for any language. Conda actually consists of Anaconda and a smaller version called Miniconda. Miniconda is usually sufficient most of the time, but you can also install anaconda from miniconda using:</p>
+<pre><code class="Bash">$ conda create -n test_ananconda anaconda
+</code></pre>
+
+<p>The <code>conda</code> command is the primary interface for managing installations of various packages and environments.</p>
+<h2 id="2-environments">2. Environments</h2>
+<p>A conda environment is a directory that contains a specific collection of conda packages that you have installed. If you change one environment, your other environments are not affected.
+Condas default environment is called base or root.</p>
+<p>To create an environment, run:</p>
+<pre><code class="Bash">$ conda create --name [environment]
+</code></pre>
+
+<p>You can easily activate or deactivate environments, which is how you switch between them.</p>
+<p>To activate an environment, run:</p>
+<pre><code class="Bash">$ source activate [environment]
+</code></pre>
+
+<p>Conda puts an asterisk (*) in front of the active environment. You can view your environments with:</p>
+<pre><code class="Bash">$ conda info --envs
+</code></pre>
+
+<p>or</p>
+<pre><code class="Bash">$ conda env list
+</code></pre>
+
+<p>Your active environment will also show in front of your prompt:</p>
+<pre><code class="Bash">(my_env) $
+</code></pre>
+
+<p>To deactivate your current environment:</p>
+<pre><code class="Bash">$ source deactivate
+</code></pre>
+
+<p>You can copy your environment by:</p>
+<pre><code class="Bash">$ conda create --name [environment] --clone [copy_of_environment]
+</code></pre>
+
+<p>You can also share your environment with someone by giving them a copy of your environment.yaml file.</p>
+<p>To remove an environment, run:</p>
+<pre><code class="Bash">$ conda remove --name [environment] --all
+</code></pre>
+
+<h2 id="3-packages">3. Packages</h2>
+<p>A conda package is a compressed tarball file that contains system-level libraries, Python or other modules, executable programs and other components. Conda keeps track of the dependencies between packages and platforms. Conda packages are downloaded from remote channels, which are URLs to directories containing conda packages. The conda command searches a default set of channels, and packages are automatically downloaded and updated from a central repository.</p>
+<p>To install conda packages in your active environment (default or other), run:</p>
+<pre><code class="Bash">$ conda install [packagename_1] [packagename_2]
+</code></pre>
+
+<p>To install conda packages in an environment, run:</p>
+<pre><code class="Bash">$ conda install --name [environemnt] [packagename_1] [packagename_2]
+</code></pre>
+
+<p>It is also possible to create a new environment and install packages at the same time</p>
+<pre><code class="Bash">$ conda create --name [environment] [packagename]
+</code></pre>
+
+<p>To list all packages in a conda environment, run: </p>
+<pre><code class="Bash">$ conda list --name [environment]
+</code></pre>
+
+<p>To remove a package, run:</p>
+<pre><code class="Bash">$ conda remove --name [packagename]
+</code></pre>
+
+<h3 id="31-versions">3.1 Versions</h3>
+<p>To install or change a specific version of a package use the syntax [packagename]=[version].</p>
+<pre><code class="Bash">$ conda install samtools=1.6.0 vt=170135
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2018-10-08 20:04:54
+-->
