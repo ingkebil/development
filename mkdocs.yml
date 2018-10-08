@@ -1,0 +1,13 @@
+site_name: Development manual 
+site_url: http://www.clinicalgenomics.se/development
+repo_url: https://github.com/Clinical-Genomics/development
+site_author: Team <teamname>
+
+theme:
+  name: 'readthedocs'
+  palette:
+    primary: 'blue grey'
+    accent: 'cyan'
+
+nav:
+  - Home: 'index.md'
