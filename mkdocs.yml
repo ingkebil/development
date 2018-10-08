@@ -13,7 +13,7 @@ nav:
   - Home: 'index.md'
 #  - Where do I develop?
 #    - and what are the commonly used tools? (tmux, …)
-  - 'How do I start a project with git?': 'git/index.md'
+#  - 'How do I start a project with git?': 'git/index.md'
   - 'How do use conda to contain my project?':
     - 'How to name your conda env': 'conda/conda_conventions.md'
 #    - What are the commonly used commands?
@@ -33,7 +33,7 @@ nav:
 #    - How to automate running your tool?
 #    - How to install your tool in production?
 #  - What are the security concerns?
-  - Other recommendations?:
+#  - Other recommendations?:
 #    - What do we recommend for web develoment?
-    - What if I need perl?: perl/README.md
+#    - What if I need perl?: perl/README.md
 #  - How do we do project management?
