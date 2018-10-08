@@ -19,7 +19,5 @@ mkdocs --help
 mkdocs serve
 ```
 
-You can read more in the official [GitBook Toolchain documentation][gb-toolchain].
-
 [mkdocs]: https://www.mkdocs.org/#getting-started
 [conda]: https://conda.io/docs/
