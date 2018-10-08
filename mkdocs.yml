@@ -37,3 +37,4 @@ nav:
 #    - What do we recommend for web develoment?
 #    - What if I need perl?: perl/README.md
 #  - How do we do project management?
+  - How do I publish this manual?: 'mkdocs/index.md'
