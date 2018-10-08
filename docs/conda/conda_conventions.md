@@ -1,4 +1,4 @@
-# Conda conventions at Clinical Genomics
+# Conda conventions
 
 - Avoid installing anything in the conda default environment (root) if possible
 - Naming conventions for conda environments: 
