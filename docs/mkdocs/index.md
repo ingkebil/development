@@ -8,7 +8,7 @@ It is as simple as:
 mkdocs gh-deploy
 ```
 
-Tada! Changes should be available shortly on [http://www.clinicalgenomics.se/development/](https://www.mkdocs.org/user-guide/deploying-your-docs/)
+Tada! Changes should be available shortly on [http://www.clinicalgenomics.se/development/](http://www.clinicalgenomics.se/development/)
 
 ## I want more detail
 
