@@ -16,13 +16,14 @@ nav:
 #  - 'How do I start a project with git?': 'git/index.md'
   - 'How do use conda to contain my project?':
     - 'How to name your conda env': 'conda/conda_conventions.md'
+    - 'How do I activate an env?': 'conda/activate.md'
 #    - What are the commonly used commands?
   - Choose your editor :): 'editors/README.md'
   - How do we use Python?:
     - logging: 'python/logging.md'
 #    - CLI
     - How to write unit test?: 'python/testing.md'
-#    - How to write documentation?
+#    - How to write documentation?  - 
 #  - How to run on stage?
 #    - How to use databases?
 #  - How to publish your tool?
