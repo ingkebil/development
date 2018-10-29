@@ -16,6 +16,7 @@ The steps below may vary according to your tool. The gist of installing your too
     - Do this with your reviewer
     - Delete current stage
     - Clone prod to stage: `condacopy-prod-to-stage.sh`
+    - Switch to stage: `source activate-stage.sh`
     - Install branch into stage with the tool's update script: `update-tool-stage.sh`
 - If it passes, merge the PR into master
 - Delete the branch
@@ -27,4 +28,3 @@ The steps below may vary according to your tool. The gist of installing your too
     - Announce on stand up
     - Take backup of prod: e.g. `savetheconda prod170926`
     - Install with the tool's update script: `update-tool-prod.sh`
-
