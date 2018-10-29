@@ -26,13 +26,13 @@ nav:
 #    - How to write documentation?  - 
 #  - How to run on stage?
 #    - How to use databases?
-#  - How to publish your tool?
-#    - How do we use github for that?
-#    - CHANGELOG
-#    - How to make a Python package?
-#    - How to bumpversion?
-#    - How to automate running your tool?
-#    - How to install your tool in production?
+  - How to publish your tool?
+    - How do we use github for that?
+    - CHANGELOG
+    - How to make a Python package?
+    - How to bumpversion?
+    - How to automate running your tool?
+    - How to install your tool in production?: 'publish/prod.md'
 #  - What are the security concerns?
 #  - Other recommendations?:
 #    - What do we recommend for web develoment?
