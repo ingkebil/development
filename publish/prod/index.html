@@ -175,26 +175,34 @@
 <p>(all scripts are in <code>~/servers/resources</code>)</p>
 <ul>
 <li>Create a PR</li>
-<li>Get the PR reviewed and approved ... but don't merge yet</li>
+<li>Get the PR reviewed and approved ... but don't merge yet<ul>
 <li>Get someone to review your code</li>
 <li>Is the code pythonic?</li>
 <li>Where is the unit test?</li>
 <li>Did any signatures of existing functions or methods change?</li>
-<li>Test the PR on stage by deploying your branch</li>
+</ul>
+</li>
+<li>Test the PR on stage by deploying your branch<ul>
 <li>Do this with your reviewer</li>
 <li>Delete current stage</li>
 <li>Clone prod to stage: <code>condacopy-prod-to-stage.sh</code></li>
 <li>Install branch into stage with the tool's update script: <code>update-tool-stage.sh</code></li>
+</ul>
+</li>
 <li>If it passes, merge the PR into master</li>
 <li>Delete the branch</li>
 <li>Bumpversion on master</li>
 <li>Add change to change log</li>
-<li>Test the installation of the new master on stage</li>
+<li>Test the installation of the new master on stage<ul>
 <li>Only test if installation succeeds</li>
-<li>If it passes, deploy on prod!</li>
+</ul>
+</li>
+<li>If it passes, deploy on prod!<ul>
 <li>Announce on stand up</li>
 <li>Take backup of prod: e.g. <code>savetheconda prod170926</code></li>
 <li>Install with the tool's update script: <code>update-tool-prod.sh</code></li>
+</ul>
+</li>
 </ul>
               
             </div>
