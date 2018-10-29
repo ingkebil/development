@@ -8,7 +8,7 @@
   
   <meta name="author" content="Team <teamname>">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>How do I activate an env? - Development manual</title>
+  <title>How to install your tool in production? - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "How do I activate an env?";
-    var mkdocs_page_input_path = "conda/activate.md";
-    var mkdocs_page_url = "/development/conda/activate/";
+    var mkdocs_page_name = "How to install your tool in production?";
+    var mkdocs_page_input_path = "publish/prod.md";
+    var mkdocs_page_url = "/development/publish/prod/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -59,23 +59,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../conda_conventions/">How to name your conda env</a>
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">How do I activate an env?</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#activate-conda-envs">Activate conda envs</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#production-and-stage">Production and stage</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../conda/activate/">How do I activate an env?</a>
                 </li>
     </ul>
 	    </li>
@@ -124,9 +112,15 @@
                     
     <a class="" href="../../How to automate running your tool?">None</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../publish/prod/">How to install your tool in production?</a>
+    <a class="current" href="./">How to install your tool in production?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#how-to-install-your-tool-in-production">How to install your tool in production?</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -158,14 +152,14 @@
     
       
         
-          <li>How do use conda to contain my project? &raquo;</li>
+          <li>How to publish your tool? &raquo;</li>
         
       
     
-    <li>How do I activate an env?</li>
+    <li>How to install your tool in production?</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/conda/activate.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/publish/prod.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -175,43 +169,33 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="activate-conda-envs">Activate conda envs</h1>
-<p>After you have created a conda environment, conda tells you the following:</p>
-<pre><code>#
-# To activate this environment, use:
-# &gt; source activate D_mkdocs
-#
-# To deactivate this environment, use:
-# &gt; source deactivate D_mkdocs
-#
-</code></pre>
-
-<h2 id="production-and-stage">Production and stage</h2>
-<p>We have two special conda environments with special configurations: <code>prod</code> and <code>stage</code>.</p>
-<p><code>prod</code> is the main environment in which not surprisingly, our production tools are running. <code>stage</code> is a recent copy of <code>prod</code> used for testing of your latest finished branch and to test deployment.</p>
-<p>What is so special about <code>prod</code> or <code>stage</code>? They come with all tools already pointing to their configurations and need to be activated using a shell script.</p>
-<p>To activate <code>prod</code> environment, type:</p>
-<pre><code>up
-</code></pre>
-
-<p>or</p>
-<pre><code>useprod
-</code></pre>
-
-<p>To activate <code>stage</code> environment, type:</p>
-<pre><code>us
-</code></pre>
-
-<p>or</p>
-<pre><code>usestage
-</code></pre>
-
-<h3 id="i-want-to-know-more">I want to know more</h3>
-<p><code>us</code> and <code>usestage</code> are aliases pointing to a script:</p>
-<pre><code>alias usestage='source ${HOME}/servers/resources/activate-stage.sh'
-</code></pre>
-
-<p>That script will activate the correct environment(s) and set the aliases for the environment.</p>
+                <h1 id="how-to-install-your-tool-in-production">How to install your tool in production?</h1>
+<p>Your code is ready for deployment. Well done bucko! Now what do I do?</p>
+<p>The steps below may vary according to your tool. The gist of installing your tool to production will be along following lines:</p>
+<p>(all scripts are in <code>~/servers/resources</code>)</p>
+<ul>
+<li>Create a PR</li>
+<li>Get the PR reviewed and approved ... but don't merge yet</li>
+<li>Get someone to review your code</li>
+<li>Is the code pythonic?</li>
+<li>Where is the unit test?</li>
+<li>Did any signatures of existing functions or methods change?</li>
+<li>Test the PR on stage by deploying your branch</li>
+<li>Do this with your reviewer</li>
+<li>Delete current stage</li>
+<li>Clone prod to stage: <code>condacopy-prod-to-stage.sh</code></li>
+<li>Install branch into stage with the tool's update script: <code>update-tool-stage.sh</code></li>
+<li>If it passes, merge the PR into master</li>
+<li>Delete the branch</li>
+<li>Bumpversion on master</li>
+<li>Add change to change log</li>
+<li>Test the installation of the new master on stage</li>
+<li>Only test if installation succeeds</li>
+<li>If it passes, deploy on prod!</li>
+<li>Announce on stand up</li>
+<li>Take backup of prod: e.g. <code>savetheconda prod170926</code></li>
+<li>Install with the tool's update script: <code>update-tool-prod.sh</code></li>
+</ul>
               
             </div>
           </div>
@@ -219,10 +203,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../editors/" class="btn btn-neutral float-right" title="Choose your editor :)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../mkdocs/" class="btn btn-neutral float-right" title="How do I publish this manual?">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../conda_conventions/" class="btn btn-neutral" title="How to name your conda env"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../python/testing/" class="btn btn-neutral" title="How to write unit test?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -250,10 +234,10 @@
           <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../conda_conventions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../python/testing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../editors/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../mkdocs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
