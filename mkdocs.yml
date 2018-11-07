@@ -27,11 +27,12 @@ nav:
 #  - How to run on stage?
 #    - How to use databases?
   - How to publish your tool?:
-    - How do we use github for that?
-    - CHANGELOG
-    - How to make a Python package?
-    - How to bumpversion?
-    - How to automate running your tool?
+#    - How do we use github for that?
+#    - CHANGELOG
+#    - How to make a Python package?
+#    - How to bumpversion?
+#    - How to automate running your tool?
+    - How make updating your tool easy?: 'publish/stage.md'
     - How to install your tool in production?: 'publish/prod.md'
 #  - What are the security concerns?
 #  - Other recommendations?:

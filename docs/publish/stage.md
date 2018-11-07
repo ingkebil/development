@@ -1,34 +1,12 @@
-# Stage
+# How to easily update your tool?
 
-## What is stage?
+You will want to create two scripts, at least:
+- one to update your tool on stage
+- one to update your tool on prod
 
-The environment in which we test our proposed solution before we push it to production is called stage. It should as closely as possible resemble production in terms of software dependencies, configuration, hardware, and data.
+Yes, I just wrote that out in full. It's that important!
 
-A staging environment can be destroyed and you cannot trust that the a previously set up stage is still fully reflecting production. Meaning one needs to be able to quickly setup stage again.
-
-No development should happen in stage.
-
-## Locations
-
-All scripts are found in `~/servers/resources` on both rasta and clinical-db.
-
-All staging websites are found on clinical-db in directory `~/STAGE/`.
-
-All staging names, both packages and databases, have been named with -stage appended to the package name, e.g. trailblazer-stage.
-
-## How to activate stage
-
-Rasta and clinical-db
-```
-cd ~/servers/resources
-. activate-stage.sh
-```
-
-## How to update stage
-
-Each software package, or better, each component of a software package, be it frontend or cli, should have an `update-component.sh` script.
-
-### CLI update script
+## Stage CLI update script
 
 How does such a script look like. Well, let's have a look at one that closest resembles a template, `update-trailblazer-stage.sh`
 
@@ -63,13 +41,13 @@ pip install -U git+https://github.com/Clinical-Genomics/trailblazer@$BRANCH
 You run it:
 ```bash
 cd ~/servers/resources
-bash update-trailblazer-stage.sh
+sh update-trailblazer-stage.sh
 ```
 
 Or you update stage to a specific branch:
 ```bash
 cd ~/servers/resources
-bash update-trailblazer-stage.sh beta
+sh update-trailblazer-stage.sh beta
 ```
 
 ### Web update script
@@ -119,7 +97,7 @@ supervisorctl restart trailblazer-api-stage
 cd -
 ```
 
-### Naming of scripts
+## Naming of scripts
 
 The suggestion is to name your script: `update-$component-stage.sh`
 
@@ -127,7 +105,7 @@ with $component the name of your component, be it `trailblazer` for the cli or `
 
 ## What about config files?
 
-Premade config files for all packages used in production have been made in the `config` dir of the servers repo. This can be found on rasta and clinical-db in the same location:
+Premade config files for all packages used in production and stage have been made in the `config` dir of the servers repo. This can be found on rasta and clinical-db in the same location:
 
 ```
 cd ~/servers/config
