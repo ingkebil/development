@@ -32,7 +32,7 @@ nav:
 #    - How to make a Python package?
 #    - How to bumpversion?
 #    - How to automate running your tool?
-    - How make updating your tool easy?: 'publish/stage.md'
+    - How make updating your tool easy?: 'publish/update-scripts.md'
     - How to install your tool in production?: 'publish/prod.md'
 #  - What are the security concerns?
 #  - Other recommendations?:

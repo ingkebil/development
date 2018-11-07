@@ -1,6 +1,7 @@
 # How to easily update your tool?
 
 You will want to create two scripts, at least:
+
 - one to update your tool on stage
 - one to update your tool on prod
 
