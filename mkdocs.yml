@@ -1,0 +1,41 @@
+site_name: Development manual
+site_url: http://www.clinicalgenomics.se/development
+repo_url: https://github.com/Clinical-Genomics/development
+site_author: Team <teamname>
+
+theme:
+  name: 'readthedocs'
+  palette:
+    primary: 'blue grey'
+    accent: 'cyan'
+
+nav:
+  - Home: 'index.md'
+#  - Where do I develop?
+#    - and what are the commonly used tools? (tmux, …)
+#  - 'How do I start a project with git?': 'git/index.md'
+  - 'How do use conda to contain my project?':
+    - 'How to name your conda env': 'conda/conda_conventions.md'
+    - 'How do I activate an env?': 'conda/activate.md'
+#    - What are the commonly used commands?
+  - Choose your editor :): 'editors/README.md'
+  - How do we use Python?:
+    - logging: 'python/logging.md'
+#    - CLI
+    - How to write unit test?: 'python/testing.md'
+#    - How to write documentation?  - 
+#  - How to run on stage?
+#    - How to use databases?
+  - How to publish your tool?:
+    - How do we use github for that?
+    - CHANGELOG
+    - How to make a Python package?
+    - How to bumpversion?
+    - How to automate running your tool?
+    - How to install your tool in production?: 'publish/prod.md'
+#  - What are the security concerns?
+#  - Other recommendations?:
+#    - What do we recommend for web develoment?
+#    - What if I need perl?: perl/README.md
+#  - How do we do project management?
+  - How do I publish this manual?: 'mkdocs/index.md'
