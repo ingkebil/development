@@ -27,15 +27,16 @@ nav:
 #  - How to run on stage?
 #    - How to use databases?
   - How to publish your tool?:
-    - How do we use github for that?
-    - CHANGELOG
-    - How to make a Python package?
-    - How to bumpversion?
-    - How to automate running your tool?
+#    - How do we use github for that?
+#    - CHANGELOG
+#    - How to make a Python package?
+#    - How to bumpversion?
+#    - How to automate running your tool?
     - How to install your tool in production?: 'publish/prod.md'
 #  - What are the security concerns?
-#  - Other recommendations?:
+  - Other recommendations?:
+    - What if I need perl?: perl/README.md
+    - What are perl's best practices?: perl/best_practises/best_practises.md
 #    - What do we recommend for web develoment?
-#    - What if I need perl?: perl/README.md
 #  - How do we do project management?
   - How do I publish this manual?: 'mkdocs/index.md'
