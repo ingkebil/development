@@ -8,7 +8,7 @@
   
   <meta name="author" content="Team <teamname>">
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>1. Setup a structure - Development manual</title>
+  <title>Installing Perl - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "1. Setup a structure";
-    var mkdocs_page_input_path = "python/count_variants/structure.md";
-    var mkdocs_page_url = "/development/python/count_variants/structure/";
+    var mkdocs_page_name = "Installing Perl";
+    var mkdocs_page_input_path = "perl/installation/installation.md";
+    var mkdocs_page_url = "/development/perl/installation/installation/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
@@ -79,11 +79,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../logging/">logging</a>
+    <a class="" href="../../../python/logging/">logging</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../testing/">How to write unit test?</a>
+    <a class="" href="../../../python/testing/">How to write unit test?</a>
                 </li>
     </ul>
 	    </li>
@@ -105,11 +105,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../perl/">What if I need perl?</a>
+    <a class="" href="../../">What if I need perl?</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+    <a class="" href="../../best_practises/best_practises/">What are perl's best practices?</a>
                 </li>
     </ul>
 	    </li>
@@ -141,10 +141,10 @@
     
       
     
-    <li>1. Setup a structure</li>
+    <li>Installing Perl</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/count_variants/structure.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/perl/installation/installation.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -154,70 +154,58 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="1-setup-a-structure">1. Setup a structure</h1>
-<p>To start with let's create a environment and a directory for our package.
-Assuming you have conda installed, run the following:</p>
-<h2 id="11-basics">1.1 Basics</h2>
-<pre><code class="bash">conda create -n count_variants python=3
-source activate count_variants
-mkdir count_variants
-cd count_variants
+                <h1 id="installing-perl">Installing Perl</h1>
+<p>It is usually a good idea to have an admin-free installation of perl. This can be done in several ways. Here we will use <a href="https://perlbrew.pl">Perlbrew</a> for a linux installation.</p>
+<h2 id="perlbrew">Perlbrew</h2>
+<p>Perlbrew is a tool to manage multiple perl installations in your <code>$HOME</code> directory. Allowing for testing your production code against different perl versions, while leaving the vendor perl alone. You can even run your programs against all installations of perl. 
+1. Disable all previous perl related exports and initiations in bashrc and bash_profile if you have any
+1. Log out and in again to initilize a fresh shell
+1. Follow the instructions at <a href="https://perlbrew.pl">Perlbrew</a> for Installing Perlbrew using curl or wget.
+1. Append the following piece of code to the end of your <code>~/.bash_profile</code>:</p>
+<pre><code class="Bash">    source ~/perl5/perlbrew/etc/bashrc
 </code></pre>
 
-<p>We wan't to do version handling with git, to make this a git repository do </p>
-<pre><code class="bash">git init
-touch .gitignore
+<p>Start a new shell and perlbrew should be up and fully functional from there.</p>
+<h3 id="perl">Perl</h3>
+<p>Install a specific perl version and use it as default.</p>
+<pre><code class="Bash">$ perlbrew install perl-5.26.0
+$ perlbrew switch perl-5.26.0
 </code></pre>
 
-<p>The <code>.gitignore</code> file is explained in the <a href="../../git/README.md">git section</a>, for now we only need to know that this file tells git what to care and not care about. </p>
-<h2 id="12-readme">1.2 README</h2>
-<p>Every decent python package should at least include a README file that describes the intention of the writer.
-Let's create a <code>README.md</code> file, this will be updated as we go along. For now do</p>
-<pre><code class="bash">touch README.md
+<p>Use a specific perl version in your current shell, run:</p>
+<pre><code class="Bash">$ perlbrew use perl-5.26.1
 </code></pre>
 
-<p>open the file with an <a href="../../../editors/">editor</a> of your choice and write the following:</p>
-<pre><code class="markdown"># count_variants
-A package to count variants in VCF files based on different criterias.
+<h3 id="cpanm">Cpanm</h3>
+<p>Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. 
+Installing CPANM with perlbrew is done by this command:</p>
+<pre><code class="Bash">$ perlbrew install-cpanm
 </code></pre>
 
-<blockquote>
-<p>You might recognize this as "markdown", a markup language for formatting text. You can read more about it under <a href="../../documentation/README.md">Documentation</a>.</p>
-</blockquote>
-<h2 id="13-license-manifestin-requirementstxt-license">1.3 LICENSE, MANIFEST.in, requirements.txt  {#license}</h2>
-<p>Next step is to include a <code>LICENSE</code> file, every project should have one. There are many different licenses, you can read more <a href="https://help.github.com/articles/licensing-a-repository/">here</a>. For now we will choose a <a href="https://choosealicense.com/licenses/mit/">MIT license</a>.
-Open a file called LICENSE and copy paste the <a href="https://choosealicense.com/licenses/mit/">MIT License</a> and fill in year and name.</p>
-<p><code>MANIFEST.in</code> is a file that explains what non python static files should be included in the distribution. For now we will leave that one empty. Just do:</p>
-<pre><code class="bash">touch MANIFEST.in
+<p>Perlbrew makes it easy to create and switch between multiple libraries of CPAN modules. You can even have several libraries for the same distribution of perl.
+Here are some examples:</p>
+<pre><code class="Bash">## To create a library named Basil to perl version 5.26.0 
+$ perlbrew lib create perl-5.26.0@Basil
+
+## To switch library for that perl distribution permanently
+$ perlbrew switch perl-5.26.0@Basil
+
+## If you have another library that you want to use for your current session 
+$ perlbrew use perl-5.26.0@Manuel
+
+## To delete your Manuel library 
+$ perlbrew lib delete perl-5.26.0@Manuel
+
+## You can view your perl distributions and libraries by running:  
+$ perlbrew list  
 </code></pre>
 
-<p><code>requirements.txt</code> is for declaring which third party software our package depends on. Right now we only know that we will be using <a href="http://click.pocoo.org/5/">Click</a> to build a cli, so run:</p>
-<pre><code class="bash">echo click &gt; requirements.txt
+<p>If you need to reinstall a specific version of a cpanm library, run:</p>
+<pre><code class="Bash">$ cpanm --reinstall [your_cpanm_lib]@[version]
 </code></pre>
 
-<h2 id="14-first-commit-first_commit">1.4 First commit {#first_commit}</h2>
-<p>Save the changes. It is now time to do our first commit! Run:</p>
-<pre><code class="bash">$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
-  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
-
-    .gitignore
-    README.md
-    LICENSE
-    MANIFEST.in
-    requirements.txt
-
-nothing added to commit but untracked files present (use &quot;git add&quot; to track)
-$ git add .gitignore README.md LICENSE MANIFEST.in requirements.txt
-$ git commit -m &quot;First commit&quot;
-$ git status
-On branch master
-nothing to commit, working tree clean
-</code></pre>
+<p>More information on perlbrew is available here:<br />
+https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew</p>
               
             </div>
           </div>

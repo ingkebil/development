@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Team <teamname>">
-  <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Installing - Development manual</title>
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>What if I need perl? - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Installing";
-    var mkdocs_page_input_path = "python/count_variants/installing.md";
-    var mkdocs_page_url = "/development/python/count_variants/installing/";
+    var mkdocs_page_name = "What if I need perl?";
+    var mkdocs_page_input_path = "perl/README.md";
+    var mkdocs_page_url = "/development/perl/";
   </script>
   
-  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -36,9 +36,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../.." class="icon icon-home"> Development manual</a>
+        <a href=".." class="icon icon-home"> Development manual</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -50,7 +50,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../..">Home</a>
+    <a class="" href="..">Home</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -59,18 +59,18 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../conda/conda_conventions/">How to name your conda env</a>
+    <a class="" href="../conda/conda_conventions/">How to name your conda env</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../../conda/activate/">How do I activate an env?</a>
+    <a class="" href="../conda/activate/">How do I activate an env?</a>
                 </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../editors/">Choose your editor :)</a>
+    <a class="" href="../editors/">Choose your editor :)</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -79,11 +79,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../logging/">logging</a>
+    <a class="" href="../python/logging/">logging</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../testing/">How to write unit test?</a>
+    <a class="" href="../python/testing/">How to write unit test?</a>
                 </li>
     </ul>
 	    </li>
@@ -94,7 +94,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../publish/prod/">How to install your tool in production?</a>
+    <a class="" href="../publish/prod/">How to install your tool in production?</a>
                 </li>
     </ul>
 	    </li>
@@ -103,20 +103,32 @@
 		
     <span class="caption-text">Other recommendations?</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../../perl/">What if I need perl?</a>
+    <a class="current" href="./">What if I need perl?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#perl">Perl</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+    <a class="" href="best_practises/best_practises/">What are perl's best practices?</a>
                 </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../mkdocs/">How do I publish this manual?</a>
+    <a class="" href="../mkdocs/">How do I publish this manual?</a>
 	    </li>
           
         </ul>
@@ -129,7 +141,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../..">Development manual</a>
+        <a href="..">Development manual</a>
       </nav>
 
       
@@ -137,14 +149,18 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../..">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Other recommendations? &raquo;</li>
+        
+      
     
-    <li>Installing</li>
+    <li>What if I need perl?</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/count_variants/installing.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/perl/README.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -154,38 +170,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="installing">Installing</h1>
-<p>So it is time to install our package and see that everything works, exciting! 😃</p>
-<p>There is only one thing missing; tell <code>setup.py</code> how to use the command line interface that we wrote earlier.
-Open <code>setup.py</code> and look for <code>entry_points</code> section. Change it to look like:</p>
-<pre><code class="python">    entry_points={
-        'console_scripts': [
-            'count_variants = count_variants.cli.root:cli'
-        ],
-    },
-</code></pre>
-
-<p>We are telling <code>setup.py</code> that if someone write <code>count_variants</code> on the command line run the function <code>cli()</code> in the file <code>count_variants.cli.root</code>.</p>
-<hr />
-<p>Now we are going to run the command that installs all dependencies and the package itself:</p>
-<pre><code class="bash">pip install --editable .
-</code></pre>
-
-<p>Watch the magic happen! 🔮</p>
-<p>When you are done you should be able to write:</p>
-<pre><code class="bash">$ count_variants
-Usage: count_variants [OPTIONS] VCF
-
-Error: Missing argument &quot;vcf&quot;.
-</code></pre>
-
-<p>Great job!!!
-If you have a vcf file lying around you could try and feed that to the program and see if it works.</p>
-<p>In the following sections we will add some complexity, write tests and push the code to GitHub so others can see it.</p>
+                <h1 id="perl">Perl</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Perl is a general-purpose programming language originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and more.</p>
+<p>The language is intended to be practical (easy to use, efficient, complete) rather than beautiful (tiny, elegant, minimal). Its major features are that it's easy to use, supports both procedural and object-oriented (OO) programming, has powerful built-in support for text processing, and has one of the world's most impressive collections of third-party modules.</p>
+<p>A good place to start learning what perl is about is the <a href="http://perldoc.perl.org/perlintro.html">perlintro</a> at <a href="http://perldoc.perl.org/index.html">perldocs</a>.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="best_practises/best_practises/" class="btn btn-neutral float-right" title="What are perl's best practices?">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../publish/prod/" class="btn btn-neutral" title="How to install your tool in production?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -211,12 +213,16 @@ If you have a vcf file lying around you could try and feed that to the program a
           <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
+        <span><a href="../publish/prod/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="best_practises/best_practises/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>

@@ -7,23 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Team <teamname>">
-  <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Installing - Development manual</title>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Stage - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Installing";
-    var mkdocs_page_input_path = "python/count_variants/installing.md";
-    var mkdocs_page_url = "/development/python/count_variants/installing/";
+    var mkdocs_page_name = "Stage";
+    var mkdocs_page_input_path = "publish/envs.md";
+    var mkdocs_page_url = "/development/publish/envs/";
   </script>
   
-  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
@@ -36,9 +36,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../../.." class="icon icon-home"> Development manual</a>
+        <a href="../.." class="icon icon-home"> Development manual</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
@@ -50,7 +50,7 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../..">Home</a>
+    <a class="" href="../..">Home</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -59,18 +59,18 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../conda/conda_conventions/">How to name your conda env</a>
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../../conda/activate/">How do I activate an env?</a>
+    <a class="" href="../../conda/activate/">How do I activate an env?</a>
                 </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../editors/">Choose your editor :)</a>
+    <a class="" href="../../editors/">Choose your editor :)</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -79,11 +79,11 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../logging/">logging</a>
+    <a class="" href="../../python/logging/">logging</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../testing/">How to write unit test?</a>
+    <a class="" href="../../python/testing/">How to write unit test?</a>
                 </li>
     </ul>
 	    </li>
@@ -94,7 +94,7 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../publish/prod/">How to install your tool in production?</a>
+    <a class="" href="../prod/">How to install your tool in production?</a>
                 </li>
     </ul>
 	    </li>
@@ -105,18 +105,18 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../../perl/">What if I need perl?</a>
+    <a class="" href="../../perl/">What if I need perl?</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+    <a class="" href="../../perl/best_practises/best_practises/">What are perl's best practices?</a>
                 </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <a class="" href="../../../mkdocs/">How do I publish this manual?</a>
+    <a class="" href="../../mkdocs/">How do I publish this manual?</a>
 	    </li>
           
         </ul>
@@ -129,7 +129,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../../..">Development manual</a>
+        <a href="../..">Development manual</a>
       </nav>
 
       
@@ -137,14 +137,14 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../../..">Docs</a> &raquo;</li>
+    <li><a href="../..">Docs</a> &raquo;</li>
     
       
     
-    <li>Installing</li>
+    <li>Stage</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/count_variants/installing.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/publish/envs.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -154,34 +154,23 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="installing">Installing</h1>
-<p>So it is time to install our package and see that everything works, exciting! 😃</p>
-<p>There is only one thing missing; tell <code>setup.py</code> how to use the command line interface that we wrote earlier.
-Open <code>setup.py</code> and look for <code>entry_points</code> section. Change it to look like:</p>
-<pre><code class="python">    entry_points={
-        'console_scripts': [
-            'count_variants = count_variants.cli.root:cli'
-        ],
-    },
+                <h1 id="stage">Stage</h1>
+<h2 id="what-is-stage">What is stage?</h2>
+<p>The environment in which we test our proposed solution before we push it to production is called stage. It should as closely as possible resemble production in terms of software dependencies, configuration, hardware, and data.</p>
+<p>A staging environment can be destroyed and you cannot trust that the a previously set up stage is still fully reflecting production. Meaning one needs to be able to quickly setup stage again.</p>
+<p>No development should happen in stage.</p>
+<h2 id="locations">Locations</h2>
+<p>All scripts are found in <code>~/servers/resources</code> on both rasta and clinical-db.</p>
+<p>All staging websites are found on clinical-db in directory <code>~/STAGE/</code>.</p>
+<p>All staging names, both packages and databases, have been named with -stage appended to the package name, e.g. trailblazer-stage.</p>
+<h2 id="how-to-activate-stage">How to activate stage</h2>
+<p>Rasta and clinical-db</p>
+<pre><code>cd ~/servers/resources
+. activate-stage.sh
 </code></pre>
 
-<p>We are telling <code>setup.py</code> that if someone write <code>count_variants</code> on the command line run the function <code>cli()</code> in the file <code>count_variants.cli.root</code>.</p>
-<hr />
-<p>Now we are going to run the command that installs all dependencies and the package itself:</p>
-<pre><code class="bash">pip install --editable .
-</code></pre>
-
-<p>Watch the magic happen! 🔮</p>
-<p>When you are done you should be able to write:</p>
-<pre><code class="bash">$ count_variants
-Usage: count_variants [OPTIONS] VCF
-
-Error: Missing argument &quot;vcf&quot;.
-</code></pre>
-
-<p>Great job!!!
-If you have a vcf file lying around you could try and feed that to the program and see if it works.</p>
-<p>In the following sections we will add some complexity, write tests and push the code to GitHub so others can see it.</p>
+<h2 id="how-to-update-stage">How to update stage</h2>
+<p>Each software package, or better, each component of a software package, be it frontend or cli, should have an <code>update-component.sh</code> script.</p>
               
             </div>
           </div>
@@ -214,9 +203,9 @@ If you have a vcf file lying around you could try and feed that to the program a
       
     </span>
 </div>
-    <script>var base_url = '../../..';</script>
-    <script src="../../../js/theme.js" defer></script>
-      <script src="../../../search/main.js" defer></script>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
 
 </body>
 </html>
