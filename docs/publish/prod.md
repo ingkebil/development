@@ -14,7 +14,8 @@ The steps below may vary according to your tool. The gist of installing your too
     - Did any signatures of existing functions or methods change?
 - Test the PR on stage by deploying your branch
     - Do this with your reviewer
-    - Announce your usage of stage on daily standup of TTN
+    - Announce on TTNs daily standup
+    - Delete current stage
     - Clone prod to stage: `condacopy-prod-to-stage.sh`
     - Switch to stage: `source activate-stage.sh`
     - Install branch into stage with the tool's update script: `update-tool-stage.sh`
