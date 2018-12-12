@@ -152,6 +152,8 @@ class MissingFileError(TrailblazerError):
 
 We encourage using a *linter* to continuously check the syntax of your code. The Python community maintains a number of linters such as pep8, and [PyFlakes][pyflakes].
 
+If your repo has been set up with continous integration, with for example Travis, you can easily make linting part of the build process together with [Git-Lint][git-lint]. This will give you step wise improvements by automatic linting of those parts of the code that are new or changed. 
+
 Another resource that can greatly ease collaboration is [EditorConfig][editor-config]. It's an effort to provide a cross editor configuration format and in placed in your project and committed to source control. You also need to install a plugin for your favorite editor, e.g. [Sublime][sublime-config].
 
 [pep8]: http://legacy.python.org/dev/peps/pep-0008/
@@ -167,3 +169,5 @@ Another resource that can greatly ease collaboration is [EditorConfig][editor-co
 [pyflakes]: https://pypi.python.org/pypi/pyflakes
 [editor-config]: http://editorconfig.org/
 [sublime-config]: https://github.com/sindresorhus/editorconfig-sublime
+[git-lint]: https://github.com/sk-/git-lint
+
