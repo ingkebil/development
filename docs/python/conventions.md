@@ -49,6 +49,10 @@ from path import path
 from .utils import read_config
 ```
 
+### Variable names
+
+PEP8 recommends to use short variable names. Achieving that can take some coding hygiene and some experience. Get more advice in our [variable hygiene section](./variables.md).
+
 ## Folders/packages
 
 A common folder structure for a Python projects looks like:
