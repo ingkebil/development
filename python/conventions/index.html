@@ -8,7 +8,7 @@
   
   <meta name="author" content="Team <teamname>">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Conventions - Development manual</title>
+  <title>conventions - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Conventions";
+    var mkdocs_page_name = "conventions";
     var mkdocs_page_input_path = "python/conventions.md";
     var mkdocs_page_url = "/development/python/conventions/";
   </script>
@@ -77,6 +77,42 @@
 		
     <span class="caption-text">How do we use Python?</span>
     <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">conventions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#conventions">Conventions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#indentation">Indentation</a></li>
+        
+            <li><a class="toctree-l4" href="#maximum-line-length-100-chars">Maximum line length: 100 chars</a></li>
+        
+            <li><a class="toctree-l4" href="#folderspackages">Folders/packages</a></li>
+        
+            <li><a class="toctree-l4" href="#command-line-interface-cli">Command line interface (CLI)</a></li>
+        
+            <li><a class="toctree-l4" href="#logging">Logging</a></li>
+        
+            <li><a class="toctree-l4" href="#server">Server</a></li>
+        
+            <li><a class="toctree-l4" href="#store">Store</a></li>
+        
+            <li><a class="toctree-l4" href="#exceptions">Exceptions</a></li>
+        
+            <li><a class="toctree-l4" href="#helpful-tools">Helpful tools</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../variables/">variables</a>
+                </li>
                 <li class="">
                     
     <a class="" href="../logging/">logging</a>
@@ -140,8 +176,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>How do we use Python? &raquo;</li>
+        
+      
     
-    <li>Conventions</li>
+    <li>conventions</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/conventions.md"
@@ -195,6 +235,8 @@ from path import path
 from .utils import read_config
 </code></pre>
 
+<h3 id="variable-names">Variable names</h3>
+<p>PEP8 recommends to use short variable names. Achieving that can take some coding hygiene and some experience. Get more advice in our <a href="../variables/">variable hygiene section</a>.</p>
 <h2 id="folderspackages">Folders/packages</h2>
 <p>A common folder structure for a Python projects looks like:</p>
 <pre><code class="bash">myPackage
@@ -273,11 +315,21 @@ class MissingFileError(TrailblazerError):
 
 <h2 id="helpful-tools">Helpful tools</h2>
 <p>We encourage using a <em>linter</em> to continuously check the syntax of your code. The Python community maintains a number of linters such as pep8, and <a href="https://pypi.python.org/pypi/pyflakes">PyFlakes</a>.</p>
+<p>If your repo has been set up with continous integration, with for example Travis, you can easily make linting part of the build process together with <a href="https://github.com/sk-/git-lint">Git-Lint</a>. This will give you step wise improvements by automatic linting of those parts of the code that are new or changed. </p>
 <p>Another resource that can greatly ease collaboration is <a href="http://editorconfig.org/">EditorConfig</a>. It's an effort to provide a cross editor configuration format and in placed in your project and committed to source control. You also need to install a plugin for your favorite editor, e.g. <a href="https://github.com/sindresorhus/editorconfig-sublime">Sublime</a>.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../variables/" class="btn btn-neutral float-right" title="variables">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../editors/" class="btn btn-neutral" title="Choose your editor :)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -303,6 +355,10 @@ class MissingFileError(TrailblazerError):
           <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
+        <span><a href="../../editors/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../variables/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

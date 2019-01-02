@@ -8,7 +8,7 @@
   
   <meta name="author" content="Team <teamname>">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>logging - Development manual</title>
+  <title>variables - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "logging";
-    var mkdocs_page_input_path = "python/logging.md";
-    var mkdocs_page_url = "/development/python/logging/";
+    var mkdocs_page_name = "variables";
+    var mkdocs_page_input_path = "python/variables.md";
+    var mkdocs_page_url = "/development/python/variables/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -81,19 +81,33 @@
                     
     <a class="" href="../conventions/">conventions</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../variables/">variables</a>
-                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">logging</a>
+    <a class="current" href="./">variables</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#logging">Logging</a></li>
+    <li class="toctree-l3"><a href="#variable-hygiene">Variable hygiene</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#variable-name-are-not-full-descriptors">Variable name are not full descriptors</a></li>
+        
+            <li><a class="toctree-l4" href="#put-details-in-comments">Put details in comments</a></li>
+        
+            <li><a class="toctree-l4" href="#too-specific-name-might-mean-too-specific-code">Too specific name might mean too specific code</a></li>
+        
+            <li><a class="toctree-l4" href="#keep-short-scopes-for-quick-lookup">Keep short scopes for quick lookup</a></li>
+        
+            <li><a class="toctree-l4" href="#spend-time-thinking-about-readability">Spend time thinking about readability</a></li>
+        
+        </ul>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../logging/">logging</a>
                 </li>
                 <li class="">
                     
@@ -159,10 +173,10 @@
         
       
     
-    <li>logging</li>
+    <li>variables</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/logging.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/python/variables.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -172,34 +186,80 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="logging">Logging</h2>
-<p>Logging is the logical next step when you realize the limitations of printing. Python includes a very useful logging module in the standard library so it's rather easy to get started. First make sure you know <a href="http://mussol.org/2016/12/15/understanding-logging-in-python/">the basics</a>. Now when you want to log some progress or program state in a module:</p>
-<pre><code class="python">import logging
+                <h1 id="variable-hygiene">Variable hygiene</h1>
+<p>PEP8 recommends short variable names, but achieving this requires good programming hygiene. Here are some advices to keep variable names short.</p>
+<h2 id="variable-name-are-not-full-descriptors">Variable name are not full descriptors</h2>
+<p>First, do not think of variable names as full descriptors of their content. Names should be clear mainly to allow to keep track of where they come from and only then can they give a bit about the content.</p>
+<pre><code># This is very descriptive, but we can infer that by looking at the expression
+students_with_grades_above_90 = filter(lambda s: s.grade &gt; 90, students)
 
-LOG = logging.getLogger(__name__)
-
-
-def foo(bar):
-    &quot;&quot;&quot;My fancy function.&quot;&quot;&quot;
-    LOG.info(&quot;incrementing the input: %s&quot;, bar)
-    return bar + 1
+# This is short and still allows the reader to infer what the value was
+good_students = filter(lambda s: s.grade &gt; 90, students)
 </code></pre>
 
-<p>The not-so-intuitive part is that you need to configure the logging module to see any output from these calls. Luckily we can reduce the setup to a simple function call most of the time using the <a href="https://coloredlogs.readthedocs.io/en/latest/">coloredlogs</a> package. During e.g. your CLI initialization include:</p>
-<pre><code class="python">import click
-import coloredlogs
-import logging
+<h2 id="put-details-in-comments">Put details in comments</h2>
+<p>Use comments and doc strings for description of what is going on, not variable names.</p>
+<pre><code># We feel we need a long variable description because the function is not documented
+def get_good_students(students):
+    return filter(lambda s: s.grade &gt; 90, students)
 
-LOG = logging.getLogger(__name__)
+students_with_grades_above_90 = get_good_students(students)
 
-@click.command()
-@click.option('-l', '--log-level', default='INFO', help='Log message level to display')
-def cli(log_level):
-    &quot;&quot;&quot;Base command line entry point.&quot;&quot;&quot;
-    coloredlogs.install(level=log_level)
-    LOG.info(&quot;Running cli&quot;)
-    # ... more code here
+
+# If the reader is not sure about what get_good_students returns,
+# their reflex should be to look at the function docstring
+def get_good_students(students):
+    &quot;&quot;&quot;Return students with grade above 90&quot;&quot;&quot;
+    return filter(lambda s: s.grade &gt; 90, students)
+
+# You can optionally comment here that good_students are the ones with grade &gt; 90
+good_students = get_good_students(students)
 </code></pre>
+
+<h2 id="too-specific-name-might-mean-too-specific-code">Too specific name might mean too specific code</h2>
+<p>If you feel you need a very specific name for a function, it might be that the function is too specific itself.</p>
+<pre><code># Very long name because very specific behaviour
+def get_students_with_grade_above_90(students):
+    return filter(lambda s: s.grade &gt; 90, students)
+
+# Adding a level of abstraction shortens our method name here
+def get_students_above(grade, students):
+    return filter(lambda s: s.grade &gt; grade, students)
+
+# What we mean here is very clear and the code is reusable
+good_students = get_students_above(90, students)
+</code></pre>
+
+<h2 id="keep-short-scopes-for-quick-lookup">Keep short scopes for quick lookup</h2>
+<p>Finally, encapsulate logic in shorter scopes. This way, you don't need to give that much detail in the variable name, as it can be looked up quickly a few lines above. A rule of thumb is to make your functions fit in your IDE without scrolling and encapsulate some logic in new function if you go beyond that.</p>
+<pre><code># line 6
+names = ['John', 'Jane']
+
+... # Hundreds of lines of code
+
+# line 371
+# Wait what was names again?
+if 'Kath' in names:
+    ...
+</code></pre>
+
+<p>Here I lost track of what names was and scrolling up will make me lose track of even more. This is better:</p>
+<pre><code># line 6
+names = ['John', 'Jane']
+
+# I encapsulate part of the logic in another function to keep scope short
+x = some_function()
+y = maybe_a_second_function(x)
+
+# line 13
+# Sure I can lookup names, it is right above
+if 'Kath' in names:
+    ...
+</code></pre>
+
+<h2 id="spend-time-thinking-about-readability">Spend time thinking about readability</h2>
+<p>The last but not least is to devote time thinking about how you can make your code more readable. This is as important as the time you spend thinking about the logic and code optimization. The best code is the code that everyone can read, and thus everyone can improve.</p>
+<p>The above text was shamelessly copied from <a href="https://stackoverflow.com/questions/48721582/how-to-choose-proper-variable-names-for-long-names-in-python">StackOverflow</a></p>
               
             </div>
           </div>
@@ -207,10 +267,10 @@ def cli(log_level):
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../testing/" class="btn btn-neutral float-right" title="How to write unit test?">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../logging/" class="btn btn-neutral float-right" title="logging">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../variables/" class="btn btn-neutral" title="variables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../conventions/" class="btn btn-neutral" title="conventions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -238,10 +298,10 @@ def cli(log_level):
           <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../variables/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../conventions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../logging/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
