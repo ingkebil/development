@@ -21,6 +21,7 @@ nav:
   - Choose your editor :): 'editors/README.md'
   - How do we use Python?:
     - conventions: 'python/conventions.md'
+    - variables: 'python/variables.md'
     - logging: 'python/logging.md'
 #    - CLI
     - How to write unit test?: 'python/testing.md'
