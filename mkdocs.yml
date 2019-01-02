@@ -20,6 +20,7 @@ nav:
 #    - What are the commonly used commands?
   - Choose your editor :): 'editors/README.md'
   - How do we use Python?:
+    - conventions: 'python/conventions.md'
     - variables: 'python/variables.md'
     - logging: 'python/logging.md'
 #    - CLI
