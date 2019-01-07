@@ -1,0 +1,12 @@
+How to view changes made to manual?
+
+```
+git clone https://github.com/Clinical-Genomics/development.git
+cd development
+conda create -n D_mkdocs
+source activate D_mkdocs
+pip install mkdocs
+mkdocs serve
+```
+
+go to your browser: http://127.0.0.1:8000
