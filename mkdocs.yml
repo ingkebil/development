@@ -38,6 +38,7 @@ nav:
 #  - What are the security concerns?
   - Other recommendations?:
     - What if I need perl?: perl/README.md
+    - How do I install and manage perl and cpanm?: perl/installation/installation.md
     - What are perl's best practices?: perl/best_practises/best_practises.md
 #    - What do we recommend for web develoment?
 #  - How do we do project management?
