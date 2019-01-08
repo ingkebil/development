@@ -24,7 +24,9 @@ nav:
     - variables: 'python/variables.md'
     - logging: 'python/logging.md'
 #    - CLI
-    - How to write unit test?: 'python/testing.md'
+    - 'How to write unit tests?':
+      - 'GIVEN-WHEN-THEN': 'python/testing/index.md'
+      - 'Are you using fixtures?': 'python/testing/fixtures.md'
 #    - How to write documentation?  - 
 #  - How to run on stage?
 #    - How to use databases?
