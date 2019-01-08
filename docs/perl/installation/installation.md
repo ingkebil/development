@@ -1,16 +1,8 @@
 # Installing Perl
-It is usually a good idea to have an admin-free installation of perl. This can be done in several ways. Here we will use [Perlbrew] for a linux installation.
+It is usually a good idea to have an admin-free installation of perl. This can be done in several ways. Here we will use [Perlbrew].
 
 ## Perlbrew
-Perlbrew is a tool to manage multiple perl installations in your `$HOME` directory. Allowing for testing your production code against different perl versions, while leaving the vendor perl alone. You can even run your programs against all installations of perl. 
-1. Disable all previous perl related exports and initiations in bashrc and bash_profile if you have any
-1. Log out and in again to initilize a fresh shell
-1. Follow the instructions at [Perlbrew] for Installing Perlbrew using curl or wget.
-1. Append the following piece of code to the end of your `~/.bash_profile`:
-```Bash
-    source ~/perl5/perlbrew/etc/bashrc
-```
-Start a new shell and perlbrew should be up and fully functional from there.
+Perlbrew is a tool to manage multiple perl installations. Allowing for testing your production code against different perl versions, while leaving the vendor perl alone. You can even run your programs against all installations of perl. 
 
 ### Perl
 Install a specific perl version and use it as default.
@@ -53,7 +45,7 @@ If you need to reinstall a specific version of a cpanm library, run:
 $ cpanm --reinstall [your_cpanm_lib]@[version]
 ```
 
-More information on perlbrew is available here:  
-https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew
+More information on perlbrew is available on [metacpan].
 
 [Perlbrew]: https://perlbrew.pl
+[metacpan]: https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew
