@@ -14,9 +14,10 @@ nav:
 #  - Where do I develop?
 #    - and what are the commonly used tools? (tmux, …)
 #  - 'How do I start a project with git?': 'git/index.md'
-  - 'How do use conda to contain my project?':
+  - 'How do confine my project?':
     - 'How to name your conda env': 'conda/conda_conventions.md'
     - 'How do I activate an env?': 'conda/activate.md'
+    - 'How do I manage perl and cpanm?': 'perl/installation/perlbrew.md'
 #    - What are the commonly used commands?
   - Choose your editor :): 'editors/README.md'
   - How do we use Python?:
@@ -38,7 +39,6 @@ nav:
 #  - What are the security concerns?
   - Other recommendations?:
     - What if I need perl?: perl/README.md
-    - How do I install and manage perl and cpanm?: perl/installation/installation.md
     - What are perl's best practices?: perl/best_practises/best_practises.md
 #    - What do we recommend for web develoment?
 #  - How do we do project management?

@@ -1,10 +1,7 @@
-# Installing Perl
-It is usually a good idea to have an admin-free installation of perl. This can be done in several ways. Here we will use [Perlbrew].
-
-## Perlbrew
+# Perlbrew
 Perlbrew is a tool to manage multiple perl installations. Allowing for testing your production code against different perl versions, while leaving the vendor perl alone. You can even run your programs against all installations of perl. 
 
-### Perl
+## Perl
 Install a specific perl version and use it as default.
 ```Bash
 $ perlbrew install perl-5.26.0
@@ -16,7 +13,7 @@ Use a specific perl version in your current shell, run:
 $ perlbrew use perl-5.26.1
 ``` 
 
-### Cpanm
+## Cpanm
 Is a lightweigth CPAN client, which facilitates installing CPAN perl modules. It is a good idea to install it together with Perlbrew to always make them available across each your perlbrew perl installations i.e the CPANM library will change with the perlbrew switch command. 
 Installing CPANM with perlbrew is done by this command:
 ```Bash
