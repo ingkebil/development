@@ -1,6 +1,6 @@
 # Fixtures (and pytest)
 
-Python has a number of test runners to extend and simplify writing (unit) tests. We recommend pytest: a super robust and feature rich test framework. It lets you write tests as simple “asserts“, has a brilliant plugin ecosystem that “just works” after pip install pytest-[somePlugin], and let’s you leverage powerful fixtures to keep things DRY.
+Python has a number of test runners to extend and simplify writing (unit) tests. We recommend [pytest]: a super robust and feature rich test framework. It lets you write tests as simple “asserts“, has a brilliant plugin ecosystem that “just works” after pip install pytest-[somePlugin], and let’s you leverage powerful fixtures to keep things DRY.
 
 A small flavor of what tests look like with pytest:
 
@@ -50,7 +50,7 @@ You notice that the term “tools” is “repeating” for the “docker”-tes
 
 ## Test fixtures
 
-This is the key concept to start mastering tests. Fixtures are pluggable components that can be shared across many tests to setup pre-conditions like:
+[Fixtures] is the key concept to start mastering tests. They are pluggable components that can be shared across many tests to setup pre-conditions like:
 
 - setup a database connection
 - read in lines form a file
@@ -110,3 +110,6 @@ def test_write_file(tmpdir):
     # THEN there should be a new file created
     assert len(tmpdir.listdir()) == 1
 ```
+
+[pytest]: http://docs.pytest.org/en/latest/
+[Fixtures]: https://docs.pytest.org/en/latest/fixture.html
