@@ -20,7 +20,7 @@ This is my own habit loop for testing: my cue is writing or altering a function.
 
 It’s important to make this loop as simple as possible. That’s why you should invest time in learning and setting up test automation.
 
-    Read more about habits and how to master them in [The Power of Habit], by Charles Duhigg.
+> Read more about habits and how to master them in [The Power of Habit], by Charles Duhigg.
 
 ## Strategy: GIVEN-WHEN-THEN
 
