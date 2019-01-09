@@ -92,7 +92,7 @@ def test_add_row(db_connection):
     assert db_connection.get_row(name=name).age == 34
 ```
 
-When pytest runs the above function it will look for a fixture called db_connection and run it. Whatever is yielded (or returned) will be passed along to the test function. We set the “scope” of the fixture to “function” so as soon as the test is complete, the block after the yield statement will run. You can pass as many fixtures as you want to a test.
+When pytest runs the above function it will look for a fixture called `db_connection` and run it. Whatever is yielded (or returned) will be passed along to the test function. We set the “scope” of the fixture to “function” so as soon as the test is complete, the block after the yield statement will run. You can pass as many fixtures as you want to a test.
 
 > Tip: test fixtures accept parameter-dependencies the same way as test functions. It’s perfectly possible to combine several test fixtures.
 
