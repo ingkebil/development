@@ -1,6 +1,6 @@
 #Python testing
 
-In general we use [pytest](http://docs.pytest.org/en/latest/) for testing Python code. You might ask why! Well, this is why: [testandcode]
+In general we use [pytest] for testing Python code. You might ask why! Well, this is why: [testandcode]
 
 ## Motivation
 
