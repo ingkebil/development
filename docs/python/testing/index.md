@@ -49,6 +49,7 @@ By being explicit about what you're testing, you can get past the initial mental
 This tutorial was originally written by our favorite alumni: [Robin Andeer]!
 
 [testandcode]: https://testandcode.com/
+[pytest]: http://docs.pytest.org/en/latest/
 [test coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [The Power of Habit]: http://charlesduhigg.com/the-power-of-habit/
 [Robin Andeer]: https://www.robinandeer.com/blog/2016/06/18/how-i-test-my-code-part-1/
