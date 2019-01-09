@@ -26,7 +26,7 @@ It’s important to make this loop as simple as possible. That’s why you shoul
 
 It can be difficult to get started writing tests. Where do I begin? My routine is to follow step-by-step instructions in a very simple model: GIVEN-WHEN-THEN.
 
-    GIVEN: describe the prerequisets for the test you will run and optionally make assertions about your setup
+- **GIVEN**: describe the prerequisets for the test you will run and optionally make assertions about your setup
     WHEN: run your function and explain what is supposed to happen
     THEN: assert the outcome of your test; return values or side effects
 
