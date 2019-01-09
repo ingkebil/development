@@ -28,7 +28,7 @@ It can be difficult to get started writing tests. Where do I begin? My routine i
 
 - **GIVEN**: describe the prerequisets for the test you will run and optionally make assertions about your setup
 - **WHEN**: run your function and explain what is supposed to happen
-    THEN: assert the outcome of your test; return values or side effects
+- **THEN**: assert the outcome of your test; return values or side effects
 
 Here’s a quick example:
 
