@@ -11,8 +11,17 @@ This document outlines how to write the perfect crontab entry.
 0 0 * * * $CRONIC your-awesome-program >> your-awesome.log 2> >(tee -a your-awesome.log >&2)
 ```
 
-That's it!
-How does it work? Read on!
+We use `$CRONIC` to make sure only errors are emailed.
+
+That's it! How does it work? Read on!
+
+## Edit the crontab
+
+```
+crontab -e
+```
+
+This will drop you into a `vim` session.
 
 ## Crontab format
 
