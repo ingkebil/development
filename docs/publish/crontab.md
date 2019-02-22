@@ -8,14 +8,23 @@ This document outlines how to write the perfect crontab entry.
 ## TL;DR
 
 ```
-SHELL=/bin/bash
-MAILTO=clinical-logwatch@scilifelab.se
-CRONIC=~/server/resources/cronic
-
-0 0 * * * $CRONIC your_awesome_program >> your_awesome.log 2> >(tee -a your_awesome.log >&2)
+0 0 * * * $CRONIC your-awesome-program >> your-awesome.log 2> >(tee -a your-awesome.log >&2)
 ```
 
+We use `$CRONIC` to make sure only errors are emailed.
+
+That's it! How does it work? Read on!
+
+## Edit the crontab
+
+```
+crontab -e
+```
+
+This will drop you into a `vim` session.
+
 ## Crontab format
+
 
 ```
  ┌───────────── minute (0 - 59)
@@ -32,7 +41,7 @@ See [Cron][cron] for more explanation on crontab's format.
 
 ## Errors!
 
-You really want to be notified when your automation goes wrong. This line will add an email address to the crontab:
+You really want to be notified when your automation goes wrong. This line will add an email address to the crontab[^1].
 
 ```MAILTO=clinical-logwatch@scilifelab.se```
 
@@ -53,31 +62,33 @@ How can we make use of this nifty feature?
 
 Like this:
 
-```cronic your_awesome_program >> your_awesome.log```
+```cronic your-awesome-program >> your-awesome.log```
 
-All output to stdout will be caught by your log (all went well!). All output to stderr will be caught by crontab which will send it by email if `MAILTO` is set (program exited with non-zeo exit code).
+All output to stdout will be caught by your log (all went well!). All output to stderr will be caught by crontab which will send it by email if `MAILTO` is set (program exited with non-zero exit code).
 
 ## Logging
 
 What if you also want to log all output, even when something goes wrong?
 
-Then comes in some bash magic!
+Then comes in some bash magic [^1]
 
 ```
 SHELL=/bin/bash
-cronic your_awesome_program >> your_awesome.log 2> >(tee -a your_awesome.log >&2)
+cronic your-awesome-program >> your-awesome.log 2> >(tee -a your-awesome.log >&2)
 ```
 
-Here we add a stderr redirect (`2>`) to the program [tee][tee]. Tee captures all stdin (through `>(tee ...)` [process substitution][process substitution]), appends it to your_awesome.log, and prints stdin back to stdout. Stdout gets redirected to stderr (`>&2`). And remember: stderr is sent to crontab, which will mail the content to `MAILTO` if set.
+Here we add a stderr redirect (`2>`) to the program [tee][tee]. Tee captures all stdin (through `>(tee ...)` [process substitution][process substitution]), appends it to your-awesome.log, and prints stdin back to stdout. Stdout gets redirected to stderr (`>&2`). And remember: stderr is sent to crontab, which will mail the content to `MAILTO` if set.
 
 ## $CRONIC
 
-Lastly, you do not want to write the full path to `cronic` for each crontab entry. Create a bash variable at the start of the crontab, which you then can use in your crontab entry:
+Lastly, you do not want to write the full path to `cronic` for each crontab entry. Create a bash variable at the start of the crontab, which you then can use in your crontab entry: [^1]
 
 ```
 CRONIC=~/server/resources/cronic
-0 0 * * * $CRONIC your_awesome_program >> your_awesome.log 2> >(tee -a your_awesome.log >&2)
+0 0 * * * $CRONIC your-awesome-program >> your-awesome.log 2> >(tee -a your-awesome.log >&2)
 ```
+
+[^1]: Please be aware that in most certainty, the shell variables `SHELL`, `MAILTO`, and `CRONIC` will already by set at the top of the server's crontab.
 
 [cron]: https://en.wikipedia.org/wiki/Cron
 [cronic]: https://github.com/Clinical-Genomics/servers/blob/master/resources/cronic

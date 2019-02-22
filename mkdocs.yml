@@ -2,6 +2,8 @@ site_name: Development manual
 site_url: http://www.clinicalgenomics.se/development
 repo_url: https://github.com/Clinical-Genomics/development
 site_author: Team <teamname>
+markdown_extensions:
+  - footnotes
 
 theme:
   name: 'readthedocs'
@@ -36,7 +38,7 @@ nav:
 #    - CHANGELOG
 #    - How to make a Python package?
 #    - How to bumpversion?
-#    - How to automate running your tool?
+    - How to automate running your tool?: 'publish/crontab.md'
     - How make updating your tool easy?: 'publish/update-scripts.md'
 #  - What are the security concerns?
   - Other recommendations?:
