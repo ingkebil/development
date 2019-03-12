@@ -40,6 +40,7 @@ nav:
 #    - How to bumpversion?
     - How to automate running your tool?: 'publish/crontab.md'
     - How make updating your tool easy?: 'publish/update-scripts.md'
+    - How to publish your tool?: 'publish/prod.md'
 #  - What are the security concerns?
   - Other recommendations?:
     - What if I need perl?: perl/README.md
