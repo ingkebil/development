@@ -5,6 +5,7 @@ All you need to know on how to set up our servers.
 Servers configurations and resources can be found in the servers repo.
 
 If you have changed  something in that repo and want to deploy it you proceed much like with any other tool: 
+
 - Create a PR
 - Get the PR reviewed and approved ... but don't merge yet
     - Get someone to review your code
