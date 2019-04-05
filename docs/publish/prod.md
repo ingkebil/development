@@ -22,6 +22,7 @@ The steps below may vary according to your tool. The gist of installing your too
 - If it passes, merge the PR into master
     - Remove or rewrite any nonsense in the merge message into descriptive text
 - Delete the branch
+- Delete the development branch in conda
 - Bumpversion on master
 - Test the installation of the new master on stage
     - But only test that the installation succeeds
