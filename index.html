@@ -207,13 +207,17 @@
 <h2 id="getting-started">Getting started</h2>
 <p>If you are new to this repository we want to get you started right away! Please have a look at one of the <a href="assignments/README.md">assignments</a>.</p>
 <h2 id="setup">Setup</h2>
-<p>This section described how to setup the repo for development. To preview changes in the finished format you need <a href="https://www.mkdocs.org/#getting-started">mkdocs</a>. If you are using <a href="https://conda.io/docs/">conda</a> you should be able to run:</p>
-<pre><code class="bash">conda create -n D_mkdocs
+<p>This section described how to setup the repo for development. To preview changes in the finished format you need <a href="https://www.mkdocs.org/#getting-started">mkdocs</a>. If you are using <a href="https://conda.io/docs/">conda</a> you should be able to run the following locally:</p>
+<pre><code class="bash"># create an active conda environment
+conda create -n D_mkdocs
+source activate D_mkdocs
+# install our only dependency
 pip install mkdocs
 # now you should be able to run
 mkdocs --help
 # to preview changes in a browser, navigate to the repo and run:
 mkdocs serve
+# content is now served on http://127.0.0.1:8000 !
 </code></pre>
               
             </div>
@@ -265,5 +269,5 @@ mkdocs serve
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-03-15 20:49:24
+Build Date UTC : 2019-04-05 19:44:46
 -->
