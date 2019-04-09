@@ -22,6 +22,7 @@ nav:
     - 'How do I manage perl and cpanm?': 'perl/installation/perlbrew.md'
 #    - What are the commonly used commands?
   - Choose your editor :): 'editors/README.md'
+  - How to write consistent CLIs?: 'cli/README.md'
   - How do we use Python?:
     - conventions: 'python/conventions.md'
     - variables: 'python/variables.md'
