@@ -30,7 +30,7 @@ nav:
     - 'How to write unit tests?':
       - 'GIVEN-WHEN-THEN': 'python/testing/index.md'
       - 'Are you using fixtures?': 'python/testing/fixtures.md'
-#    - How to write documentation?  - 
+#    - How to write documentation?  -
 #  - How to run on stage?
 #    - How to use databases?
   - How to publish your tool?:
@@ -41,6 +41,7 @@ nav:
     - How to automate running your tool?: 'publish/crontab.md'
     - How make updating your tool easy?: 'publish/update-scripts.md'
     - How to publish your tool?: 'publish/prod.md'
+    - Who can sign off on tests, reviews and deploys?: 'publish/sign-off.md'
     - How to update configuration?: 'publish/servers.md'
 #  - What are the security concerns?
   - Other recommendations?:
