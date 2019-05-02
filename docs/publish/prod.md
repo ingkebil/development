@@ -21,6 +21,7 @@ The steps below may vary according to your tool. The gist of installing your too
     - Switch to stage: `usestage`
     - Install branch into stage with the tool's update script: `update-tool-stage.sh`
 - If it passes, merge the PR into master
+    - Add a small risk assessment to the merge message describing the potential impact on existing functionality
     - Remove or rewrite any nonsense in the merge message into descriptive text
 - Delete the branch
 - Delete the development branch in conda
