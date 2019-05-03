@@ -12,7 +12,7 @@ The steps below may vary according to your tool. The gist of installing your too
       - Is the code adhering to the language standards?
       - Where is the unit test?
       - Did any signatures of existing functions or methods change?
-      - Check [the code review guide](code-review.md) to see that you didn't miss anything.
+      - Check [the code review guide][review] to see that you didn't miss anything.
 - Test the PR on stage by deploying your branch
     - Do this with your reviewer
     - Announce on TTNs daily standup
@@ -32,3 +32,5 @@ The steps below may vary according to your tool. The gist of installing your too
     - Announce on stand up
     - Take backup of prod: e.g. `savetheconda prod170926`
     - Install with the tool's update script: `update-tool-prod.sh`
+
+[review]: ../git/code-review.md

@@ -15,7 +15,10 @@ nav:
   - Home: 'index.md'
 #  - Where do I develop?
 #    - and what are the commonly used tools? (tmux, …)
-#  - 'How do I start a project with git?': 'git/index.md'
+  - 'How do I start a project with git?':
+    - 'Quick reference guide to Github': 'git/index.md'
+    - 'How to review code?': 'git/code-review.md'
+    - 'How do I write a good issue in Github?': 'git/issue-reports.md'
   - 'How do confine my project?':
     - 'How to name your conda env': 'conda/conda_conventions.md'
     - 'How do I activate an env?': 'conda/activate.md'
