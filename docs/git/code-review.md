@@ -25,7 +25,7 @@ Collect the suggested changes in TODO lists, questions for the code author, and 
 
 The code needs to be reviewed and approved by a code owner. They are automatically assigned when you create the pull request.
 
-The person reviewing the code [signs off][sign-off] on the pull request with a "👍" or similar and then merges the code.
+The person reviewing the code [signs off][sign-off] on the pull request with a "👍" or similar.
 
 > Hot fixes are excluded from code reviews and can be merged by the author herself.
 
