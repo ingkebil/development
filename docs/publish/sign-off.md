@@ -20,7 +20,7 @@ In this model the sign-offs all happen in the pull request. The developer will a
 In this model several pull requests are bunched in the same release and it is therefore necessary to do the sign-offs in three steps:
 
 1. First pull request to add changes to the feature branch - sign-offs needed are on code review, functional testing and merge as described under Github flow.
-2. AM Test specification and implementation plan - sign-offs needed on system testing (testing of the whole feature branch to be deployed) and decision to merge to master and deploy the code. Test specifications and implementation plan templates are available in AM (`1249 Test Specification - Template` and `1187 Implementation plan - template`)
+2. AM Test specification and implementation plan - sign-offs needed on system testing (testing of the whole development or release branch to be deployed) and decision to merge to master and deploy the code. Test specifications and implementation plan templates are available in AM (`1249 Test Specification - Template` and `1187 Implementation plan - template`)
 3. Second pull request to merge into master - confirm the sign-offs in the AM test specification and implementation plan.
 
 ### People authorized to sign-off on code reviews
