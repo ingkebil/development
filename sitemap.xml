@@ -86,6 +86,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://www.clinicalgenomics.se/development/publish/sign-off/</loc>
+     <lastmod>2019-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://www.clinicalgenomics.se/development/publish/servers/</loc>
      <lastmod>2019-05-07</lastmod>
      <changefreq>daily</changefreq>
