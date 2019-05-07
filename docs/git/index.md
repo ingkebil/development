@@ -40,7 +40,7 @@ If you are working locally (your computer only), you could also add the `--globa
 
 ## Create a new repository
 
-There are several ways how one can create a new local repository
+There are several ways to create a new local repository.
 
 ### Create a new repository from scratch
 
