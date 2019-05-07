@@ -73,6 +73,8 @@ Before any code is deployed into production it needs to be tested in a productio
 
 Now that your changes have been verified in a production like environment, it is time to merge your code.
 
+_Make sure the code has been [signed off][sign off] before proceding!_
+
 > ProTip
 >
 > Squashing commits of a pull request improves the readability of the commit history. During development commit early and often. Once your work is ready merge with a focussed commit message. By default, the merge button for repositories will be set to "Squash and merge".
@@ -92,3 +94,4 @@ Once merged, Pull Requests preserve a record of the historical changes to your c
 [merge]: ../github/merge.png
 [closing issues]: https://help.github.com/en/articles/closing-issues-using-keywords
 [update scripts]: ../publish/update-scripts.md
+[sign off]: ../publish/sign-off.md
