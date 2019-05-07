@@ -15,6 +15,7 @@ Your code is ready for deployment. Well done bucko! Now what do I do?
     - Switch to stage: `usestage`
     - Install branch into stage with the tool's update script: `update-tool-stage.sh`
 - If it passes, merge the PR into master
+    - Add a small risk assessment to the merge message describing the potential impact on existing functionality
     - Remove or rewrite any nonsense in the merge message into descriptive text
 - Delete the branch
 - Delete the development branch in conda
