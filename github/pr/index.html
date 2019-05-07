@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>How to make a pull request? - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "How to make a pull request?";
+    var mkdocs_page_input_path = "github/pr.md";
+    var mkdocs_page_url = "/development/github/pr/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tools/">What are the commonly used tools?</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Choose a development workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dev/models/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/githubflow/">github flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/gitflow/">git flow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do confine my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../conda/activate/">How do I activate an env?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/installation/perlbrew/">How do I manage perl and cpanm?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../python/conventions/">conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/variables/">variables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">How to write unit tests?</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/">GIVEN-WHEN-THEN</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/fixtures/">Are you using fixtures?</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How to publish your tool?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../publish/prod/">How to publish your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/crontab/">How to automate running your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/update-scripts/">How make updating your tool easy?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/servers/">How to update configuration?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use github?</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">How to make a pull request?</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#open-a-pull-request">Open a Pull Request</a></li>
+    
+
+    <li class="toctree-l3"><a href="#describe-how-to-test-your-changes">Describe how to test your changes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#discuss-and-review-your-code">Discuss and review your code</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#code-health">Code health</a></li>
+        
+            <li><a class="toctree-l4" href="#production-readiness">Production readiness</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#test-your-changes">Test your changes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#merge-your-feature">Merge your feature</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../pr-request/">How to request a pull request review?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Other recommendations?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/">What if I need perl?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mkdocs/">How do I publish this manual?</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>How do we use github? &raquo;</li>
+        
+      
+    
+    <li>How to make a pull request?</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/github/pr.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="open-a-pull-request">Open a Pull Request</h3>
+<p><img alt="pullrequest" src="../../dev/pullrequest.png" /></p>
+<p>Pull Requests initiate discussion about your commits. Because they're tightly integrated with the underlying Git repository, anyone can see exactly what changes would be merged if they accept your request.</p>
+<p>You can open a Pull Request at any point during the development process: when you have little or no code but want to share some screenshots or general ideas, when you're stuck and need help or advice, or when you're ready for someone to review your work. By using GitHub's @mention system in your Pull Request message, you can ask for feedback from specific people or teams.</p>
+<p>More information on how to make a pull request can be found on <a href="https://help.github.com/en/desktop/contributing-to-projects/creating-a-pull-request">github</a>.</p>
+<h3 id="describe-how-to-test-your-changes">Describe how to test your changes</h3>
+<p>Pull Requests frame a problem by describing it. Maybe you're trying to fix a bug, add a feature, or trying out a new code pattern. Having a proper problem description ensures that your reviewer knows what their getting into.</p>
+<p>To let your reviewer know how to run your code, describe how to test it properly. Lay out a scenario that gives a basic runthrough from set up to expected outcome.</p>
+<p>The usual template goes like this:</p>
+<pre><code class="text">This PR solves the waterleak in the coffee machine, fixes issue #33.
+
+How to test :
+  0. Clone this feature! `git clone -b your-awesome-feature https://github.com/clinical-genomics/&lt;your-repo&gt;`
+  1. copy test db
+  2. test feature
+
+Expected outcome:
+leak is now solved!
+</code></pre>
+
+<p>Are there multiple angles you can test your feature with? Awesome! Specify a test case for each scenario.</p>
+<p>Not only does this help your reviewer navigate your code, it also helps you. By describing the feature step by step for someone else, it ensures you have not missed anything critical.</p>
+<h3 id="discuss-and-review-your-code">Discuss and review your code</h3>
+<p><img alt="discuss" src="../../dev/discuss.png" /></p>
+<p>Once a Pull Request has been opened, the person or team reviewing your changes may have questions or comments. Read how to <a href="../pr-request/">request a pull request review</a>.</p>
+<p>You can also continue to push to your branch in light of discussion and feedback about your commits. If someone comments that you forgot to do something or if there is a bug in the code, you can fix it in your branch and push up the change. GitHub will show your new commits and any additional feedback you may receive in the unified Pull Request view.</p>
+<blockquote>
+<p>ProTip</p>
+<p>Pull Request comments are written in Markdown, so you can embed images and emoji, use pre-formatted text blocks, and other lightweight formatting. You even can suggest commitable changes right in the comment.</p>
+</blockquote>
+<p>A review focusses on the code health and on production readiness. If you're unsure on how to review a pull request, read more about it on <a href="https://help.github.com/en/articles/reviewing-proposed-changes-in-a-pull-request">github</a>.</p>
+<h4 id="code-health">Code health</h4>
+<p>Perhaps the coding style doesn't match project guidelines, the change is missing unit tests, or maybe everything looks great and props are in order. Pull Requests are designed to encourage and capture this type of conversation.</p>
+<blockquote>
+<p>ProTip</p>
+<p>You can suggest changes directly in a comment, by hittin the <svg version="1.1" width="13" height="16" viewBox="0 0 13 16" class="octicon octicon-diff" aria-hidden="true"><path fill-rule="evenodd" d="M6 7h2v1H6v2H5V8H3V7h2V5h1v2zm-3 6h5v-1H3v1zM7.5 2L11 5.5V15c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h6.5zM10 6L7 3H1v12h9V6zM8.5 0H3v1h5l4 4v8h1V4.5L8.5 0z"></path></svg>.
+<img alt="suggest changes" src="../suggestion-block.png" /></p>
+</blockquote>
+<h4 id="production-readiness">Production readiness</h4>
+<p>The Pull Request template lays out one or more scenarios on how to test your code. The reviewer will go through a scenario and document the results and whether or not the test is passing. The reviewer should be generous with comments, descriptions, and screenshots and ask for explanation or improvements as the test is progressing.</p>
+<p>The reviewer will describe if the test scenario passes.</p>
+<h3 id="test-your-changes">Test your changes</h3>
+<p><img alt="deploy" src="../../dev/deploy.png" /></p>
+<p>Before any code is deployed into production it needs to be tested in a production like environment: stage. To make your life easier, read up on how to make an update script to update your tool for each environment right <a href="../../publish/update-scripts/">here</a>.</p>
+<h3 id="merge-your-feature">Merge your feature</h3>
+<p><img alt="merge" src="../merge.png" /></p>
+<p>Now that your changes have been verified in a production like environment, it is time to merge your code.</p>
+<blockquote>
+<p>ProTip</p>
+<p>Squashing commits of a pull request improves the readability of the commit history. During development commit early and often. Once your work is ready merge with a focussed commit message. By default, the merge button for repositories will be set to "Squash and merge".</p>
+</blockquote>
+<p>Once merged, Pull Requests preserve a record of the historical changes to your code. Because they're searchable, they let anyone go back in time to understand why and how a decision was made.</p>
+<blockquote>
+<p>ProTip</p>
+<p>By incorporating certain keywords into the text of your Pull Request, you can associate issues with code. When your Pull Request is merged, the related issues are also closed. For example, entering the phrase <code>Closes #32</code> would close issue number 32 in the repository. For more information, check out our <a href="https://help.github.com/en/articles/closing-issues-using-keywords">help article</a>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pr-request/" class="btn btn-neutral float-right" title="How to request a pull request review?">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../publish/servers/" class="btn btn-neutral" title="How to update configuration?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../publish/servers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../pr-request/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

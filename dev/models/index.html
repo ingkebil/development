@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Overview - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Overview";
+    var mkdocs_page_input_path = "dev/models.md";
+    var mkdocs_page_url = "/development/dev/models/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tools/">What are the commonly used tools?</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Choose a development workflow</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Overview</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#branching-workflows">Branching workflows</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#shared-repository-model">Shared repository model</a></li>
+        
+            <li><a class="toctree-l4" href="#rolling-release-github-flow">Rolling release (github flow)</a></li>
+        
+            <li><a class="toctree-l4" href="#distinct-release-git-flow">Distinct release (git flow)</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../githubflow/">github flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../gitflow/">git flow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do confine my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../conda/activate/">How do I activate an env?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/installation/perlbrew/">How do I manage perl and cpanm?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../python/conventions/">conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/variables/">variables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">How to write unit tests?</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/">GIVEN-WHEN-THEN</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/fixtures/">Are you using fixtures?</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How to publish your tool?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../publish/prod/">How to publish your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/crontab/">How to automate running your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/update-scripts/">How make updating your tool easy?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/servers/">How to update configuration?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use github?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../github/pr/">How to make a pull request?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../github/pr-request/">How to request a pull request review?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Other recommendations?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/">What if I need perl?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mkdocs/">How do I publish this manual?</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Choose a development workflow &raquo;</li>
+        
+      
+    
+    <li>Overview</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/dev/models.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="branching-workflows">Branching workflows</h1>
+<p>Chosing a branching workflow answers the question: how are we branching and merging our features?</p>
+<p>Does the workflow </p>
+<ul>
+<li>scale with team size,</li>
+<li>influence deployment speed,</li>
+<li>provide an easy way to undo mistakes,</li>
+<li>impose unnecessary cognative overhead for its users?</li>
+</ul>
+<p>As a team, does the workflow </p>
+<ul>
+<li>enable me to collaborate unintrusively with my coworkers,</li>
+<li>provide for an easy merge strategy,</li>
+<li>enforce basic coding standards?</li>
+</ul>
+<p>Based on the answers of these questions, we are recommending two kinds of branching workflows.</p>
+<p>To understand this documentation, knowledge of git and branching is recommended! Why don't you read up on our <a href="../../git/">git</a> page?</p>
+<h2 id="shared-repository-model">Shared repository model</h2>
+<p>Before we dive into how we are using branching workflows, a brief introduction on collaborative development models. An answer to the question: how are we cloning a repository?</p>
+<p>There are two main types of collaborative development models. In the <em>fork and pull model</em>, anyone can fork an existing repository and push changes to their personal fork without needing access to the source repository. The changes can be pulled into the source repository by the project maintainer. </p>
+<p>In the <em>shared repository model</em>, collaborators are granted push access to a single shared repository and feature branches are created when changes need to be made. Pull requests are useful in this model as they initiate code review and general discussion about a set of changes before the changes are merged into the main branch of development.</p>
+<p><em>We are using the shared repository model.</em></p>
+<h2 id="rolling-release-github-flow">Rolling release (github flow)</h2>
+<p><img alt="github flow image" src="../createbranch.png" /></p>
+<p>Some key features of github flow are:</p>
+<ul>
+<li>Master is production ready</li>
+<li>Master is deployed to production</li>
+<li>Development happens on feature branches</li>
+<li>Fast deployment speed</li>
+<li>Ideal for one version in production.</li>
+<li>Requires a verification for each release</li>
+</ul>
+<p>When would you use github flow?</p>
+<ul>
+<li>The workflow is great for bleeding edge software development</li>
+<li>Meaning that github flow scales easily</li>
+</ul>
+<p>Do you want to <a href="../githubflow/">know more</a>?</p>
+<h2 id="distinct-release-git-flow">Distinct release (git flow)</h2>
+<p><img alt="gitflow-image" src="../05.svg" /></p>
+<p>Some key features of git flow:</p>
+<ul>
+<li>Master is production ready</li>
+<li>Master is deployed to production</li>
+<li>Development happens in a development branch, which in turn has feature branches</li>
+<li>Deploy when the the development of a release if finished and validated</li>
+<li>Ideal for multiple versions in production.</li>
+<li>Requires a validation for each release</li>
+</ul>
+<p>When would you use git flow?</p>
+<ul>
+<li>The workflow is great for a release-based software development</li>
+<li>The development branch forms a safety barrier between development and production</li>
+</ul>
+<p>Do you want to <a href="../gitflow/">know more</a>?</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../githubflow/" class="btn btn-neutral float-right" title="github flow">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../tools/" class="btn btn-neutral" title="What are the commonly used tools?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../tools/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../githubflow/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
