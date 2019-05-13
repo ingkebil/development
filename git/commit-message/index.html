@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Team <teamname>">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>On the importance of commit messages - Development manual</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "On the importance of commit messages";
+    var mkdocs_page_input_path = "git/commit-message.md";
+    var mkdocs_page_url = "/development/git/commit-message/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Development manual</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../tools/">What are the commonly used tools?</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Choose a development workflow</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../dev/models/">Overview</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/githubflow/">github flow</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../dev/gitflow/">git flow</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do confine my project?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../conda/conda_conventions/">How to name your conda env</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../conda/activate/">How do I activate an env?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/installation/perlbrew/">How do I manage perl and cpanm?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../editors/">Choose your editor :)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use Python?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../python/conventions/">conventions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/variables/">variables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../python/logging/">logging</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">How to write unit tests?</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/">GIVEN-WHEN-THEN</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../python/testing/fixtures/">Are you using fixtures?</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How to publish your tool?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../publish/prod/">How to publish your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/crontab/">How to automate running your tool?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/update-scripts/">How make updating your tool easy?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/sign-off/">Who can sign off on tests, reviews and deploys?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/servers/">How to update configuration?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">How do we use github?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../github/pr/">How to make a pull request?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../github/pr-request/">How to request a pull request review?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Other recommendations?</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../perl/">What if I need perl?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../perl/best_practises/best_practises/">What are perl's best practices?</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../mkdocs/">How do I publish this manual?</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Development manual</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>On the importance of commit messages</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/git/commit-message.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="on-the-importance-of-commit-messages">On the importance of commit messages</h1>
+<p>We chose <a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2">conventional commits</a> for its readability and its ability to automate our <a href="https://semver.org/">semantic versioning</a> &amp; changelog.</p>
+<p>Conventional commits are structured as <code>&lt;type&gt;(&lt;scope&gt;):&lt;subject&gt;</code>. Adhering to this structure with detailed subjects and message bodies when appropriate allows us to create a truly meaningful history. When browsing this history we can really see the progression of development, and when reviewing PRs we have a brief summary of changes right in front of us. However, the real value of a meaningful commit message may not come for months down the road.</p>
+<h2 id="format-of-the-commit-message">Format of the commit message:</h2>
+<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;
+</code></pre>
+
+<h3 id="message-subject-first-line">Message subject (first line)</h3>
+<p>First line cannot be longer than 70 characters, second line is always blank and other lines should be wrapped at 80 characters.
+These are the <type> values:</p>
+<ul>
+<li><strong>fix</strong>: the commit patches a bug in your codebase (this correlates with PATCH in semantic versioning).</li>
+<li><strong>feat</strong>: the commit introduces a new feature to the codebase (this correlates with MINOR in semantic versioning).</li>
+<li><strong>BREAKING CHANGE</strong>: a commit that has the text "BREAKING CHANGE" at the beginning of its optional body or footer section introduces a breaking API change (correlating with MAJOR in semantic versioning). A breaking change can be part of commits of any type. e.g., a fix:, feat: &amp; chore: types would all be valid, in addition to any other type.</li>
+<li>Others: commit types other than fix: and feat: are allowed, for example recommends chore:, docs:, style:, refactor:, and test:. We also recommend improvement for commits that improve a current implementation without adding a new feature or fixing a bug.</li>
+<li>A scope may be provided to a commit’s type, to provide additional contextual information and is contained within parenthesis, e.g., feat(parser): add ability to parse arrays.</li>
+</ul>
+<p>Example <scope> values:</p>
+<ul>
+<li>cli</li>
+<li>build</li>
+<li>frontend</li>
+<li>tests</li>
+<li>config</li>
+<li>web</li>
+</ul>
+<p>The <code>&lt;scope&gt;</code> can be empty (eg. if the change is a global or difficult to assign to a single component), in which case the parentheses are omitted.</p>
+<h3 id="message-body">Message body</h3>
+<ul>
+<li>uses the imperative, present tense: “change” not “changed” nor “changes”</li>
+<li>includes description for the change and contrasts with previous behavior</li>
+</ul>
+<p><em>This description must include the motivation for the chosen version increment.</em></p>
+<h2 id="when-to-use-conventional-commits">When to use conventional commits?</h2>
+<p>During the work on a feature branch commit messages are reflecting the work in progress. Only after a feature is approved to be merged, does the commit message become important and conventional commits should be followed. The commit messages that ends up in the tools master branch is following the conventional commits standard.</p>
+<blockquote>
+<p>ProTip</p>
+<p>Squashing commits of a pull request reduces the clutter introduced in the commit history. It enables to push early and often to the feature branch and to merge a feature as a unit.</p>
+</blockquote>
+<h2 id="why-use-conventional-commits">Why Use Conventional Commits</h2>
+<ul>
+<li>Automatically generating CHANGELOGs.</li>
+<li>Automatically determining a semantic version bump.</li>
+<li>Communicating the nature of changes to teammates, the public, and other stakeholders.</li>
+<li>Triggering build and publish processes.</li>
+<li>Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>Commit message with description and breaking change in body</p>
+<pre><code class="text">feat: allow provided config object to extend other configs
+
+BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+</code></pre>
+
+<p>Commit message with no body</p>
+<pre><code class="text">docs: correct spelling of CHANGELOG
+</code></pre>
+
+<p>Commit message with scope</p>
+<pre><code class="text">feat(lang): added polish language
+</code></pre>
+
+<p>Commit message for a fix using an (optional) issue number.</p>
+<pre><code class="text">fix: minor typos in code
+
+see the issue for details on the typos fixed
+
+fixes issue #12
+</code></pre>
+
+<p>Sources:</p>
+<ul>
+<li><a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2">conventional commits</a></li>
+<li><a href="http://karma-runner.github.io/0.10/dev/git-commit-msg.html">karma</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
