@@ -7,3 +7,6 @@
  <b>Responding to change</b> over following a plan<br><br>
  That is, while there is value in the items on the right, we value the items on the left more.
  </p>
+<sub>
+ © 2001, the Agile Manifesto authors. This declaration may be freely copied in any form, but only in its entirety through this notice.
+</sub>
