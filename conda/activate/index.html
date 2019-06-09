@@ -259,10 +259,10 @@
 </code></pre>
 
 <h2 id="production-and-stage">Production and stage</h2>
-<p>We have two special conda environments with special configurations: <code>prod</code> and <code>stage</code>.</p>
-<p><code>prod</code> is the main environment in which not surprisingly, our production tools are running. <code>stage</code> is a recent copy of <code>prod</code> used for testing of your latest finished branch and to test deployment.</p>
-<p>What is so special about <code>prod</code> or <code>stage</code>? They come with all tools already pointing to their configurations and need to be activated using a shell script.</p>
-<p>To activate <code>prod</code> environment, type:</p>
+<p>We have two special conda environments with special configurations: production, called <code>P_main</code> and stage, called <code>S_main</code>.</p>
+<p><code>P_main</code> is the main environment in which not surprisingly, our production tools are running. <code>S_main</code> is a recent copy of <code>P_main</code> used for testing of your latest feature branch and to test deployment.</p>
+<p>What is so special about <code>P_main</code> or <code>S_main</code>? They come with all tools already pointing to their configurations and need to be activated using a shell script.</p>
+<p>To activate <code>P_main</code> environment, type:</p>
 <pre><code>up
 </code></pre>
 
@@ -270,7 +270,7 @@
 <pre><code>useprod
 </code></pre>
 
-<p>To activate <code>stage</code> environment, type:</p>
+<p>To activate <code>S_main</code> environment, type:</p>
 <pre><code>us
 </code></pre>
 
@@ -280,10 +280,8 @@
 
 <h3 id="i-want-to-know-more">I want to know more</h3>
 <p><code>us</code> and <code>usestage</code> are aliases pointing to a script:</p>
-<pre><code>alias usestage='source ${HOME}/servers/resources/activate-stage.sh'
+<pre><code>alias usestage='source ${HOME}/servers/resources/usestage.sh'
 </code></pre>
-
-<p>That script will activate the correct environment(s) and set the aliases for the environment.</p>
               
             </div>
           </div>
