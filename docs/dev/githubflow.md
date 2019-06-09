@@ -2,6 +2,14 @@
 
 GitHub Flow is a lightweight, branching workflow that supports teams and projects where deployments are made regularly. It is centered around a feature and small confined changes.
 
+Some key features of github flow are:
+
+- Master is production ready
+- Master is deployed to production
+- Development happens on feature branches
+- Fast deployment speed
+- Requires a verification for each release
+
 ## How it works
 
 ### Create a branch

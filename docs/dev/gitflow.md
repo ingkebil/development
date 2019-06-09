@@ -10,10 +10,11 @@ Gitflow is one of two styles of branching workflows you and your team can utiliz
 
 Some key takeaways to know about Gitflow are:
 
-- The workflow is great for a release-based software workflow.
-- Gitflow offers a dedicated channel for hotfixes to production.
-- The workflow enables an easy rollback.
-- It is ideal when there needs to be multiple versions in production.
+- Master is production ready
+- Master is deployed to production
+- Development happens in a development branch, which in turn has feature branches
+- Deploy when the development of a release is finished and validated
+- Requires a validation for each release
 
 Gitflow is based in two main branches with infinite lifetime:
 

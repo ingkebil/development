@@ -39,13 +39,12 @@ Some key features of github flow are:
 - Master is deployed to production
 - Development happens on feature branches
 - Fast deployment speed
-- Ideal for one version in production.
 - Requires a verification for each release
 
 When would you use github flow?
 
-- The workflow is great for bleeding edge software development
-- Meaning that github flow scales easily
+- The workflow is great for Continious Integration/Continious Deployment
+- Little procedural overhead
 
 Do you want to [know more][githubflow]?
 
@@ -58,8 +57,7 @@ Some key features of git flow:
 - Master is production ready
 - Master is deployed to production
 - Development happens in a development branch, which in turn has feature branches
-- Deploy when the the development of a release if finished and validated
-- Ideal for multiple versions in production.
+- Deploy when the development of a release is finished and validated
 - Requires a validation for each release
 
 When would you use git flow?
