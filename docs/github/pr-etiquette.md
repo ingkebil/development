@@ -14,4 +14,4 @@ As a reviewer:
 
  - When you receive a pull request review and are unable to finish it within a reasonable time, you are responsible to inform that you are unable to review in a timely manner. If needed, suggest another reviewer and mention that person in the pull request to keep the process from being blocked.
 
-When the code is reviewed and the tests pass, [signing off](../..[ublish/sign-off.md) of the "merge and deploy" is only a formality. At this stage the pull request should not require any additional work from the person signing off nor from the developers.
+When the code is reviewed and the tests pass, [signing off](../publish/sign-off.md) of the "merge and deploy" is only a formality. At this stage the pull request should not require any additional work from the person signing off nor from the developers.
