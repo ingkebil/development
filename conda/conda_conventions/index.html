@@ -88,6 +88,12 @@
             
     <li class="toctree-l3"><a href="#conda-conventions">Conda conventions</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l4" href="#naming-conventions">Naming conventions</a></li>
+        
+        </ul>
+    
 
     </ul>
                 </li>
@@ -242,25 +248,32 @@
             <div class="section">
               
                 <h1 id="conda-conventions">Conda conventions</h1>
+<p>This document describes how to name your conda environments.</p>
+<p>Examples:</p>
+<p>Production environment for microsalt:</p>
+<pre><code>P_usalt
+</code></pre>
+
+<p>Stage environment for microsalt:</p>
+<pre><code>S_usalt
+</code></pre>
+
+<p>A development environment for microsalt:</p>
+<pre><code>D_fix-microbial-coverage_190517_IS
+</code></pre>
+
+<h2 id="naming-conventions">Naming conventions</h2>
 <ul>
-<li>Avoid installing anything in the conda default environment (root) if possible</li>
-<li>Naming conventions for conda environments: </li>
-<li>Production: <code>[env_type=P]_[logical_name]_[creation_date]</code></li>
-<li>Development: <code>[env_type=D]_[logical_name]_[creation_date]_[signature]</code></li>
-<li>Archive: <code>[env_type=A]_[logical_name]_[timestamp]_[signature]</code><ul>
-<li>env_type: environment types are<ul>
-<li><strong>D</strong> (Develop),</li>
-<li><strong>P</strong> (Production),</li>
-<li>or <strong>A</strong> (Archive).</li>
+<li>Production: <code>P_[name]</code></li>
+<li>Stage: <code>S_[name]</code></li>
+<li>Development: <code>D_[name]_[creation_date]_[signature]</code></li>
+<li>Archive: <code>A_[name]_[timestamp]_[signature]</code></li>
 </ul>
-</li>
-<li>creation_date: <code>%y%m%d</code></li>
-<li>timestamp: <code>%y%m%d %H%M%S</code>.</li>
-<li>logical_name: whatever makes sense.</li>
-<li>signature: something to show who created the environment. Use the two- or three letter name acronyms assigned to you.</li>
-</ul>
-</li>
-</ul>
+<p>With:
+   - creation_date: <code>%y%m%d</code>
+   - timestamp: <code>%y%m%d %H%M%S</code>.
+   - name: whatever makes sense.
+   - signature: showing who created the environment. Use the two- or three letter name acronyms assigned to you.</p>
               
             </div>
           </div>
