@@ -8,7 +8,7 @@
   
   <meta name="author" content="Team <teamname>">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>How make updating your tool easy? - Development manual</title>
+  <title>Checklist for a github repository - Development manual</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "How make updating your tool easy?";
-    var mkdocs_page_input_path = "publish/update-scripts.md";
-    var mkdocs_page_url = "/development/publish/update-scripts/";
+    var mkdocs_page_name = "Checklist for a github repository";
+    var mkdocs_page_input_path = "dev/project.md";
+    var mkdocs_page_url = "/development/dev/project/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -64,15 +64,15 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../../dev/models/">Overview</a>
+    <a class="" href="../models/">Overview</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../dev/githubflow/">github flow</a>
+    <a class="" href="../githubflow/">github flow</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../../dev/gitflow/">git flow</a>
+    <a class="" href="../gitflow/">git flow</a>
                 </li>
     </ul>
 	    </li>
@@ -140,43 +140,23 @@
     <ul class="subnav">
                 <li class="">
                     
-    <a class="" href="../prod/">How to publish your tool?</a>
+    <a class="" href="../../publish/prod/">How to publish your tool?</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../crontab/">How to automate running your tool?</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">How make updating your tool easy?</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#how-to-easily-update-your-tool">How to easily update your tool?</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#stage-cli-update-script">Stage CLI update script</a></li>
-        
-            <li><a class="toctree-l4" href="#naming-of-scripts">Naming of scripts</a></li>
-        
-            <li><a class="toctree-l4" href="#what-about-config-files">What about config files?</a></li>
-        
-            <li><a class="toctree-l4" href="#what-about-databases">What about databases?</a></li>
-        
-            <li><a class="toctree-l4" href="#so-what-is-beta">So, what is beta?</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../../publish/crontab/">How to automate running your tool?</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../sign-off/">Who can sign off on tests, reviews and deploys?</a>
+    <a class="" href="../../publish/update-scripts/">How make updating your tool easy?</a>
                 </li>
                 <li class="">
                     
-    <a class="" href="../servers/">How to update configuration?</a>
+    <a class="" href="../../publish/sign-off/">Who can sign off on tests, reviews and deploys?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../publish/servers/">How to update configuration?</a>
                 </li>
     </ul>
 	    </li>
@@ -197,9 +177,15 @@
                     
     <a class="" href="../../github/pr-etiquette/">Pull request etiquette</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../../dev/project/">Checklist for a github repository</a>
+    <a class="current" href="./">Checklist for a github repository</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#optional-but-recommended-steps">Optional but recommended steps</a></li>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -246,14 +232,14 @@
     
       
         
-          <li>How to publish your tool? &raquo;</li>
+          <li>How do we use github? &raquo;</li>
         
       
     
-    <li>How make updating your tool easy?</li>
+    <li>Checklist for a github repository</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/publish/update-scripts.md"
+        <a href="https://github.com/Clinical-Genomics/development/edit/master/docs/dev/project.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -263,138 +249,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="how-to-easily-update-your-tool">How to easily update your tool?</h1>
-<p>You will want to create two scripts, at least:</p>
-<ul>
-<li>one to update your tool on stage</li>
-<li>one to update your tool on prod</li>
-</ul>
-<p>Yes, I just wrote that out in full. It's that important!</p>
-<h2 id="stage-cli-update-script">Stage CLI update script</h2>
-<p>How does such a script look like. Well, let's have a look at one that closest resembles a template, <code>update-trailblazer-stage.sh</code></p>
-<pre><code class="bash">#!/usr/bin/env bash
-
-# exit on error
-set -e
-
-# make sure we run as hiseq.clinical
-sh ./assert_user.sh hiseq.clinical
-
-# make sure we run on rasta. Leave this assert out if this script can be run on all servers.
-sh ./assert_host.sh rastapopoulos.scilifelab.se
-
-# One optional argument
-BRANCH=${1}
-
-# make sure we can have access to aliases
-shopt -s expand_aliases
-
-# make sure we are closely resembling production
-source ~/.bashrc
-
-# go to stage. Yes, this conda env should already exist
-source activate stage
-
-# install with latest changes on &quot;master&quot;
-pip install -U git+https://github.com/Clinical-Genomics/trailblazer@$BRANCH
-</code></pre>
-
-<p>You run it:</p>
-<pre><code class="bash">cd ~/servers/resources
-sh update-trailblazer-stage.sh
-</code></pre>
-
-<p>Or you update stage to a specific branch:</p>
-<pre><code class="bash">cd ~/servers/resources
-sh update-trailblazer-stage.sh beta
-</code></pre>
-
-<h3 id="web-update-script">Web update script</h3>
-<p>For web frontend, one can add everything you need to update a staging env:</p>
-<pre><code class="bash">#!/usr/bin/env bash
-
-# exit on error
-set -e
-
-# make sure we run as hiseq.clinical
-sh ./assert_user.sh hiseq.clinical
-
-# make sure we run on clinical-db
-sh ./assert_host.sh clinical-db.scilifelab.se
-
-# One optional argument, prefilled
-BRANCH=${1-master}
-
-# make sure we can have access to aliases
-shopt -s expand_aliases
-
-# make sure we are closely resembling production
-source ~/.bashrc
-
-# go to stage. Yes, this conda env should already exist
-source activate stage
-
-# trailblazer-stage is already installed in a predefined location. The repo should already be cloned
-cd ~/STAGE/trailblazer
-
-# Update!
-git fetch
-git checkout $BRANCH
-git pull
-
-# install and update pip dependencies
-pip install -U --editable .
-
-# restart the Flask service
-supervisorctl restart trailblazer-stage
-supervisorctl restart trailblazer-api-stage
-
-# Drop you back to the initial directory
-cd -
-</code></pre>
-
-<h2 id="naming-of-scripts">Naming of scripts</h2>
-<p>The suggestion is to name your script: <code>update-$component-stage.sh</code></p>
-<p>with $component the name of your component, be it <code>trailblazer</code> for the cli or <code>trailblazer-ui</code> for the web.</p>
-<h2 id="what-about-config-files">What about config files?</h2>
-<p>Premade config files for all packages used in production and stage have been made in the <code>config</code> dir of the servers repo. This can be found on rasta and clinical-db in the same location:</p>
-<pre><code>cd ~/servers/config
-</code></pre>
-
-<p>All config files point to the stage location of the package, if any, to lims-stage, and to the staging databases.</p>
-<h2 id="what-about-databases">What about databases?</h2>
-<h3 id="mysql">MySQL</h3>
-<p>All databases are located on clinical-db. To make sure you have the latest uncorrupted data, you can make a copy of one or all databases like this:</p>
-<p>On clinical-db, copying all databases:</p>
-<pre><code>cd ~/servers/resources
-bash dbcopy-prod-to-stage.sh
-</code></pre>
-
-<p>On clinical-db, copy one database:</p>
-<pre><code>cd ~/servers/resources
-bash dbcopy-prod-to-stage.sh trailblazer
-</code></pre>
-
-<p>The credentials to the stage databases have already been set in the stage configs.</p>
-<h3 id="mongo">Mongo</h3>
-<p>All mongodbs are located on clinical-db. To copy both scout and loqusdb, you can issue:</p>
-<pre><code>cd ~/servers/resources
-bash dbcopy-mongoprod-to-stage.sh
-</code></pre>
-
-<p>This will reinstate a backuped version of scout (dated: 2018-05-18) and a fresh copy of loqusdb.</p>
-<p>Please be aware that this process takes several days to complete!</p>
-<p>The mongo-stage server is not running by default. To start the mongo-stage run:</p>
-<pre><code>cd ~/servers/resources
-bash start-mongo-stage.sh &amp;
-</code></pre>
-
-<h2 id="so-what-is-beta">So, what is beta?</h2>
-<p>The beta environment, for now, is not an environment at all. It is a bunch of branches in git for cg and trailblazer that are affected by the MIP6/Scout4 update.</p>
-<p>To update stage to use those branches, run</p>
-<p>Rasta:</p>
-<pre><code>bash update-beta.sh
-</code></pre>
+                <p>This is a list containing all items that need to be set up so that repositories are compatible with <code>1042 Verifications and Validations</code>.</p>
+<ol>
+<li><strong>Choose a branching model</strong>.
+Read up on our <a href="../models/">branching models</a>.</li>
+<li><strong>Update the README.md</strong>. Add on which branching model you are in the README.md of the repo.</li>
+<li><strong>Add code owners</strong>. Add .github/CODEOWNERS. Please add two people if possible. Read up on <a href="https://help.github.com/en/articles/about-code-owners">codeowners</a>.</li>
+<li><strong>Add a pull request template</strong>. Add .github/PULL_REQUEST_TEMPLATE that includes a test scenario, a motivation for bump template as well as signoff tickboxes for code review, functional testing, and sing off for deploy/merge. Read up on <a href="https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository">pull request templates</a>.</li>
+<li><strong>Create update scripts</strong>. Read up on how to create an <a href="../../publish/update-scripts/">update script</a>.</li>
+<li><strong>Use semantic versioning</strong>. Bump version on each change on master, e.g. use the <a href="https://github.com/peritus/bumpversion">bumpversion package</a> to automate bumping and tagging.</li>
+<li><strong>Define the public API</strong>. Without knowing what the public API of your tool is, semantic versioning remains a guessing game. The public API can be e.g. all public functions, the CLI, a REST API.</li>
+<li><strong>Set up TravisCI</strong>. Get those unit tests tested <a href="https://travis-ci.org/">automatically</a>! In doubt, check out <a href="https://github.com/Clinical-Genomics/cg/blob/master/.travis.yml">cg</a>.</li>
+</ol>
+<h3 id="optional-but-recommended-steps">Optional but recommended steps</h3>
+<ol>
+<li><strong>Commit messages</strong>. Use <a href="https://www.conventionalcommits.org/en/">conventional commits</a> messages when formulating commit messages to the master branch.</li>
+<li><strong>Set up coveralls</strong>. Only allow -0.1% decrease in test <a href="https://coveralls.io/">coverage</a> so bug fixes can pass but new code is forced to have a unit test.</li>
+<li><strong>Set up automatic linting</strong>. <a href="https://github.com/Clinical-Genomics/cg/blob/master/.travis.yml">Automatically</a> apply <a href="https://github.com/Clinical-Genomics/cg/blob/master/.gitlint.yaml">standard python coding styles</a>  with ease!</li>
+</ol>
               
             </div>
           </div>
@@ -402,10 +274,10 @@ bash start-mongo-stage.sh &amp;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sign-off/" class="btn btn-neutral float-right" title="Who can sign off on tests, reviews and deploys?">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../perl/" class="btn btn-neutral float-right" title="What if I need perl?">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../crontab/" class="btn btn-neutral" title="How to automate running your tool?"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../github/pr-etiquette/" class="btn btn-neutral" title="Pull request etiquette"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -433,10 +305,10 @@ bash start-mongo-stage.sh &amp;
           <a href="https://github.com/Clinical-Genomics/development/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../crontab/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../github/pr-etiquette/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../sign-off/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../perl/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
