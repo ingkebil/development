@@ -3,8 +3,8 @@ This is a list containing all items that need to be set up so that repositories 
 1. **Choose a branching model**.
 Read up on our [branching models](models.md).
 1. **Update the README.md**. Add on which branching model you are in the README.md of the repo.
-1. **Add code owners**. Add .github/CODEOWNERS. Please add two people if possible. Read up on [codeowners](https://help.github.com/en/articles/about-code-owners).
-1. **Add a pull request template**. Add .github/PULL_REQUEST_TEMPLATE that includes a test scenario, a motivation for bump template as well as signoff tickboxes for code review, functional testing, and sing off for deploy/merge. Read up on [pull request templates](https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository).
+1. **Add code owners**. Add `.github/CODEOWNERS`. Please add two people if possible. Read up on [codeowners](https://help.github.com/en/articles/about-code-owners).
+1. **Add a pull request template**. Add `.github/PULL_REQUEST_TEMPLATE` that includes a test scenario, a motivation for bump template as well as signoff tickboxes for code review, functional testing, and [sing off for deploy/merge](../publish/sign-off.md). Read up on [pull request templates](https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository).
 1. **Create update scripts**. Read up on how to create an [update script](../publish/update-scripts.md).
 1. **Use semantic versioning**. Bump version on each change on master, e.g. use the [bumpversion package](https://github.com/peritus/bumpversion) to automate bumping and tagging.
 1. **Define the public API**. Without knowing what the public API of your tool is, semantic versioning remains a guessing game. The public API can be e.g. all public functions, the CLI, a REST API.
