@@ -7,13 +7,10 @@ This is a step-wise instruction on how to set-up and validate MIP.
        1. [Install cpanm modules](#22-install-cpanm-modules)
        1. [Test cpanm and mip_install](#23-test-cpanm-and-mip_install)
    1. [Installing MIP and prerequistes](#3-installing-mip-and-prerequistes)
-       1. [Svdb](#31-svdb)
-       1. [Python 3 tools](#32-python-3-tools)
-       1. [Cnvnator](#33-cnvnator)
-       1. [Vep](#34-vep)
-       1. [MIP main environment](#35-mip-main-environment)
-       1. [Test MIP](#36-test-mip)
-   1.  [Resources](#4-resources)
+       1. [Setting up MIP's config](#31-setting-up-mip's-config)
+       1. [Downloading MIP's references](#32-downloading-mip's-references)
+   1. [Developing and testing MIP](#4-developing-and-testing-mip)
+   1. [Resources](#5-resources)
 
 ## 1. Perl
 MIP requires perl 5.26.0 or above. We use perlbrew to handle different versions of perl and cpanm librarires. You can find installation instructions for perl and cpanm [here](https://github.com/Clinical-Genomics/development/blob/master/perl/installation/installation.md). Information on your current, perl version and cpanm libraries can be found with:
@@ -30,13 +27,13 @@ $ perlbrew use perl-5.26.0
 ## 2. MIP
 We need to clone the MIP github repo in a place where it does not affect production.
 ```Bash
-$ cd /mnt/hds/proj/bioinfo/develop/modules
+$ cd /home/proj/stage/bin/git/
 $ git clone https://github.com/Clinical-Genomics/MIP.git
 $ cd MIP
 $ git checkout master
 ```
 
-### 2.1 Cpanm 
+### 2.1 Cpanm
 MIP uses several perl modules outside of the perl core distribution. These needs to be installed preferentially to a separate cpanm library tied to your perl version. To install a new cpanm library to a specific perl version, run:
 ```Bash
 $ perlbrew lib create perl-5.26.0@MIP
@@ -51,7 +48,7 @@ $ perlbrew use perl-5.26.0@MIP
 ```
 
 ### 2.2 Install cpanm modules
-Update the cpanm library to take into account any updates in MIP prerequistes:
+Update the cpanm library to take into account any updates in MIP prerequisites:
 ```Bash
 $ cd definitions
 $ cpanm --installdeps .
@@ -64,88 +61,51 @@ $ cd t; prove mip_install.t
 $ cd -
 ```
 
-## 3. Installing MIP and prerequistes
-The programs supported by MIP requires several references. To save time it is usually a good idea to hard link reference from an already exsting previous mip reference dir (if you have one).
-```Bash
-$ mkdir -p /mnt/hds/proj/bioinfo/MIP_ANALYSIS/references_6.0
-$ ln /mnt/hds/proj/bioinfo/MIP_ANALYSIS/references_5.0/* /mnt/hds/proj/bioinfo/MIP_ANALYSIS/references_6.0
-```
+## 3. Installing MIP and prerequisites
+Due to dependency conflicts MIP needs multiple conda environments to function properly. The names of these environments are set using the '--envn' flag.
 
-If you supply the intended MIP reference directory using the `--reference_dir` flag the install script will try to download most of the supported reference that are required. Note that this is not all of the references as not all of them are available for download and that this process may take some time as some references are quite large. 
+Generate the install script and start installation:
+```bash
+$ perl mip install rd_dna --envn \
+emip=S_mip7.1_rd-dna \
+ecnvnator=S_mip7.1_rd-dna_cnvnator \
+edelly=S_mip7.1_rd-dna_delly \
+epeddy=S_mip7.1_rd-dna_peddy \
+eperl5=S_mip7.1_rd-dna_perl5 \
+epy3=S_mip7.1_rd-dna_py3 \
+esvdb=S_mip7.1_rd-dna_svdb \
+etiddit=S_mip7.1_rd-dna_tiddit \
+evep=S_mip7.1_rd-dna_vep
 
-Some tools have conflicting dependencies. Therefore, it is required to place them in separate conda environments.
-
-### 3.1 Svdb 
-```Bash
-$ perl mip_install.pl -env P_mip-svdb_180203 -sp svdb -sp vcfanno -sp vt -sp bcftools -sp htslib -sp picard
 $ bash mip.sh
 ```
-Add these lines to your mip config file:
-```YAML
- - module_source_environment_command:
-     psv_combinevariantcallsets: "source activate P_mip-svdb_180203"
-```
-
-### 3.2 Python 3 tools
+Test the installation by running:
 ```Bash
-$ perl mip_install.pl -env P_mip-pyv3.6_180203 --python_version 3.6 --select_program genmod --select_program chanjo --select_program variant_integrity --select_program multiqc
-$ bash mip.sh
+$ prove t
+$ perl t/mip_analyse_rd_dna.test
 ```
-Add these lines to your mip config file:
-```YAML
- - program_source_environment_command:
-     pgenmod: "source activate P_mip-pyv3.6_180203"
- - module_source_environment_command:
-     pfrequency_filter: "source activate P_mip-pyv3.6_180203"
-     pchanjo_sexcheck: "source activate P_mip-pyv3.6_180203"
-     pmultiqc: "source activate P_mip-pyv3.6_180203"
-     prankvariant: "source activate P_mip-pyv3.6_180203"
-     psv_rankvariant: "source activate P_mip-pyv3.6_180203"
-```
+### 3.1 Setting up MIP's config
+MIP provides a template, which can be found here: `templates/mip_rd_dna_config.yaml`
 
-### 3.3 Cnvnator
-```Bash
-$ perl mip_install.pl -env P_mip-cnvnator_180203 --select_program cnvnator
-$ bash mip.sh
-```
-Add these lines to your mip config file:
-```YAML
- - module_source_environment_command:
-     pcnvnator: "LD_LIBRARY_PATH=/mnt/hds/proj/bioinfo/SERVER/miniconda/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; source /mnt/hds/proj/bioinfo/SERVER/miniconda/envs/mip_cnvnator/root/bin/thisroot.sh; source activate P_mip-cnvnator_180203"        
-```
+Go to the load_env key and change the environment names (called `mip_travis_<package>` in the template) to the ones specified during the installation.
 
-### 3.4 Vep
+### 3.2 Downloading MIP's references
+The programs supported by MIP requires several references. To save time it is usually a good idea to hard link reference from an already existing previous mip reference dir (if you have one).
 ```Bash
-$ perl mip_install.pl -env P_mip-6.0_180203 --sp vep
-$ bash mip.sh
+$ mkdir -p /home/proj/stage/rare-disease/references/references_7.1/
+$ ln /home/proj/stage/rare-disease/references/references_7.0/* /home/proj/stage/rare-disease/references/references_7.1/
 ```
-Add these lines to your mip config file:
-```YAML
- - module_source_environment_command:
-     pvarianteffectpredictor: "LD_LIBRARY_PATH=/mnt/hds/proj/bioinfo/SERVER/miniconda/envs/P_mip-vep_180203/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; source activate P_mip-vep_180203"
-     psv_varianteffectpredictor: "LD_LIBRARY_PATH=/mnt/hds/proj/bioinfo/SERVER/miniconda/envs/P_mip-vep_180203/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH; source activate P_mip-vep_180203"
-```
-### 3.5 MIP main environment
-```Bash
-$ perl mip_install.pl -env P_mip-6.0_180203 --skip svdb --skip vep
-$ bash mip.sh
-```
-Add these lines to your mip config file:
-```YAML
-source_main_environment_commands:
-  - source
-  - activate
-  - P_mip-6.0_180203
-```
+MIP's standard references are specified in `templates/mip_download_rd_dna_config_-1.0-.yaml`. MIP can automatically detect which references that has been changed between MIP versions and needs an update. First open the template file and change the environment name under the key load_env to MIP's conda environment (in our case S_mip7.1_rd-dna).
 
-### 3.6 Test MIP
-Now that all prerequisites have been installed, run:
 ```Bash
-$ cd t; prove -r
-$ cd -
+$ conda activate S_mip7.1_rd-dna
+$ mip download rd_dna -c templates/mip_download_rd_dna_config_-1.0-.yaml --reference_dir /home/proj/stage/rare-disease/references/references_7.1
 ```
-to test the MIP installation.
+This launches SLURM jobs that will download the missing references.
 
+Some of MIP's references cannot be automatically downloaded. See the section [Private References](https://github.com/Clinical-Genomics/MIP/blob/master/documentation/Setup.md#private-references) on MIP's github repo.
+
+## 4. Developing and testing MIP
 Perform your changes and depending on the type of update (major, minor, patch) run the test suite and integration tests (run_tests.t) as well as actual test data sets. These can be found in the test data directory - described below:
 
 **WGS/WES**
@@ -153,8 +113,8 @@ Perform your changes and depending on the type of update (major, minor, patch) r
 - 643594-200M: Low coverage hapmap dataset. Execution time: ~ 24 h
 - 643594-450M: High coverage hapmap dataset. Execution time: ~ 24-30 h
 
-## 4. Resources
-  - Test data directories: `/mnt/hds/proj/cust000/validations/`
-  - Reference directories: `/mnt/hds/proj/bioinfo/MIP_ANALYSIS/`
-  - MIP develop config directory: `/mnt/hds/proj/bioinfo/develop/config/`
-  - MIP develop analysis directories: `/mnt/hds/proj/bioinfo/develop/customers/cust000/` 
+## 5. Resources
+  - Test data directories: `/home/proj/stage/rare-disease/validations/`
+  - Reference directories: `/home/proj/stage/rare-disease/references/`
+  - MIP stage config directory: ` /home/proj/stage/servers/config/hasta.scilifelab.se/`
+  - MIP stage analysis directories: `/home/proj/stage/rare-disease/cases/`
