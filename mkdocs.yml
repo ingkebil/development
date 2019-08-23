@@ -39,6 +39,7 @@ nav:
 #    - How to write documentation?  -
 #  - How to run on stage?
 #    - How to use databases?
+  - How to integrate two tools?: 'dev/integration.md'
   - How to publish your tool?:
     - How to publish your tool?: 'publish/prod.md'
 #    - CHANGELOG
