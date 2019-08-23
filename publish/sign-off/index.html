@@ -191,10 +191,6 @@
                     
     <a class="" href="../../github/pr-etiquette/">Pull request etiquette</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../dev/project/">Checklist for a github repository</a>
-                </li>
     </ul>
 	    </li>
           
@@ -258,7 +254,7 @@
             <div class="section">
               
                 <h1 id="when-do-you-need-a-sign-off-and-who-can-sign-off-on-tests-code-reviews-and-deploys">When do you need a sign-off and who can sign off on tests, code reviews and deploys?</h1>
-<p>All tools developed at clinical genomics need to be tested, reviewed and deployed according to a specific routine which is generally outlined under <a href="../prod/">"How to publish your tool"</a>. These three things also need a sign-off by an authorized person. For tools used in production this is especially important. There are two development models used at Clinical Genomics and depending on which you use the sign-offs happen at slightly different steps in the update process.</p>
+<p>All tools developed at clinical genomics need to be tested, reviewed and deployed according to a specific routine which is generally outlined under <a href="../prod/">"How to publish your tool"</a>. These three things also need a sign-off by an authorized person. For tools used in production this is especially important. There are two branching models used at Clinical Genomics and depending on which you use the sign-offs happen at slightly different steps in the update process.</p>
 <h2 id="github-flow">Github flow</h2>
 <p>In this model the sign-offs all happen in the pull request. The developer will as part of the initial pull request add two check boxes to the description; one for code review and one for functional testing. The authorized person(s) doing the test and review then ticks the boxes as the code has been checked and tested on stage according to the test case described in the pull request. The person ticking the last box also approves the pull request. Only when the boxes are ticked, the authorized person(s) have added their thumbs up and the pull request has been approved the decision to merge and deploy is made. The person(s) authorized to sign-off on this then adds the go-ahead as a comment in the pull request and merges the branch to master (or other source). This process is better described in <a href="../prod/">"How to publish your tool"</a>.</p>
 <h3 id="people-authorized-to-sign-off-on-code-reviews">People authorized to sign-off on code reviews</h3>
