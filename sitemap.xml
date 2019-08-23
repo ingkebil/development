@@ -71,6 +71,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>http://www.clinicalgenomics.se/development/dev/integration/</loc>
+     <lastmod>2019-08-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://www.clinicalgenomics.se/development/publish/prod/</loc>
      <lastmod>2019-08-23</lastmod>
      <changefreq>daily</changefreq>
@@ -107,6 +112,11 @@
     </url>
     <url>
      <loc>http://www.clinicalgenomics.se/development/github/pr-etiquette/</loc>
+     <lastmod>2019-08-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://www.clinicalgenomics.se/development/dev/project/</loc>
      <lastmod>2019-08-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
