@@ -26,6 +26,8 @@ Your code is ready for deployment. Well done bucko! Now what do I do?
     - Announce on stand up
     - Take backup of prod: e.g. `savetheconda prod170926`
     - Install with the tool's update script: `update-tool-prod.sh`
+    
+Installing the tool an update script will log the deploy.
 
 [pr]: ../../github/pr
 [pr-review]: ../../github/pr-request
