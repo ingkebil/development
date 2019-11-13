@@ -187,7 +187,7 @@
     <a class="current" href="./">Checklist for a github repository</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#project-requirements">Project requirements</a></li>
+    <li class="toctree-l3"><a href="#optional-but-recommended-steps">Optional but recommended steps</a></li>
     
 
     </ul>
@@ -254,26 +254,24 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="project-requirements">Project requirements</h1>
-<ul>
-<li>choose a branching model</li>
-<li>add on which branching model you are in the README.md of the repo</li>
-<li>add .github/CODEOWNERS</li>
-<li>add .github/PULL_REQUEST_TEMPLATE that includes a test scenario, a motivation for bump template as well as signoff tickboxes for code review, functional testing, and sing off for deploy/merge. </li>
-<li>test out update script for stage and production</li>
-<li>change the way you push to production<ul>
-<li>use semantic versioning<ul>
-<li>bump version on each change on master, e.g. use the bumpversion package to automate bumping and tagging</li>
-</ul>
-</li>
-<li>use conventional commits when adding commits to the master branch (optional, recommended)</li>
-<li>coveralls is set up<ul>
-<li>only allow -0.1% decrease in test coverage so bug fixes can pass but new code is forced to have a unit test (optional, recommended)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+                <p>This is a list containing all items that need to be set up so that repositories are compatible with <code>1042 Verifications and Validations</code>.</p>
+<ol>
+<li><strong>Choose a branching model</strong>.
+Read up on our <a href="../models/">branching models</a>.</li>
+<li><strong>Update the README.md</strong>. Add on which branching model you are in the README.md of the repo.</li>
+<li><strong>Add code owners</strong>. Add <code>.github/CODEOWNERS</code>. Please add two people if possible. Read up on <a href="https://help.github.com/en/articles/about-code-owners">codeowners</a>.</li>
+<li><strong>Add a pull request template</strong>. Add <code>.github/PULL_REQUEST_TEMPLATE</code> that includes a test scenario, a motivation for bump template as well as signoff tickboxes for code review, functional testing, and <a href="../../publish/sign-off/">sing off for deploy/merge</a>. Read up on <a href="https://help.github.com/en/articles/creating-a-pull-request-template-for-your-repository">pull request templates</a>.</li>
+<li><strong>Create update scripts</strong>. Read up on how to create an <a href="../../publish/update-scripts/">update script</a>.</li>
+<li><strong>Use semantic versioning</strong>. Bump version on each change on master, e.g. use the <a href="https://github.com/peritus/bumpversion">bumpversion package</a> to automate bumping and tagging.</li>
+<li><strong>Define the public API</strong>. Without knowing what the public API of your tool is, semantic versioning remains a guessing game. The public API can be e.g. all public functions, the CLI, a REST API.</li>
+<li><strong>Set up TravisCI</strong>. Get those unit tests tested <a href="https://travis-ci.org/">automatically</a>! In doubt, check out <a href="https://github.com/Clinical-Genomics/cg/blob/master/.travis.yml">cg</a>.</li>
+</ol>
+<h3 id="optional-but-recommended-steps">Optional but recommended steps</h3>
+<ol>
+<li><strong>Commit messages</strong>. Use <a href="https://www.conventionalcommits.org/en/">conventional commits</a> messages when formulating commit messages to the master branch.</li>
+<li><strong>Set up coveralls</strong>. Only allow -0.1% decrease in test <a href="https://coveralls.io/">coverage</a> so bug fixes can pass but new code is forced to have a unit test.</li>
+<li><strong>Set up automatic linting</strong>. <a href="https://github.com/Clinical-Genomics/cg/blob/master/.travis.yml">Automatically</a> apply <a href="https://github.com/Clinical-Genomics/cg/blob/master/.gitlint.yaml">standard python coding styles</a>  with ease!</li>
+</ol>
               
             </div>
           </div>
