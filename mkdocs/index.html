@@ -215,6 +215,8 @@
         
             <li><a class="toctree-l3" href="#i-want-more-detail">I want more detail</a></li>
         
+            <li><a class="toctree-l3" href="#wait-how-do-i-set-up-mkdocs">Wait, how do I set up mkdocs?</a></li>
+        
         </ul>
     
 
@@ -266,6 +268,19 @@
 <h2 id="i-want-more-detail">I want more detail</h2>
 <p>We are using github's gh-pages to store the generated manual. Once mkdocs has generated HTML from the markdown, it will be stored in the branch <code>gh-pages</code>.</p>
 <p>More explanation on the <a href="https://www.mkdocs.org/user-guide/deploying-your-docs/">deploying your docs</a> page.</p>
+<h2 id="wait-how-do-i-set-up-mkdocs">Wait, how do I set up mkdocs?</h2>
+<p>This section described how to setup the repo for development. To preview changes in the finished format you need <a href="https://www.mkdocs.org/#getting-started">mkdocs</a>. If you are using <a href="https://conda.io/docs/">conda</a> you should be able to run the following locally:</p>
+<pre><code class="bash"># create an active conda environment
+conda create -n D_mkdocs
+source activate D_mkdocs
+# install our only dependency
+pip install mkdocs
+# now you should be able to run
+mkdocs --help
+# to preview changes in a browser, navigate to the repo and run:
+mkdocs serve
+# content is now served on http://127.0.0.1:8000 !
+</code></pre>
               
             </div>
           </div>
@@ -316,5 +331,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2019-11-13 20:12:22
+Build Date UTC : 2019-11-13 20:27:40
 -->
